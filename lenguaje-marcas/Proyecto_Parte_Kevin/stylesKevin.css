@@ -1,0 +1,211 @@
+#menu{
+    display:flex;
+    justify-content: center;
+
+}
+
+#inicio{
+    padding-left: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+}
+
+#modelos{
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+}
+
+#servicios{
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+}
+
+#contacto{
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%; 
+}
+
+header{
+    font-size: large;
+
+}
+
+/* styles.css */
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  h1, h2, h3 {
+    color: black;
+  }
+  
+  /* Estilos de la barra de navegación */
+  #menu {
+    background-color: lightblue;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  
+  #menu div {
+    margin: 0 10px;
+  }
+  
+  /* Estilos de la sección destacada */
+  .destacada {
+    background-color: lightblue;
+    padding: 20px;
+  }
+  
+  .boton {
+    background-color: black;
+    color: white;
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    text-decoration: none;
+  }
+  
+  /* Estilos de la sección de modelos de automóviles */
+  .modelos {
+    background-color: lightblue;
+    color: black;
+    padding: 20px;
+  }
+  
+  .grid-modelos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .modelo {
+    background-color: #F0F8FF;
+    padding: 20px;
+  }
+  
+  /* Estilos de la sección de servicios */
+  .servicios {
+    text-align: center;
+    background-color: lightblue;
+    padding: 20px;
+  }
+
+  #servicioTop{
+    display: flex;
+    text-align: left;
+    padding-left: 15%;
+  }
+
+  #imagen1{
+    display: flex
+  }
+
+  #imgMant{
+    padding-left: 11.5%;
+    padding-right: 5%;
+  }
+  
+  #imgVen{
+    padding-left: 1.4%;
+    padding-right: 5%;
+  }
+
+  #imgFin{
+    padding-left: 2%;
+
+  }
+
+  #mant{
+    padding-right: 2%;
+  }
+  
+  #venta{
+    padding-left: 18.3%;
+  }
+
+  #finan{
+    padding-left: 23%;
+  }
+
+  #servicioBot{
+    display: flex;
+    text-align: left;
+    padding-top: 5%;
+    padding-left: 15%;
+  }
+
+  #manejo{
+    padding-left: 20%;
+    padding-right: 18%;
+  }
+
+  /* Estilos de la sección de contacto */
+  .contacto {
+    background-color: lightblue;
+    color: black;
+    padding: 10px;
+  }
+  
+  .contacto a {
+    color: black;
+  }
+  
+  /* Estilos del footer */
+  footer {
+    background-color: lightblue;
+    color: black;
+    padding: 5px;
+    text-align: center;
+  }
+
+#pFooter {
+    font-weight: bold;
+    font-style: normal;
+    text-align: center;
+    padding-top: 1%;
+}
+
+#divBajo {
+    display:flex;
+    margin-left: 30%;
+    text-align: center;
+}
+
+#telefono {
+    color: white;
+    display:flex;
+    padding: 1%;
+}
+
+#correo {
+    color: white;
+    display:flex;
+    padding: 1%;
+}
+
+#direccion {
+    color: white;
+    display:flex;
+    padding: 1%;
+}
+
+#derechos{
+    color: normal;
+    text-align: right;
+    font-style: italic;
+}
+  
