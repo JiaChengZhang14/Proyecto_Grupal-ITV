@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ITC</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Archivo CSS para estilos -->
+  <link rel="stylesheet" href="stylesKevin.css"> <!-- Archivo CSS para estilos -->
 </head>
 <body>
   <header >
@@ -48,38 +48,50 @@
     <!-- Sección de servicios -->
     <section class="servicios">
       <h2 id="h2">Servicios</h2>
-      <div id="servicioTop">
+      <p>Estos son los principales servicios que ofrecemos</p>
+      <div class="servicioTop">
         <p id="mant">Servicio de mantenimiento</p>
         <p id="venta">Venta de repuestos</p>
         <p id="finan">Financiamiento</p>
       </div>
-      <div id="imagen1">        
-        <img id="imgMant" src="images/mantenimiento.jpg" width="300" height="250">
-        <img id="imgVen" src="images/venta.jpg" width="350" height="250">
-        <img id="imgFin" src="images/finan.jpg" width="300" height="250">
+      <div class="imagen1">        
+        <img id="imgMant" src="imagesKevin/mantenimiento.jpg" width="350" height="250">
+        <img id="imgVen" src="imagesKevin/venta.jpg" width="350" height="250">
+        <img id="imgFin" src="imagesKevin/finan.jpg" width="325" height="250">
       </div>
       <div id="servicioBot">
         <p id="manejo">Prueba de manejo</p>
         <p id="ases">Asesoramiento personalizado</p>
       </div>
+      <div id="imagen2">        
+        <img id="imgManejo" src="imagesKevin/manejo.jpg" width="350" height="250">
+        <img id="imgAses" src="imagesKevin/ases.jpg" width="350" height="250">
+      </div>
     </section>
 
     <!-- Sección de contacto -->
     <footer>
-      <address class="contacto">
-        <h2>Contacto</h2>
-        <p id="pFooter">¡Contáctanos para obtener más información!</p>
-      <div id="divBajo">
-        <a id="telefono" href="#">123456789</a>
-        <br>
-        <a id="correo" href="#">info@contacto.itc.com</a>
-        <br>
-        <a id="direccion" href="#">P.º de la Ermita, 15, 28918 Leganés, Madrid</a>
-      </address>
-      </div>
-    </main>
+      <addres class="contacto">
+        <div class="divcontacto">
+          <div id="divArriba">
+            <h2>Contacto</h2>
+            <p id="pFooter">¡Contáctanos para obtener más información!</p>
+          </div>
+          <div id="divBajo">
+            <img src="imagesKevin/phone.png" height="4%" width="4%">
+            <a id="telefono" href="#">123456789</a>
+            <br>
+              <img id="logos" src="imagesKevin/email.png">
+              <a id="correo" href="#">info@contacto.itc.com</a>
+            <br>
+            <img id="logos" src="imagesKevin/dire.png">
+            <a id="direccion" href="#">P.º de la Ermita, 15, 28918 Leganés, Madrid</a>
+          </div>
+        </div>
+      </addres>
     <hr id="linea"></hr>
     <p id="derechos">Derechos de autor &copy; 2023 ITC. Todos los derechos reservados.</p>
   </footer>
+  </main>
 </body>
 </html>
