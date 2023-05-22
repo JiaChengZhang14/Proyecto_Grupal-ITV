@@ -32,6 +32,14 @@
     margin-right: auto;
     width: 25%; 
 }
+#formulario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#formulario img {
+  width: 20%;
+}
 
 
 /* styles.css */
@@ -171,3 +179,11 @@ body {
     font-style: italic;
 }
   
+
+@media screen and (min-width: 1920px) {
+  body {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+
+}

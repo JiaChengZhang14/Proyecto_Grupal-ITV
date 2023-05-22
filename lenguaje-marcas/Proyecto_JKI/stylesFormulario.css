@@ -1,0 +1,72 @@
+/* styles.css */
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+  }
+  
+  h1, h2, h3 {
+    color: rgb(0, 0, 0);
+  }
+  
+  /* Estilos del formulario */
+  form {
+    background-color: lightblue;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+}
+  
+  form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="tel"],
+  form select {
+    width: 95%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  form input[type="submit"] {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Estilos del footer */
+  footer {
+    background-color: lightblue;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    text-align: center;
+  }
+  
+  #linea {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  #derechos {
+    color: normal;
+    text-align: right;
+    font-style: italic;
+  }
+  

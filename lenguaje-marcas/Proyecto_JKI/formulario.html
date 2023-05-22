@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITC - Formulario de Contacto</title>
+  <link rel="stylesheet" href="stylesFormulario.css"> <!-- Archivo CSS para estilos -->
+</head>
+<body>
+  <header>
+    <!-- Barra de navegación -->
+
+  </header>
+  <form action="">
+    <fieldset>
+        <legend><h2>Contacto</h2></legend>
+        <section>
+              <label for="nombre">Nombre:</label>
+              <input type="text" id="nombre" name="nombre" required>
+              <label for="apellidos">Apellidos:</label>
+              <input type="text" id="apellidos" name="apellidos" required>
+      
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required><br> <br>
+      
+              <label for="telefono">Teléfono:</label>
+              <input type="tel" id="telefono" name="telefono" required>
+      
+              <label for="matricula">Matrícula de vehículo:</label>
+              <input type="text" id="matricula" name="matricula" required><br><br>
+      
+              <label for="tipo_vehiculo">Tipo de vehículo:</label>
+              <select id="tipo_vehiculo" name="tipo_vehiculo" required>
+                <option value="TURISMO">TURISMO</option>
+                <option value="FURGONETA">FURGONETA</option>
+                <option value="CAMION">CAMION</option>
+                <option value="MOTOCICLETA">MOTOCICLETA</option>
+              </select><br><br>
+              <input type="submit" value="Enviar">
+          </section>
+    </fieldset>
+  </form>
+
+  <footer>
+    <hr id="linea"></hr>
+    <p id="derechos">Derechos de autor &copy; 2023 ITC. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
