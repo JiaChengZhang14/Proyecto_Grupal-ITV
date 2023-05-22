@@ -1,5 +1,6 @@
 /*crea un procedimiento que liste trabajadores de la estacion que le entre por parametro */
 
+use empresaitv;
 -- PROCEDURE 2
 delimiter $$
 drop procedure if exists listWorkersByStation $$
@@ -7,7 +8,7 @@ create procedure listWorkersByStation(stationId INT)
 begin
     declare l_last_row_fetched int;
     declare id int;
-    declare c1 cursor for select * from Trabajador where id_itv = stationId;
+    declare c1 cursor for select * from trabajador where id_itv = stationId;
     declare continue handler for not found set l_last_row_fetched = 1;
     set l_last_row_fetched = 0;
     open c1;
