@@ -8,7 +8,7 @@
   <script src = "scripts/script.js"></script>
 </head>
 <body>
-  <form action="" onsubmit="validarFormulario()">
+  <form action="">
     <fieldset>
         <legend><h2>Contacto</h2></legend>
         <section>
@@ -18,10 +18,10 @@
               <input type="text" id="apellidos" name="apellidos" required>
       
               <label for="email">Email:</label>
-              <input type="email" id="email" name="email" required><br> <br>
+              <input type="email" id="email" name="email" required placeholder="ejemplo@email.com"><br> <br>
       
               <label for="telefono">Teléfono:</label>
-              <input type="tel" id="telefono" name="telefono" required>
+              <input type="tel" id="telefono" name="telefono" required placeholder="123456789">
       
               <label for="matricula">Matrícula de vehículo:</label>
               <input type="text" id="matricula" name="matricula" required><br><br>
@@ -33,7 +33,7 @@
                 <option value="CAMION">CAMION</option>
                 <option value="MOTOCICLETA">MOTOCICLETA</option>
               </select><br><br>
-              <input type="submit" value="Enviar">
+              <input type="submit" value="Enviar" onclick="validarFormulario()">
           </section>
     </fieldset>
   </form>
