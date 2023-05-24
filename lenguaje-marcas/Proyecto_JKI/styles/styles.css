@@ -41,6 +41,12 @@
   width: 20%;
 }
 
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
 
 /* styles.css */
 
@@ -71,6 +77,7 @@ body {
   .destacada {
     background-color: lightblue;
     padding: 20px;
+    margin-top: 5%;
   }
   
   .boton {
@@ -131,35 +138,37 @@ body {
     padding-left: 10%;
   }
 
-  #imagen1{
+  .imagen1{
     display: flex;
-    border-spacing: 10%;
+    justify-content: center;
+  }
+
+  .imagen2{
+    display: flex;
+    margin-left: 25%;
   }
 
   #imgMant{
+    margin-left: 5%;
     border-radius: 5%;
   }
   
   #imgVen{
     text-align: center;
     border-radius: 5%;
-    margin-right: 20%;
-    margin-left: 15%;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   #imgFin{
     border-radius: 5%;
+    margin-right: 5%;
   }
 
-  #mant{
-  }
   
   #venta{
     padding-right: 27%;
     padding-left: 29.5%;
-  }
-
-  #finan{
   }
 
   #servicioBot{
