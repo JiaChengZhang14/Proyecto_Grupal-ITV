@@ -15,6 +15,7 @@ module com.example.projectofinalitv {
     requires koin.core.jvm;
     requires java.sql;
     requires com.google.gson;
+    requires org.jsoup;
 
     opens com.example.projectofinalitv to javafx.fxml;
     exports com.example.projectofinalitv;

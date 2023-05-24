@@ -11,8 +11,8 @@ data class Informe(
     val contaminacion: Double? = null,
     val interior: IsApto? = null,
     val luces: IsApto? = null,
-    val trabajador: Trabajador,
-    val vehiculo: Vehiculo
+    val vehiculo: Vehiculo,
+    val trabajadorId: Long?
 )
 
 enum class IsApto {

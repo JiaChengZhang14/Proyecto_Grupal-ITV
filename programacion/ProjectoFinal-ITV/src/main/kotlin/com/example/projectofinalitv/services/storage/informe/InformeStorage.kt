@@ -8,6 +8,7 @@ import com.github.michaelbull.result.Ok
 import com.github.michaelbull.result.Result
 import com.google.gson.GsonBuilder
 import mu.KotlinLogging
+import org.jsoup.nodes.Document
 import java.io.File
 import java.nio.file.Files.createFile
 
@@ -53,5 +54,60 @@ class InformeStorage(private val configApp: ConfigApp) {
             Err(InformeError.ExportingError("Se ha producido un error al exportar los informes a json"))
         }
 
+    }
+
+
+    /**
+     * Funcion que exporta los datos de un informe a un fichero HTML
+     * @author JiaCheng Zhang
+     * @param data es el informe que se quiere exportar
+     */
+    fun exportSingleInformeToHtml(data: Informe) {
+        logger.debug { "Exportando informe a HTML" }
+        val document = Document("")
+        val html = document.appendElement("html")
+        val head = html.appendElement("head")
+        val body = html.appendElement("body")
+
+
+        val informeDiv = body.appendElement("div")
+        informeDiv.addClass("informe")
+
+        val titulo = informeDiv.appendElement("h1")
+        titulo.text("Informe")
+
+        val fechaInicio = informeDiv.appendElement("p")
+        fechaInicio.text("Fecha de inicio: ${data.fechaInicio}")
+
+        val fechaFinal = informeDiv.appendElement("p")
+        fechaFinal.text("Fecha final: ${data.fechaFinal}")
+
+        val favorable = informeDiv.appendElement("p")
+        favorable.text("Favorable: ${data.favorable ?: ""}")
+
+        val frenado = informeDiv.appendElement("p")
+        frenado.text("Frenado: ${data.frenado ?: ""}")
+
+        val contaminacion = informeDiv.appendElement("p")
+        contaminacion.text("Contaminacion: ${data.contaminacion ?: ""}")
+
+        val interior = informeDiv.appendElement("p")
+        interior.text("Interior: ${data.interior ?: ""}")
+
+        val luces = informeDiv.appendElement("p")
+        luces.text("Luces: ${data.luces ?: ""}")
+
+
+        val vehiculo = informeDiv.appendElement("p")
+        vehiculo.text("Vehiculo: ${data.vehiculo.marca}")
+
+        val trabajadorId = informeDiv.appendElement("p")
+        vehiculo.text("Vehiculo: ${data.trabajadorId ?:""}")
+
+        val file = File(filePath+"informe.html")
+        if (!file.exists()){
+            createFile(file.toPath())
+        }
+        file.writeText(document.html())
     }
 }
