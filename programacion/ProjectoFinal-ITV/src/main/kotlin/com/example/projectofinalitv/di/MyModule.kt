@@ -8,7 +8,11 @@ import com.example.projectofinalitv.repositories.trabajador.TrabajadoresReposito
 import com.example.projectofinalitv.repositories.vehiculo.IVehiculosRepository
 import com.example.projectofinalitv.repositories.vehiculo.VehiculosRepositoryImpl
 import com.example.projectofinalitv.services.database.DatabaseManager
+import com.example.projectofinalitv.services.storage.informe.InformeStorageHtml
+import com.example.projectofinalitv.services.storage.informe.InformeStorageJson
+import com.example.projectofinalitv.services.storage.trabajador.TrabajadorStorageCsv
 import com.example.projectofinalitv.viewmodel.ViewModel
+import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
 val myModule = module {
@@ -26,6 +30,15 @@ val myModule = module {
 
     //El repositorio de propietarios
     single<IPropietarioRepository>{ PropietarioRepositoryImpl(get()) }
+
+    //El storage de informes JSON
+    single(named("InformeJSON")){ InformeStorageJson(get()) }
+
+    //El storage de informes HTML
+    single(named("InformeHTML")){ InformeStorageHtml(get()) }
+
+    //El storage de trabajadores CSV
+    single { TrabajadorStorageCsv(get()) }
 
     //El viewModel
     single { ViewModel(get(), get(), get()) }

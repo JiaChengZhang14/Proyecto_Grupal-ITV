@@ -1,5 +1,6 @@
 package com.example.projectofinalitv.mapper
 
+import com.example.projectofinalitv.dto.VehiculoDTO
 import com.example.projectofinalitv.models.Propietario
 import com.example.projectofinalitv.models.TipoMotor
 import com.example.projectofinalitv.models.TipoVehiculo
@@ -8,6 +9,26 @@ import com.example.projectofinalitv.viewmodel.VehiculoReference
 import mu.KotlinLogging
 
 private val logger = KotlinLogging.logger {  }
+
+/**
+ * función que transforma un Vehiculo en un VehiculoDto
+ * @author IvanRoncoCebadera
+ * @return el VehiculoDto creado con respecto al Vehiculo
+ */
+fun Vehiculo.toDto(): VehiculoDTO{
+    logger.debug { "transformo el Vehículo en VehiculoDto" }
+    return VehiculoDTO(
+        id = id.toString(),
+        matricula = matricula,
+        marca = marca,
+        modelo = modelo,
+        fechaMatriculacion = fechaMatriculacion.toString(),
+        fechaUltimaRevision = if(fechaUltimaRevision == null) "" else fechaUltimaRevision.toString(),
+        tipoMotor = tipoMotorText,
+        tipoVehiculo = tipoVehiculoText,
+        propietario = propietario.toDto()
+    )
+}
 
 /**
  * función que transforma un VehiculoReference en un Vehiculo

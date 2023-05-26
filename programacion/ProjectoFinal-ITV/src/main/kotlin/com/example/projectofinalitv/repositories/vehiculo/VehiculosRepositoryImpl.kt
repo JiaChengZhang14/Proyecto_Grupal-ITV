@@ -2,13 +2,13 @@ package com.example.projectofinalitv.repositories.vehiculo
 
 import com.example.projectofinalitv.mapper.getTipoMotor
 import com.example.projectofinalitv.mapper.getTipoVehiculo
-import com.example.projectofinalitv.models.Propietario
 import com.example.projectofinalitv.models.Vehiculo
 import com.example.projectofinalitv.services.database.DatabaseManager
 import com.example.projectofinalitv.utils.toLocalDate
 import com.example.projectofinalitv.utils.toLocalDateTime
 import mu.KotlinLogging
 import java.sql.Statement
+import kotlin.math.log
 
 private val logger = KotlinLogging.logger {  }
 
@@ -57,32 +57,7 @@ class VehiculosRepositoryImpl(
      */
     override fun getById(id: Long): Vehiculo? {
         logger.debug { "El repositorio llama a la DatabaseManager para tomar un vehículo de id: $id" }
-        var vehiculo: Vehiculo? = null
-        database.connection.use {
-            val sql = "SELECT * FROM vehiculo WHERE id_vehiculo = ?;"
-
-            it.prepareStatement(sql).use { stm ->
-
-                stm.setLong(1, id)
-
-                val result = stm.executeQuery()
-                while (result.next()) {
-                    vehiculo =
-                        Vehiculo(
-                            id = result.getLong("id_vehiculo"),
-                            matricula = result.getString("matricula"),
-                            marca = result.getString("marca"),
-                            modelo = result.getString("modelo"),
-                            fechaMatriculacion = result.getString("fecha_matriculacion").toLocalDate(),
-                            fechaUltimaRevision = result.getString("fecha_ultima_revision").toLocalDateTime(),
-                            tipoMotor = result.getString("tipo_motor").getTipoMotor(),
-                            tipoVehiculo = result.getString("tipo_vehiculo").getTipoVehiculo(),
-                            propietario = database.selectPropietarioById(result.getString("id_propietario"))!!
-                        )
-                }
-            }
-        }
-        return vehiculo
+        return database.getVehiculoById(id)
     }
 
     /**

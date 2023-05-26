@@ -10,4 +10,8 @@ data class Propietario(
     companion object{
         const val PROPIETARIO_ID = ""
     }
+
+    override fun toString(): String {
+        return "Propietario(dni='$dni', nombre='$nombre')"
+    }
 }

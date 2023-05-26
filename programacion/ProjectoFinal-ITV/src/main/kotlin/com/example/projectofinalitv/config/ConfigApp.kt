@@ -13,6 +13,10 @@ class ConfigApp {
         readProperty("app.database.url") ?: "jdbc:mariadb://localhost:3306/empresaitv?serverTimezone=UTC"
     }
 
+    val APP_TEST_URL by lazy {
+        readProperty("app.database_test.url") ?: "jdbc:mariadb://localhost:3306/empresaitvparatest?serverTimezone=UTC"
+    }
+
     val APP_USER: String by lazy {
         readProperty("app.database.user") ?: "root"
     }
@@ -30,7 +34,7 @@ class ConfigApp {
     }
 
     val APP_FILE_PATH: String by lazy {
-        System.getProperty("user.dir")+File.separator+readProperty("app.file.path")
+        System.getProperty("user.dir")+File.separator+readProperty("app.files.path")
     }
 
     /**

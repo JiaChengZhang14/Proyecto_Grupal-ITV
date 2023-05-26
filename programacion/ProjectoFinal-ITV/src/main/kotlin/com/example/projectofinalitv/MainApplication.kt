@@ -6,14 +6,15 @@ import com.example.projectofinalitv.di.myModule
 import com.example.projectofinalitv.models.*
 import com.example.projectofinalitv.routes.RoutesManager
 import com.example.projectofinalitv.services.database.DatabaseManager
-import com.example.projectofinalitv.services.storage.informe.InformeStorage
+import com.example.projectofinalitv.services.storage.informe.InformeStorageHtml
+import com.example.projectofinalitv.services.storage.informe.InformeStorageJson
+import com.example.projectofinalitv.services.storage.trabajador.TrabajadorStorageCsv
 import javafx.application.Application
 import javafx.stage.Stage
 import mu.KotlinLogging
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 import org.koin.core.context.startKoin
-import java.lang.ProcessHandle.Info
 import java.time.LocalDate
 import java.time.LocalDateTime
 
@@ -26,34 +27,72 @@ class MainApplication : Application(), KoinComponent {
         startKoin {
             modules(modules = myModule)
         }
-        val storage = InformeStorage(configApp = ConfigApp())
-        storage.exportSingleInformeToHtml(Informe(
+        val trabajadorStorage = TrabajadorStorageCsv(ConfigApp())
+        trabajadorStorage.exportarCsv(
+            listOf(
+                Trabajador(
+                    1, 3, "Iván", "748294857", "ivan@gmail.com", "iijij", "ierijei", LocalDate.now(),
+                    listOf(Especialidad.ELECTRICIDAD), 1,
+                    listOf(
+                        Informe(
+                            LocalDateTime.now(),
+                            LocalDateTime.now(),
+                            IsApto.APTO,
+                            9.87,
+                            21.45,
+                            IsApto.NO_APTO,
+                            null,
+                            Vehiculo(
+                                1, "njijij", "jnjinj", "jnemijem", LocalDate.now(), null , TipoMotor.CUALQUIERA, TipoVehiculo.CUALQUIERA,
+                                Propietario(
+                                    "njrnoirjv", "jvijenve", "lnk mdk m", "nvkdpoefmv", "mdk mfdkp "
+                                )
+                            ),
+                            1
+                        )
+                    )
+                )
+            )
+        )
+
+        val informeStorage = InformeStorageJson(ConfigApp())
+        informeStorage.exportSingleInformeToJson(
+            Informe(
             LocalDateTime.now(),
             LocalDateTime.now(),
             IsApto.APTO,
-            2.45,
-            2.43,
+            9.87,
+            21.45,
             IsApto.NO_APTO,
-            IsApto.APTO,
+            null,
             Vehiculo(
-                345,
-                "asdasd",
-                "asdasd",
-                "asdasd",
-                LocalDate.now(),
-                LocalDateTime.now(),
-                TipoMotor.DIESEL,
-                TipoVehiculo.CAMION,
+                1, "njijij", "jnjinj", "jnemijem", LocalDate.now(), null , TipoMotor.CUALQUIERA, TipoVehiculo.CUALQUIERA,
                 Propietario(
-                    "asdasd",
-                    "asdasd",
-                    "asdads",
-                    "asdasd",
-                    "asdasdas"
+                    "njrnoirjv", "jvijenve", "lnk mdk m", "nvkdpoefmv", "mdk mfdkp "
                 )
             ),
-            2
-        ))
+            1
+        )
+        )
+        val informeHtml = InformeStorageHtml(ConfigApp())
+        informeHtml.exportSingleInformeToHtml(
+            Informe(
+                LocalDateTime.now(),
+                LocalDateTime.now(),
+                IsApto.APTO,
+                9.87,
+                21.45,
+                IsApto.NO_APTO,
+                null,
+                Vehiculo(
+                    1, "njijij", "jnjinj", "jnemijem", LocalDate.now(), null , TipoMotor.CUALQUIERA, TipoVehiculo.CUALQUIERA,
+                    Propietario(
+                        "njrnoirjv", "jvijenve", "lnk mdk m", "nvkdpoefmv", "mdk mfdkp "
+                    )
+                ),
+                1
+            )
+        )
     }
 
     override fun start(stage: Stage) {

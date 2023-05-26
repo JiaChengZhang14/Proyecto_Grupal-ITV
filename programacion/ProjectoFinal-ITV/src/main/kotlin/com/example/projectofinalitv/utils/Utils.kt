@@ -1,5 +1,6 @@
 package com.example.projectofinalitv.utils
 
+import com.example.projectofinalitv.models.Especialidad
 import com.example.projectofinalitv.routes.RoutesManager
 import mu.KotlinLogging
 import java.io.InputStream
@@ -9,6 +10,16 @@ import java.time.LocalDate
 import java.time.LocalDateTime
 
 private val logger = KotlinLogging.logger {  }
+
+fun String.getEspecialidad(): Especialidad {
+    logger.debug { "Conseguimos la especialidad del trabajador según el texto: $this" }
+    return when(this.uppercase()){
+        "ELECTRICIDAD" -> Especialidad.ELECTRICIDAD
+        "MOTOR" -> Especialidad.MOTOR
+        "INTERIOR" -> Especialidad.INTERIOR
+        else -> Especialidad.ADMINISTRACION
+    }
+}
 
 /**
  * función que consigue el recurso pedido como URL
@@ -74,7 +85,7 @@ fun String.toLocalDateTime(): LocalDateTime? {
     val fechaYHora = this.split(" ")
     if(this.matches(regexLocalDateTime) || fechaYHora.size == 2){
         if(fechaYHora.size == 2){
-            //Este apartado de si se puede partir por " ", es debido a que 'localtime()' en MySQL no da la fecha como: 2007-12-03 10:15:3.
+            //Este apartado de si se puede partir por " ", es debido a que 'localtime()' en MySQL no da la fecha como: 2007-12-03 10:15:3 y no como 2007-12-03T10:15:3.
             try{
                 fecha = LocalDateTime.parse(fechaYHora.joinToString(separator = "T"))
             }catch (_: Exception){
@@ -98,7 +109,7 @@ fun String.toLocalDateTime(): LocalDateTime? {
  * @param hora es la hora, minutos y segundos para crear el LocalDateTime
  * @return el LocalDateTime que resulta de juntar la hora y la fecha introducida
  */
-fun toLocalDateTime(fecha: LocalDate, hora: String): LocalDateTime {
+fun toLocalDateTimeFromFechaHora(fecha: LocalDate, hora: String): LocalDateTime {
     logger.debug { "Creamos un LocalDateTime, apartir de: $fecha, y $hora" }
     return "$fecha $hora".toLocalDateTime()!!
 }

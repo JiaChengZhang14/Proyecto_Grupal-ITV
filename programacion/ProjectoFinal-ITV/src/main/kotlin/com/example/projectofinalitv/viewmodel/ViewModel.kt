@@ -1,5 +1,6 @@
 package com.example.projectofinalitv.viewmodel
 
+import com.example.projectofinalitv.error.PropietarioError
 import com.example.projectofinalitv.error.VehiculoError
 import com.example.projectofinalitv.mapper.toPropietario
 import com.example.projectofinalitv.mapper.toPropietarioReference
@@ -16,6 +17,7 @@ import com.github.michaelbull.result.andThen
 import javafx.beans.property.SimpleObjectProperty
 import mu.KotlinLogging
 import com.example.projectofinalitv.validator.validate
+import com.example.projectofinalitv.validator.validatePropietario
 import java.time.LocalDate
 import java.time.LocalDateTime
 
@@ -31,7 +33,9 @@ class ViewModel(
 
     init {
         state.value = state.value.copy(
-            vehiculos = vehiculosRepository.getAll()
+            vehiculos = vehiculosRepository.getAll(),
+            propietarios = propietariosRepository.getAll(),
+            trabajadores = trabajadoresRepository.getAll()
         )
     }
 
@@ -41,7 +45,7 @@ class ViewModel(
      * @param tipoOperacion es el tipo de operación que se establecerá en el SharedState
      */
     fun setTipoOperacion(tipoOperacion: TipoOperacion) {
-        logger.debug { "Se cambia el tipo de operación que se va a realizar" }
+        logger.debug { "Se cambia el tipo de operación que se va a realizar a: $tipoOperacion" }
         if(tipoOperacion != state.value.tipoOperacion){
             state.value = state.value.copy(
                 tipoOperacion = tipoOperacion
@@ -72,10 +76,12 @@ class ViewModel(
      */
     fun saveVehiculo(vehiculo: Vehiculo): Result<Vehiculo, VehiculoError> {
         logger.debug { "Se llama al repositorio de vehiculos para añadir un nuevo vehículo" }
-        //Aplicar aquí un validator de que la matricula no se repita y cosas por el estilo, el validado de campos se hace en el controlador
-        return vehiculo.validate(state.value.vehiculos).andThen {
-            updateSharedStateVehiculo(state.value.vehiculos.filter { it.id == vehiculo.id } + vehiculo)
-            Ok(vehiculosRepository.save(vehiculo))
+
+        var vehiculoC = vehiculo.copy(id = Vehiculo.VEHICULO_ID)
+
+        return vehiculoC.validate(state.value.vehiculos).andThen {
+            updateSharedStateVehiculo(state.value.vehiculos.filter { it.id == vehiculoC.id } + vehiculoC)
+            Ok(vehiculosRepository.save(vehiculoC))
         }
     }
 
@@ -171,6 +177,86 @@ class ViewModel(
         return state.value.propietarios.filter { it.dni == dniPropietario}.get(0)
     }
 
+    /**
+     * función que actualiza la parte del estado referente a los propietarios
+     * @author IvanRoncoCebadera
+     * @param vehiculos la lista de propietarios con la que actualizaremos el SharedState
+     */
+    private fun updateSharedStatePropietario(propietarios: List<Propietario>) {
+        logger.debug { "Actualizamos el estado compartido tras la operación que modificó la base de datos" }
+        state.value = state.value.copy(
+            propietarioReference = PropietarioReference(),
+            propietarios = propietarios
+        )
+    }
+
+    /**
+     * función que llama al repositorio de vehículos para guardar un nuevo vehículo
+     * @author IvanRoncoCebadera
+     * @param vehiculo es el vehículo que se desea guardar
+     * @return si todo sale bien, el vehículo guardado, si algo sale mal, el error que haya ocurrido
+     */
+    fun savePropietario(propietario: Propietario): Result<Propietario, PropietarioError> {
+        logger.debug { "Se llama al repositorio de propietarios para añadir un nuevo propietario" }
+
+        var propietarioC = propietario.copy(dni = Propietario.PROPIETARIO_ID)
+
+        return propietarioC.validatePropietario(state.value.propietarios).andThen {
+            updateSharedStatePropietario(state.value.propietarios.filter { it.dni == propietarioC.dni } + propietarioC)
+            Ok(propietariosRepository.save(propietarioC))
+        }
+    }
+
+    /**
+     * función que llama al repositorio de vehículos para actualizar un vehículo
+     * @author IvanRoncoCebadera
+     * @param propietario es el vehículo que se desea actualizar
+     * @return si todo sale bien, el vehículo actualizado, si algo sale mal, el error que haya ocurrido
+     */
+    fun updatePropietario(propietario: Propietario): Result<Propietario, PropietarioError> {
+        logger.debug { "Se llama al repositorio de propietarios para actualizar un propietario" }
+
+        return propietario.validatePropietario(state.value.propietarios).andThen {
+            //Si no se ha editado nigún cambio, no se guarda
+            if(propietario == state.value.propietarioReference.toPropietario()){
+                return Err(PropietarioError.SameDataUpdate(propietario.dni))
+            }
+
+            updateSharedStatePropietario(state.value.propietarios.filter { it.dni == propietario.dni } + propietario)
+            Ok(propietariosRepository.save(propietario))
+        }
+    }
+
+    /**
+     * función que actualiza los datos a mostrar del propietario, según el que se haya seleccionado en la tabla
+     * @author IvanRoncoCebadera
+     * @param propietario es el propietario seleccionado en la tabla de propietarios
+     */
+    fun onSelectedUpdatePropietarioReference(propietario: Propietario) {
+        logger.debug { "Se actualizan los datos del propietario a mostar según la selección en la tabla" }
+        state.value = state.value.copy(
+            propietarioReference = propietario.toPropietarioReference()
+        )
+    }
+
+    /**
+     * función que sirve para filtrar los datos que se encuentran visibles en la tabla de vehículos
+     * @author IvanRoncoCebadera
+     * @param dni es el dni con el que se filtra
+     * @param nombre es el nombre con el que se filtra
+     * @return devuelve la lista de vehiculos a representar, filtrada como se ha pedido
+     */
+    fun filtrarTablaPropietarios(dni: String, nombre: String): List<Propietario> {
+        logger.debug { "Filtramos la tabla de vehiculos según el dni: $dni y el nombre: $nombre " }
+        return state.value.propietarios
+            .filter {
+                it.dni.lowercase().contains(dni.lowercase())
+            }
+            .filter {
+                it.nombre.lowercase().contains(nombre.lowercase())
+            }
+    }
+
 }
 
 
@@ -181,13 +267,25 @@ data class SharedState(
     val trabajadorReference: TrabajadorReference = TrabajadorReference(),
     val vehiculoReference: VehiculoReference = VehiculoReference(),
     val propietarioReference: PropietarioReference = PropietarioReference(),
-    val citaReference: Pair<LocalDateTime, LocalDateTime> = Pair(LocalDateTime.now(), LocalDateTime.now()),
+    val informeReference: InformeReference = InformeReference(),
     val tipoOperacion: TipoOperacion = TipoOperacion.AÑADIR,
     val tiposDeVehiculos: List<String> = TipoVehiculo.values().map { it.toString() },
     val tiposDeMotores: List<String> = TipoMotor.values().map { it.toString() }
 ){
 
 }
+
+data class InformeReference (
+    val fechaInicial: LocalDateTime? = null,
+    val fechaFinal: LocalDateTime? = null,
+    val favorable: String = "",
+    val frenado: String = "",
+    val contaminacion: String = "",
+    val interior: String = "",
+    val luces: String = "",
+    val idTrabajador: Long = -1L,
+    val tipoVehiculo: TipoVehiculo = TipoVehiculo.OTRO
+)
 
 enum class TipoOperacion {
     AÑADIR, EDITAR
@@ -227,6 +325,6 @@ data class TrabajadorReference(
     val fechaContratacion: LocalDate = LocalDate.now(),
     var especialidades: List<Especialidad> = listOf(),
     val idResponsable: Long = -1L,
-    val citas: Map<Pair<LocalDateTime, LocalDateTime>, List<Long>> = mapOf()
+    val informe: List<Informe> = listOf()
 )
 

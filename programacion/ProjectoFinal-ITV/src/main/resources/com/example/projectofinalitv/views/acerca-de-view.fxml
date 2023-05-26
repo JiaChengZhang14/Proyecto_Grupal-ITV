@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="409.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectofinalitv.controllers.acercaDe.AcercaDeViewController">
+   <children>
+      <Label layoutX="40.0" layoutY="25.0" prefHeight="82.0" prefWidth="227.0" text="Acerca de ITC">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="131.0" fitWidth="116.0" layoutX="447.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/ITC.png" />
+         </image>
+      </ImageView>
+      <TextArea editable="false" layoutX="34.0" layoutY="107.0" prefHeight="82.0" prefWidth="394.0" text="En ITC nos dedicamos a la inspección de vehiculos princpalmente.&#10;Ofrecemos servicios de gestion de vehiculos junto a sus respectivos &#10;propietarios y proporcionamos informes en distintos formatos &#10;(HTML, JSON)" />
+      <Label layoutX="142.0" layoutY="233.0" prefHeight="30.0" prefWidth="178.0" text="Enlaces de interés:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="82.0" fitWidth="116.0" layoutX="40.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/github.png" />
+         </image>
+      </ImageView>
+      <GridPane layoutX="112.0" layoutY="289.0" prefHeight="91.0" prefWidth="416.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="207.4000244140625" minWidth="10.0" prefWidth="153.59998779296876" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="338.5999755859375" minWidth="10.0" prefWidth="263.20001220703125" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Hyperlink onAction="#jiaGitHub" text="https://github.com/JiaChengZhang14" GridPane.columnIndex="1" />
+            <Hyperlink onAction="#kevinGitHub" text="https://github.com/kevindmatuteo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Hyperlink onAction="#ivanGitHub" text="https://github.com/IvanRoncoCebadera" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label prefHeight="22.0" prefWidth="125.0" text="JiaCheng Zhang:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label prefHeight="18.0" prefWidth="129.0" text="Kevin Matute:" GridPane.rowIndex="1">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label text="Ivan Ronco Cebadera: " GridPane.rowIndex="2">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

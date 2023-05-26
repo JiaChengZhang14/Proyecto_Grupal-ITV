@@ -12,7 +12,7 @@ import com.example.projectofinalitv.models.Vehiculo
 import com.example.projectofinalitv.routes.RoutesManager
 import com.example.projectofinalitv.utils.conseguirIntervaloInicialYFinal
 import com.example.projectofinalitv.utils.getResourceAsStream
-import com.example.projectofinalitv.utils.toLocalDateTime
+import com.example.projectofinalitv.utils.toLocalDateTimeFromFechaHora
 import com.example.projectofinalitv.viewmodel.TipoOperacion
 import com.example.projectofinalitv.viewmodel.VehiculoReference
 import com.example.projectofinalitv.viewmodel.ViewModel
@@ -238,7 +238,7 @@ class VehiculosDetallesController: KoinComponent {
     private fun generatedVehiculo(): Result<VehiculoReference, VehiculoError> {
         logger.debug { "Generamos un vehículo según los campos que tenemos, tras validar todo" }
 
-        val regexMatricula = Regex("[A-Z]{4}[0-9]{3}")
+        val regexMatricula = Regex("[0-9]{3}[BCDFGHJKLMNPRSTVWXYZ]{3}")
         require(matricula.text.matches(regexMatricula)){
             return Err(VehiculoError.MatriculaNoValida(matricula.text))
         }
@@ -261,7 +261,7 @@ class VehiculosDetallesController: KoinComponent {
             marca = marca.text,
             modelo = modelo.text,
             fechaMatriculacion = fechaMatriculacion.value,
-            fechaUltimaRevision = toLocalDateTime(fechaUltimaRevision.value, intervalosDeTiempo.selectionModel.selectedItem),
+            fechaUltimaRevision = toLocalDateTimeFromFechaHora(fechaUltimaRevision.value, intervalosDeTiempo.selectionModel.selectedItem),
             tipoMotor = tipoMotor.selectionModel.selectedItem.getTipoMotor(),
             tipoVehiculo = tipoVehiculo.selectionModel.selectedItem.getTipoVehiculo(),
             dniPropietario = propietarios.selectionModel.selectedItem.dni
@@ -279,9 +279,11 @@ class VehiculosDetallesController: KoinComponent {
         Alert(Alert.AlertType.CONFIRMATION).apply {
             title = "¿Quieres salir de la operación $operacion?"
             headerText = "¿Seguro que desea proseguir?"
-            contentText = "Estás apunto de salir de la $operacion sobre vehículos."
+            contentText = "Estás apunto de salir de la operación $operacion sobre vehículos."
         }.showAndWait().ifPresent {
-            if(it != ButtonType.OK){
+            if(it == ButtonType.OK){
+                RoutesManager.activeStage.close()
+            }else{
                 event.consume()
             }
         }

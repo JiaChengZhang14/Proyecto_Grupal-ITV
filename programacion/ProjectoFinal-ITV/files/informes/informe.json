@@ -1,0 +1,27 @@
+{
+  "fechaInicio": "2023-05-26T13:55:48.724286500",
+  "fechaFinal": "2023-05-26T13:55:48.724286500",
+  "favorable": "apto",
+  "frenado": "9,87",
+  "contaminacion": "21,45",
+  "interior": "no apto",
+  "luces": "",
+  "trabajador": "1",
+  "vehiculo": {
+    "id": "1",
+    "matricula": "njijij",
+    "marca": "jnjinj",
+    "modelo": "jnemijem",
+    "fechaMatriculacion": "2023-05-26",
+    "fechaUltimaRevision": "",
+    "tipoMotor": "CUALQUIERA",
+    "tipoVehiculo": "CUALQUIERA",
+    "propietario": {
+      "dni": "njrnoirjv",
+      "nombre": "jvijenve",
+      "apellidos": "lnk mdk m",
+      "telefono": "nvkdpoefmv",
+      "email": "mdk mfdkp "
+    }
+  }
+}

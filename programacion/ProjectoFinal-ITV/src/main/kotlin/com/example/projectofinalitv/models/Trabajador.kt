@@ -1,7 +1,6 @@
 package com.example.projectofinalitv.models
 
 import java.time.LocalDate
-import java.time.LocalDateTime
 
 data class Trabajador(
     val idTrabajador: Long,
@@ -14,16 +13,14 @@ data class Trabajador(
     val fechaContratacion: LocalDate,
     var especialidades: List<Especialidad>,
     val idResponsable: Long,
-    val citas: List<Informe>
+    val informes: List<Informe> = listOf()
 ){
     companion object{
         const val TRABAJADOR_ID = -1L
     }
-
     init {
         comprobarSiEsElResponsable()
     }
-
     /**
      * función que comprueba si el trabajador es el responsable, en caso afirmativo le añade esa responsabilidad
      * @author IvanRoncoCebadera
@@ -33,9 +30,7 @@ data class Trabajador(
             especialidades = especialidades + Especialidad.RESPONSABLE
         }
     }
-
     val salario get() = getSalarioTotal()
-
     /**
      * función que calcula automaticamente el salario del trabajador según sus especialidad y sus años de antigüedad
      * @author IvanRoncoCebadera
@@ -52,7 +47,6 @@ data class Trabajador(
         }
         return resultado
     }
-
     /**
      * función que calcula los años que lleva trabajados el trabajador, hasta el día de hoy
      * @author IvanRoncoCebadera

@@ -21,6 +21,7 @@ data class Vehiculo(
     val tipoMotorText get() = tipoMotor.toString()
 
     val tipoVehiculoText get() = tipoVehiculo.toString()
+
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false

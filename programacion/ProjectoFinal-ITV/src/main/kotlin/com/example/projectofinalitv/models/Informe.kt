@@ -12,9 +12,17 @@ data class Informe(
     val interior: IsApto? = null,
     val luces: IsApto? = null,
     val vehiculo: Vehiculo,
-    val trabajadorId: Long?
-)
+    val trabajadorId: Long
+){
+    val frenadoDosDecimales get() = String.format("%.2f", frenado)
 
-enum class IsApto {
-    APTO, NO_APTO
+    val contaminacionDosDecimales get() = String.format("%.2f", contaminacion)
+
+    val intervalo get() = "$fechaInicio-$fechaFinal"
+
+    val vehiculoTipo get() = "${vehiculo.tipoVehiculo}"
+}
+
+enum class IsApto(val string: String){
+    APTO("apto"), NO_APTO("no apto")
 }

@@ -1,6 +1,9 @@
 package com.example.projectofinalitv.routes
 
 import com.example.projectofinalitv.controllers.cita.CitasViewController
+import com.example.projectofinalitv.controllers.detalles.DetallesViewController
+import com.example.projectofinalitv.controllers.propietario.PropietarioDetallesController
+import com.example.projectofinalitv.controllers.propietario.PropietarioViewController
 import com.example.projectofinalitv.controllers.vehiculo.VehiculosDetallesController
 import com.example.projectofinalitv.controllers.vehiculo.VehiculosViewController
 import com.example.projectofinalitv.utils.getResource
@@ -27,11 +30,12 @@ object RoutesManager {
 
     private enum class Vistas(val url: String){
         MAIN("views/citas-main-view.fxml"),
-        MAIN_DETALLES("views/citas-detalles-view.fxml"),
+        MAIN_DETALLES("views/citas-detalle-view.fxml"),
         VEHICULO("views/vehiculos-main-view.fxml"),
         VEHICULO_DETALLES("views/vehiculos-detalles-view.fxml"),
         PROPIETARIO("views/propietarios-main-view.fxml"),
-        PROPIETARIO_DETALLES("views/propietarios-detalles-view.fxml")
+        PROPIETARIO_DETALLES("views/propietarios-detalles-view.fxml"),
+        ACERCA_DE("views/acerca-de-view.fxml")
     }
 
     /**
@@ -42,7 +46,7 @@ object RoutesManager {
     fun initMainStage(stage: Stage){
         logger.debug { "Se inicia la vista principal de la aplicación" }
         val fxmlLoader = FXMLLoader(getResource(Vistas.MAIN.url))
-        val scene = Scene(fxmlLoader.load(), 320.0, 240.0)
+        val scene = Scene(fxmlLoader.load(), 949.0, 452.0)
         stage.apply {
             title = "Gestión de citas"
             isResizable = false
@@ -62,7 +66,7 @@ object RoutesManager {
      * función que abre la vista principal de vehículos
      * @author IvanRoncoCebadera
      */
-    fun initMainVehiculoStage(){
+    fun initMainViewVehiculo(){
         logger.debug { "Se inicia la vista principal de vehiculos" }
         val stage = Stage()
         val fxmlLoader = FXMLLoader(getResource(Vistas.VEHICULO.url))
@@ -102,7 +106,6 @@ object RoutesManager {
             stage.scene = scene
         }
 
-        //Haber si esto funciona, sino pues le paso la stage por parametro o algo
         stage.initOwner(activeStage)
         stage.initModality(Modality.WINDOW_MODAL)
 
@@ -110,4 +113,103 @@ object RoutesManager {
 
         activeStage.show()
     }
+
+    /**
+     * función que abre la vista de gestión de propietarios
+     * @author IvanRoncoCebadera
+     */
+    fun initMainViewPropietario() {
+        logger.debug { "Se inicia la vista de gestión de propietario de la aplicación" }
+        val stage = Stage()
+        val fxmlLoader = FXMLLoader(getResource(Vistas.PROPIETARIO.url))
+        val scene = Scene(fxmlLoader.load(), 800.0, 400.0)
+        stage.apply {
+            title = "Gestión de propietarios"
+            isResizable = false
+            setOnCloseRequest {
+                fxmlLoader.getController<PropietarioViewController>().onCloseActionClick(it)
+            }
+            stage.scene = scene
+        }
+
+        stage.initOwner(mainStage)
+        stage.initModality(Modality.WINDOW_MODAL)
+
+        _activeStage = stage
+
+        activeStage.show()
+    }
+
+    /**
+     * función que abre la vista de detalles de propietarios
+     * @author IvanRoncoCebadera
+     */
+    fun initDetalleViewPropietario() {
+        logger.debug { "Se inicia la vista de detalles de propietario de la aplicación" }
+        val stage = Stage()
+        val fxmlLoader = FXMLLoader(getResource(Vistas.PROPIETARIO_DETALLES.url))
+        val scene = Scene(fxmlLoader.load(), 300.0, 360.0)
+        stage.apply {
+            title = "Gestión de propietarios"
+            isResizable = false
+            setOnCloseRequest {
+                fxmlLoader.getController<PropietarioDetallesController>().onCloseActionClick(it)
+            }
+            stage.scene = scene
+        }
+
+        stage.initOwner(activeStage)
+        stage.initModality(Modality.WINDOW_MODAL)
+
+        _activeStage = stage
+
+        activeStage.show()
+    }
+
+    fun initDetalleViewCita() {
+        logger.debug { "Se inicia la vista de los detalles de la cita" }
+        val stage = Stage()
+        val fxmlLoader = FXMLLoader(getResource(Vistas.MAIN_DETALLES.url))
+        val scene = Scene(fxmlLoader.load(), 260.0, 400.0)
+        stage.apply {
+            title = "Detalles de cita"
+            isResizable = false
+            setOnCloseRequest {
+                fxmlLoader.getController<PropietarioDetallesController>().onCloseActionClick(it)
+            }
+            stage.scene = scene
+        }
+
+        stage.initOwner(activeStage)
+        stage.initModality(Modality.WINDOW_MODAL)
+
+        stage.setOnCloseRequest {
+            fxmlLoader.getController<DetallesViewController>().onCloseActionClick(it)
+        }
+        stage.scene = scene
+        _activeStage = stage
+
+        activeStage.show()
+    }
+
+    fun initAcercaDeView() {
+        logger.debug { "Iniciando la vista de acerca de" }
+        val stage = Stage()
+        val fxmlLoader = FXMLLoader(getResource(Vistas.ACERCA_DE.url))
+        val scene = Scene(fxmlLoader.load(), 600.0, 409.0)
+        stage.apply {
+            title = "Gestión de propietarios"
+            isResizable = false
+
+            stage.scene = scene
+        }
+
+        stage.initOwner(mainStage)
+        stage.initModality(Modality.WINDOW_MODAL)
+
+        _activeStage = stage
+
+        activeStage.show()
+    }
+
 }

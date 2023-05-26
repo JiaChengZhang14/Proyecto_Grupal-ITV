@@ -4,19 +4,20 @@ import com.example.projectofinalitv.models.Propietario
 import com.example.projectofinalitv.services.database.DatabaseManager
 import mu.KotlinLogging
 
+private val logger = KotlinLogging.logger {  }
+
 class PropietarioRepositoryImpl(
     private val database: DatabaseManager
 ): IPropietarioRepository {
-
-    private val logger = KotlinLogging.logger {  }
 
     /**
      * @author JiaCheng Zhang, Kevin Matute
      * @return Devuelve una lista con todos los propietarios de la base de datos.
      */
     override fun getAll(): List<Propietario> {
+        logger.debug { "getting all propietarios" }
         val propietarios = mutableListOf<Propietario>()
-        val sql = """SELECT * FROM vehiculo""".trimIndent()
+        val sql = """SELECT * FROM propietario""".trimIndent()
         database.connection.use {
             it.prepareStatement(sql).use { stm ->
                 val res = stm.executeQuery()
@@ -44,29 +45,8 @@ class PropietarioRepositoryImpl(
      * @return Devuelve el propietario con el dni que se ha introducido por parametros
      */
     override fun getById(id: String): Propietario? {
-        logger.debug { "getting all propietarios by id" }
-        val sql = """SELECT * FROM propietario WHERE dni = ?""".trimIndent()
-        var propietario: Propietario? = null
-        database.connection.use {
-
-            it.prepareStatement(sql).use { stm ->
-
-                stm.setString(1, id)
-
-                val res = stm.executeQuery()
-                while (res.next()) {
-                    propietario =
-                        Propietario(
-                            dni = res.getString("dni"),
-                            nombre = res.getString("nombre"),
-                            apellidos = res.getString("apellidos"),
-                            telefono = res.getString("telefono"),
-                            email = res.getString("email"),
-                        )
-                }
-            }
-        }
-        return propietario
+        logger.debug { "getting propietario by id" }
+        return database.selectPropietarioById(id)
     }
 
 
@@ -94,11 +74,41 @@ class PropietarioRepositoryImpl(
         return entity
     }
 
+    /**
+    * funcion que borra un propietario de la base de datos en base a su id
+    * @author KevinMatute
+    * @param id es el indentificador del propieterio, este se usara bara buscar el propietario y eliminarlo
+    * @return true si se elimina correctamente el propietario, false si no se elimina correctamente
+    */
     override fun deleteById(id: String): Boolean {
-        TODO("Not yet implemented")
+        logger.debug { "Se elimina un propietario con id: $id" }
+
+        val res: Int
+        database.connection.use {
+            val sql = """
+            DELETE FROM propietario WHERE dni = ?
+        """.trimIndent()
+            it.prepareStatement(sql).use { stm ->
+                stm.setString(1, id)
+                res= stm.executeUpdate()
+            }
+        }
+        return res >= 1
     }
 
+
+    /**
+    * función que elimina todos los propietarios de la base de datos
+    * @author KevinMatute
+    * @return true si se eliminan todos los propietarios, false si no se eliminan correctamente.
+    */
     override fun deleteAll(): Boolean {
-        TODO("Not yet implemented")
-    }
+        logger.debug { "Se llama a database para borrar todos los propietarios: deleteAll" }
+        var res: Int
+        database.connection.use {
+            val sql = """
+            DELETE FROM propietario;""".trimIndent()
+            it.prepareStatement(sql).use { stm ->
+                res = stm.executeUpdate()}
+            return res >= 0}}
 }

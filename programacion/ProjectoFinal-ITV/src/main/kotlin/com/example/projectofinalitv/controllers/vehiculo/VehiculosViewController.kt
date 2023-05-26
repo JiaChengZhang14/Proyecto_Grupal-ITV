@@ -104,7 +104,7 @@ class VehiculosViewController: KoinComponent {
      * @author IvanRoncoCebadera
      */
     private fun initStyle() {
-        logger.debug { "Iniciamos estilos ha aplicar a nuestro programa" }
+        logger.debug { "Iniciamos estilos ha aplicar a nuestra ventana de gestión de vehículos" }
 
         val styleOpacity = "-fx-opacity: 1"
         fechaMatriculacion.style = styleOpacity
@@ -137,7 +137,7 @@ class VehiculosViewController: KoinComponent {
         }
 
         botonEditar.setOnAction {
-            onClickEditarIntroducirVehiculo()
+            onClickEditarVehiculo()
         }
 
         botonBorrar.setOnAction {
@@ -150,7 +150,7 @@ class VehiculosViewController: KoinComponent {
      * @author IvanRoncoCebadera
      */
     private fun initBinds() {
-        logger.debug { "Iniciamos todos los bindings que sean necesarios en la aplicación" }
+        logger.debug { "Iniciamos todos los bindings que sean necesarios en la ventana de gestión de vehículos" }
 
         comboBoxTipoMotor.items = FXCollections.observableArrayList(viewModel.state.value.tiposDeMotores)
         comboBoxTipoMotor.selectionModel.selectFirst()
@@ -240,7 +240,7 @@ class VehiculosViewController: KoinComponent {
     }
 
     /**
-     * función que nos muestra una ventana pidiendo confirmaación o denegación a la hora de eliminar un vehículo seleccionado
+     * función que nos muestra una ventana pidiendo confirmación o denegación a la hora de eliminar un vehículo seleccionado
      * @author IvanRoncoCebadera
      */
     private fun onClickEliminarIntroducirVehiculo() {
@@ -284,7 +284,7 @@ class VehiculosViewController: KoinComponent {
      * @return devuelve true, si no has seleccionado ningún vehículo, false en caso contrario
      */
     private fun ningunVehiculoSeleccionado(): Boolean {
-        logger.debug { "Se comprueba si hay algún vehículo seleccinado" }
+        logger.debug { "Se comprueba si hay algún vehículo seleccionado" }
         if (tablaVehiculo.selectionModel.selectedItem == null) {
             Alert(Alert.AlertType.ERROR).apply {
                 title = "Error al ejecutar acción"
@@ -300,7 +300,7 @@ class VehiculosViewController: KoinComponent {
      * función que cambia el tipo de operación a EDITAR y abre la ventana de detalles de vehículo
      * @author IvanRoncoCebadera
      */
-    private fun onClickEditarIntroducirVehiculo() {
+    private fun onClickEditarVehiculo() {
         logger.debug { "Se habré la ventana modal, para la edición de el vehículo seleccionado" }
         if (ningunVehiculoSeleccionado()) return
         viewModel.setTipoOperacion(TipoOperacion.EDITAR)
@@ -362,14 +362,14 @@ class VehiculosViewController: KoinComponent {
     /**
      * función que nos abré una ventana para avisarnos de si queremos salir de la ventana de gestión de vehículos
      * @author IvanRoncoCebadera
-     * @param event el evento que provoca que se llame a esta función, lo usaremos para cancelar la acción de salir de la ventana
+     * @param event el evento que provoca que se llame a esta función, lo usaremos para cancelar la acción de cerrar de la ventana
      */
     fun onCloseActionClick(event: Event) {
-        logger.debug { "Se trata de salir de la app" }
+        logger.debug { "Se trata de salir de la ventana de gestión de vehíulos" }
         Alert(Alert.AlertType.CONFIRMATION).apply {
-            title = "¿Quieres salir de la app?"
+            title = "¿Quieres salir de la gestión de vehículos?"
             headerText = "¿Seguro que desea proseguir?"
-            contentText = "Estás apunto de salir de la aplicación de gestión de los vehículos."
+            contentText = "Estás apunto de salir de la ventana de gestión de los propietarios."
         }.showAndWait().ifPresent {
             if(it != ButtonType.OK){
                 event.consume()

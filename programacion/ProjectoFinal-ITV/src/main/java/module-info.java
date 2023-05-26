@@ -14,8 +14,16 @@ module com.example.projectofinalitv {
     // Koin
     requires koin.core.jvm;
     requires java.sql;
+
+    // Gson
     requires com.google.gson;
+
+    // Jsoup
     requires org.jsoup;
+    requires java.desktop;
+
+    // dtos, abrimos a Gson
+    opens com.example.projectofinalitv.dto to com.google.gson;
 
     opens com.example.projectofinalitv to javafx.fxml;
     exports com.example.projectofinalitv;
@@ -31,4 +39,10 @@ module com.example.projectofinalitv {
 
     opens com.example.projectofinalitv.controllers.propietario to javafx.fxml;
     exports com.example.projectofinalitv.controllers.propietario;
+
+    opens com.example.projectofinalitv.controllers.detalles to javafx.fxml;
+    exports com.example.projectofinalitv.controllers.detalles;
+
+    opens com.example.projectofinalitv.controllers.acercaDe to javafx.fxml;
+    exports com.example.projectofinalitv.controllers.acercaDe;
 }
