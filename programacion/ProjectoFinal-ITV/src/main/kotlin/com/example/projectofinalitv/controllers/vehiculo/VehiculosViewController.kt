@@ -253,7 +253,7 @@ class VehiculosViewController: KoinComponent {
             contentText = "¿Seguro que deseas eliminar al vehículo de id: $id?"
         }.showAndWait().ifPresent{
             if(it == ButtonType.OK){
-                viewModel.deleteVehiculo()
+                viewModel.deleteVehiculo(id)
                     .onSuccess {
                         Alert(Alert.AlertType.INFORMATION).apply {
                             title = "Operación terminada"

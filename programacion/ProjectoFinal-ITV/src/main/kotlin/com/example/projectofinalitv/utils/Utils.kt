@@ -17,6 +17,7 @@ fun String.getEspecialidad(): Especialidad {
         "ELECTRICIDAD" -> Especialidad.ELECTRICIDAD
         "MOTOR" -> Especialidad.MOTOR
         "INTERIOR" -> Especialidad.INTERIOR
+        "MECANICA" -> Especialidad.MECANICA
         else -> Especialidad.ADMINISTRACION
     }
 }
@@ -81,7 +82,7 @@ fun String.toLocalDateTime(): LocalDateTime? {
         return null
     }
     var fecha = LocalDateTime.now()
-    val regexLocalDateTime = Regex("[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}")
+    val regexLocalDateTime = Regex("[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}(:[0-9]{2})?")
     val fechaYHora = this.split(" ")
     if(this.matches(regexLocalDateTime) || fechaYHora.size == 2){
         if(fechaYHora.size == 2){

@@ -4,6 +4,7 @@ import java.time.LocalDateTime
 
 
 data class Informe(
+    val idInforme: Long = INFORME_ID,
     val fechaInicio: LocalDateTime,
     val fechaFinal: LocalDateTime,
     val favorable: IsApto? = null,
@@ -14,6 +15,9 @@ data class Informe(
     val vehiculo: Vehiculo,
     val trabajadorId: Long
 ){
+    companion object{
+        const val INFORME_ID = -1L
+    }
     val frenadoDosDecimales get() = String.format("%.2f", frenado)
 
     val contaminacionDosDecimales get() = String.format("%.2f", contaminacion)

@@ -4,7 +4,6 @@ import com.example.projectofinalitv.error.PropietarioError
 import com.example.projectofinalitv.error.VehiculoError
 import com.example.projectofinalitv.mapper.toPropietario
 import com.example.projectofinalitv.mapper.toPropietarioReference
-import com.example.projectofinalitv.mapper.toVehiculo
 import com.example.projectofinalitv.mapper.toVehiculoReference
 import com.example.projectofinalitv.models.*
 import com.example.projectofinalitv.repositories.propietario.IPropietarioRepository
@@ -60,7 +59,7 @@ class ViewModel(
      * @author IvanRoncoCebadera
      * @param vehiculos la lista de vehículos con la que actualizaremos el SharedState
      */
-    private fun updateSharedStateVehiculo(vehiculos: List<Vehiculo>) {
+    fun updateSharedStateVehiculo(vehiculos: List<Vehiculo>) {
         logger.debug { "Actualizamos el estado compartido tras la operación que modificó la base de datos" }
         state.value = state.value.copy(
             vehiculoReference = VehiculoReference(),
@@ -94,13 +93,13 @@ class ViewModel(
     fun updateVehiculo(vehiculo: Vehiculo): Result<Vehiculo, VehiculoError> {
         logger.debug { "Se llama al repositorio de vehiculos para actualizar un vehículo" }
 
-        return vehiculo.validate(state.value.vehiculos).andThen {
+        return vehiculo.validate(state.value.vehiculos.filter { it.id != vehiculo.id }).andThen {
             //Si no se ha editado nigún cambio, no se guarda
-            if(vehiculo == state.value.vehiculoReference.toVehiculo(state.value.propietarioReference.toPropietario())){
+            if(state.value.vehiculos.contains(vehiculo)){
                 return Err(VehiculoError.SameDataUpdate(vehiculo.id))
             }
 
-            updateSharedStateVehiculo(state.value.vehiculos.filter { it.id == vehiculo.id } + vehiculo)
+            updateSharedStateVehiculo(state.value.vehiculos.filter { it.id != vehiculo.id } + vehiculo)
             Ok(vehiculosRepository.save(vehiculo))
         }
     }
@@ -110,17 +109,15 @@ class ViewModel(
      * @author IvanRoncoCebadera
      * @return si todo sale bien, unit, si algo sale mal, el error que haya ocurrido
      */
-    fun deleteVehiculo(): Result<Unit, VehiculoError> {
+    fun deleteVehiculo(idVehiculo: Long): Result<Boolean, VehiculoError> {
         logger.debug { "Intentamos eliminar el vehículo actualmente seleccionado" }
 
-        val vehiculo = state.value.vehiculoReference
-
-        if(!vehiculosRepository.deleteById(vehiculo.id)){
-            return Err(VehiculoError.NotFound(vehiculo.matricula))
+        if(!vehiculosRepository.deleteById(idVehiculo)){
+            return Err(VehiculoError.NotFound(idVehiculo.toString()))
         }
 
-        updateSharedStateVehiculo(state.value.vehiculos.filter { it.id != vehiculo.id })
-        return Ok(Unit)
+        updateSharedStateVehiculo(state.value.vehiculos.filter { it.id != idVehiculo })
+        return Ok(true)
     }
 
     /**
@@ -177,6 +174,23 @@ class ViewModel(
         return state.value.propietarios.filter { it.dni == dniPropietario}.get(0)
     }
 
+    /**
+
+    función que llama al repositorio de propietarios para borrar un propietario
+    @author IvanRoncoCebadera
+    @return si todo sale bien, unit, si algo sale mal, el error que haya ocurrido*/
+    fun deletePropietario(): Result<Boolean, PropietarioError> {
+        logger.debug { "Intentamos eliminar el propietario actualmente seleccionado" }
+
+        val propietario = state.value.propietarioReference
+
+        if(!propietariosRepository.deleteById(propietario.dni)){
+            return Err(PropietarioError.NotFound(propietario.dni))
+        }
+
+        updateSharedStatePropietario(state.value.propietarios.filter { it.dni != propietario.dni })
+        return Ok(true)
+    }
     /**
      * función que actualiza la parte del estado referente a los propietarios
      * @author IvanRoncoCebadera
@@ -321,7 +335,7 @@ data class TrabajadorReference(
     val telefono: String = "",
     val email: String = "",
     val nombreUsuario: String = "",
-    val contraseñaUsuario: String = "",
+    val contraseniaUsuario: String = "",
     val fechaContratacion: LocalDate = LocalDate.now(),
     var especialidades: List<Especialidad> = listOf(),
     val idResponsable: Long = -1L,

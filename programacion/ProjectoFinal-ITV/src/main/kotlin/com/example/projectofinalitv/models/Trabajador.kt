@@ -9,7 +9,7 @@ data class Trabajador(
     val telefono: String,
     val email: String,
     val nombreUsuario: String,
-    val contraseñaUsuario: String, // El cifrado de este campo se hace en la BBDD, despues cuando se recuperé ya estará cifrado, igualmente ver si hay un password field o algo qu lo haga!!!!!
+    val contraseniaUsuario: String, // El cifrado de este campo se hace en la BBDD, despues cuando se recuperé ya estará cifrado, igualmente ver si hay un password field o algo qu lo haga!!!!!
     val fechaContratacion: LocalDate,
     var especialidades: List<Especialidad>,
     val idResponsable: Long,

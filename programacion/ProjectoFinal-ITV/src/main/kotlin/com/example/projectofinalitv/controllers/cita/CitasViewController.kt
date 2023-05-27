@@ -69,11 +69,6 @@ class CitasViewController : KoinComponent {
 
     private val viewModel: ViewModel by inject()
 
-    @FXML
-    private lateinit var columnaMatricula: TableColumn<Informe, String>
-
-    @FXML
-    private lateinit var columnaIntervalo: TableColumn<Informe, String>
 
 
     @FXML

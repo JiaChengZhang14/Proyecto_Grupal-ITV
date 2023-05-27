@@ -213,7 +213,7 @@ class PropietarioViewController: KoinComponent {
             contentText = "¿Seguro que deseas eliminar al propietario de dni: $id?"
         }.showAndWait().ifPresent{
             if(it == ButtonType.OK){
-                viewModel.deleteVehiculo()
+                viewModel.deletePropietario()
                     .onSuccess {
                         Alert(Alert.AlertType.INFORMATION).apply {
                             title = "Operación terminada"

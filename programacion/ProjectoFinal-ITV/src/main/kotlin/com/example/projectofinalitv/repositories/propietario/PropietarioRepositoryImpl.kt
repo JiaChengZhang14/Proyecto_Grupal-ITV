@@ -4,11 +4,11 @@ import com.example.projectofinalitv.models.Propietario
 import com.example.projectofinalitv.services.database.DatabaseManager
 import mu.KotlinLogging
 
-private val logger = KotlinLogging.logger {  }
+private val logger = KotlinLogging.logger { }
 
 class PropietarioRepositoryImpl(
     private val database: DatabaseManager
-): IPropietarioRepository {
+) : IPropietarioRepository {
 
     /**
      * @author JiaCheng Zhang, Kevin Matute
@@ -21,7 +21,7 @@ class PropietarioRepositoryImpl(
         database.connection.use {
             it.prepareStatement(sql).use { stm ->
                 val res = stm.executeQuery()
-                while(res.next()){
+                while (res.next()) {
                     propietarios.add(
                         Propietario(
                             dni = res.getString("dni"),
@@ -75,11 +75,11 @@ class PropietarioRepositoryImpl(
     }
 
     /**
-    * funcion que borra un propietario de la base de datos en base a su id
-    * @author KevinMatute
-    * @param id es el indentificador del propieterio, este se usara bara buscar el propietario y eliminarlo
-    * @return true si se elimina correctamente el propietario, false si no se elimina correctamente
-    */
+     * funcion que borra un propietario de la base de datos en base a su id
+     * @author KevinMatute
+     * @param id es el indentificador del propieterio, este se usara bara buscar el propietario y eliminarlo
+     * @return true si se elimina correctamente el propietario, false si no se elimina correctamente
+     */
     override fun deleteById(id: String): Boolean {
         logger.debug { "Se elimina un propietario con id: $id" }
 
@@ -90,7 +90,7 @@ class PropietarioRepositoryImpl(
         """.trimIndent()
             it.prepareStatement(sql).use { stm ->
                 stm.setString(1, id)
-                res= stm.executeUpdate()
+                res = stm.executeUpdate()
             }
         }
         return res >= 1
@@ -98,10 +98,10 @@ class PropietarioRepositoryImpl(
 
 
     /**
-    * función que elimina todos los propietarios de la base de datos
-    * @author KevinMatute
-    * @return true si se eliminan todos los propietarios, false si no se eliminan correctamente.
-    */
+     * función que elimina todos los propietarios de la base de datos
+     * @author KevinMatute
+     * @return true si se eliminan todos los propietarios, false si no se eliminan correctamente.
+     */
     override fun deleteAll(): Boolean {
         logger.debug { "Se llama a database para borrar todos los propietarios: deleteAll" }
         var res: Int
@@ -109,6 +109,9 @@ class PropietarioRepositoryImpl(
             val sql = """
             DELETE FROM propietario;""".trimIndent()
             it.prepareStatement(sql).use { stm ->
-                res = stm.executeUpdate()}
-            return res >= 0}}
+                res = stm.executeUpdate()
+            }
+            return res >= 0
+        }
+    }
 }

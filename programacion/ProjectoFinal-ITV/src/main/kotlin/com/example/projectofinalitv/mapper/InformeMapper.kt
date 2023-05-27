@@ -39,3 +39,4 @@ fun String.getApto(): IsApto {
         else -> IsApto.NO_APTO
     }
 }
+

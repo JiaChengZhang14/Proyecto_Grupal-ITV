@@ -1,27 +1,27 @@
 {
-  "fechaInicio": "2023-05-26T13:55:48.724286500",
-  "fechaFinal": "2023-05-26T13:55:48.724286500",
+  "fechaInicio": "2023-05-01T09:00",
+  "fechaFinal": "2023-05-01T10:30",
   "favorable": "apto",
-  "frenado": "9,87",
-  "contaminacion": "21,45",
-  "interior": "no apto",
-  "luces": "",
+  "frenado": "8,50",
+  "contaminacion": "35,00",
+  "interior": "apto",
+  "luces": "apto",
   "trabajador": "1",
   "vehiculo": {
     "id": "1",
-    "matricula": "njijij",
-    "marca": "jnjinj",
-    "modelo": "jnemijem",
-    "fechaMatriculacion": "2023-05-26",
-    "fechaUltimaRevision": "",
-    "tipoMotor": "CUALQUIERA",
-    "tipoVehiculo": "CUALQUIERA",
+    "matricula": "FBCD123",
+    "marca": "Ford",
+    "modelo": "Focus",
+    "fechaMatriculacion": "2020-01-01",
+    "fechaUltimaRevision": "2023-05-01T09:00",
+    "tipoMotor": "GASOLINA",
+    "tipoVehiculo": "TURISMO",
     "propietario": {
-      "dni": "njrnoirjv",
-      "nombre": "jvijenve",
-      "apellidos": "lnk mdk m",
-      "telefono": "nvkdpoefmv",
-      "email": "mdk mfdkp "
+      "dni": "12345678A",
+      "nombre": "Juan",
+      "apellidos": "Pérez",
+      "telefono": "123456789",
+      "email": "juan@example.com"
     }
   }
 }

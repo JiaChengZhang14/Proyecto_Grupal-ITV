@@ -7,17 +7,26 @@ import com.example.projectofinalitv.models.TipoVehiculo
 import com.example.projectofinalitv.models.Vehiculo
 import com.example.projectofinalitv.repositories.propietario.PropietarioRepositoryImpl
 import com.example.projectofinalitv.services.database.DatabaseManager
+import org.junit.jupiter.api.AfterAll
+import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeAll
+import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.TestInstance
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 internal class VehiculosRepositoryImplTest {
 
-    private val repositoryVehiculo: PropietarioRepositoryImpl = PropietarioRepositoryImpl(DatabaseManager(ConfigApp()))
+    private val configApp = ConfigApp().apply {
+        APP_URL = "jdbc:mariadb://localhost:3306/empresaitvparatest?serverTimezone=UTC"
+    }
 
-    private val repository: VehiculosRepositoryImpl = VehiculosRepositoryImpl(DatabaseManager(ConfigApp()))
+    private val repositoryPropietario: PropietarioRepositoryImpl = PropietarioRepositoryImpl(DatabaseManager(configApp))
 
-    val propietarios = listOf<Propietario>(
+    private val repositoryVehiculo: VehiculosRepositoryImpl = VehiculosRepositoryImpl(DatabaseManager(configApp))
+
+    private val propietarios = listOf(
         Propietario(
             dni = "12345678A",
             nombre = "Iván",
@@ -34,10 +43,10 @@ internal class VehiculosRepositoryImplTest {
         )
     )
 
-    val vehiculos = listOf<Vehiculo>(
+    private val vehiculos = listOf(
         Vehiculo(
             id = 1,
-            matricula = "AAAA345",
+            matricula = "CCCC345",
             marca = "Peugeot",
             modelo = "Gris",
             tipoMotor = TipoMotor.ELECTRICO,
@@ -56,18 +65,33 @@ internal class VehiculosRepositoryImplTest {
     )
 
     @BeforeAll
-    fun setUp(){
+    fun setPropietariosUp(){
         propietarios.forEach {
+            repositoryPropietario.save(it)
+        }
+    }
+
+    @BeforeEach
+    fun setUp(){
+        repositoryVehiculo.resetearValorAutoIncrementDeLaTablaVehiculo(1)
+        vehiculos.forEach {
             repositoryVehiculo.save(it)
         }
     }
 
+    @AfterAll
+    fun tearPropietarioDown(){
+        repositoryPropietario.deleteAll()
+    }
+
+    @AfterEach
+    fun tearDown(){
+        repositoryVehiculo.deleteAll()
+    }
+
     @Test
     fun getAll() {
-        val vehiculosSelected = repository.getAll()
-
-        //Esto es una nota, acordaos de borrarme!!!!
-        //Si pones el assertAll(), estalla, sería la hostía si conseguis poner un assertAll() y que funcione, pero no os rayeis mucho
+        val vehiculosSelected = repositoryVehiculo.getAll()
 
         assertTrue(vehiculosSelected.size == 2)
         assertEquals(vehiculosSelected[0], vehiculos[0])
@@ -77,19 +101,18 @@ internal class VehiculosRepositoryImplTest {
     @Test
     fun getById() {
         val id = 1L
-        val vehiculoSelected = repository.getById(id)
+        val selectedVehiculos = repositoryVehiculo.getById(id)
 
-        assertTrue(vehiculoSelected!!.id == id)
-        assertEquals(vehiculoSelected, vehiculos[0])
+        assertTrue(selectedVehiculos!!.id == id)
+        assertEquals(selectedVehiculos, vehiculos[0])
     }
 
     @Test
     fun getByIdButNotFound() {
         val id = -1L
-        val vehiculoSelected = repository.getById(id)
+        val selectedVehiculos = repositoryVehiculo.getById(id)
 
-        assertEquals(vehiculoSelected, null)
-
+        assertEquals(selectedVehiculos, null)
     }
 
     @Test
@@ -106,15 +129,18 @@ internal class VehiculosRepositoryImplTest {
                 tipoVehiculo = TipoVehiculo.CAMION,
                 propietario = propietarios[0]
             )
-        val vehiculoSelected = repository.save(vehiculo)
+        val savedVehiculo = repositoryVehiculo.save(vehiculo)
+        val selectedVehiculos = repositoryVehiculo.getAll()
 
-        assertTrue(vehiculoSelected!!.id == newId)
-        assertEquals(vehiculoSelected, vehiculo.copy(id = newId))
+        assertTrue(savedVehiculo!!.id == newId)
+        assertEquals(savedVehiculo, vehiculo.copy(id = newId))
+        assertTrue(selectedVehiculos.size == 3)
+        assertEquals(selectedVehiculos[2], savedVehiculo)
     }
 
     @Test
     fun update(){
-        val id = 3L
+        val id = vehiculos[0].id
         val vehiculo =
             Vehiculo(
                 id = id,
@@ -125,41 +151,57 @@ internal class VehiculosRepositoryImplTest {
                 tipoVehiculo = TipoVehiculo.CAMION,
                 propietario = propietarios[0]
             )
-        val vehiculoSelected = repository.save(vehiculo)
+        val updatedVehiculo = repositoryVehiculo.save(vehiculo)
+        val selectedVehiculos = repositoryVehiculo.getAll()
 
-        assertTrue(vehiculoSelected!!.id == id)
-        assertEquals(vehiculoSelected, vehiculo)
+        assertEquals(updatedVehiculo, vehiculo)
+        assertTrue(selectedVehiculos.size == 2)
+        assertEquals(selectedVehiculos[0], updatedVehiculo)
     }
 
     @Test
     fun deleteByIdCorrectly() {
-        val idCorrecto = 1L
+        val idCorrecto = vehiculos[0].id
 
-        val res = repository.deleteById(idCorrecto)
+        val res = repositoryVehiculo.deleteById(idCorrecto)
+        val selectedVehiculo = repositoryVehiculo.getAll()
 
         assertTrue(res)
+        assertTrue(selectedVehiculo.size == 1)
+        assertNotEquals(selectedVehiculo[0], vehiculos[0])
     }
 
     @Test
     fun deleteByIdIncorrectly() {
         val idIncorrecto = -1L
 
-        val res = repository.deleteById(idIncorrecto)
+        val res = repositoryVehiculo.deleteById(idIncorrecto)
+        val selectedVehiculo = repositoryVehiculo.getAll()
 
         assertFalse(res)
+        assertTrue(selectedVehiculo.size == 2)
     }
 
     @Test
     fun deleteAllCorrectly() {
-        val res = repository.deleteAll()
+        val oldSelectedVehiculos = repositoryVehiculo.getAll()
+        val res = repositoryVehiculo.deleteAll()
+        val newSelectedVehiculos = repositoryVehiculo.getAll()
 
         assertTrue(res)
+        assertTrue(oldSelectedVehiculos.size == 2)
+        assertTrue(newSelectedVehiculos.size == 0)
     }
 
     @Test
     fun deleteAllIncorrectly() {
-        val res = repository.deleteAll()
+        repositoryVehiculo.deleteAll()
+        val oldSelectedVehiculos = repositoryVehiculo.getAll()
+        val res = repositoryVehiculo.deleteAll()
+        val newSelectedVehiculos = repositoryVehiculo.getAll()
 
         assertFalse(res)
+        assertTrue(oldSelectedVehiculos.size == 0)
+        assertTrue(newSelectedVehiculos.size == 0)
     }
 }

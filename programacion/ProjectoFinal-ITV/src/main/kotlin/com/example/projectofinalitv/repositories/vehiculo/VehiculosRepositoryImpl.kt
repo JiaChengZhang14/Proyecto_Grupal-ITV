@@ -8,7 +8,6 @@ import com.example.projectofinalitv.utils.toLocalDate
 import com.example.projectofinalitv.utils.toLocalDateTime
 import mu.KotlinLogging
 import java.sql.Statement
-import kotlin.math.log
 
 private val logger = KotlinLogging.logger {  }
 
@@ -170,7 +169,7 @@ class VehiculosRepositoryImpl(
                 res = stm.executeUpdate()
             }
         }
-        return res >= 0
+        return res >= 1
     }
 
     /**
@@ -178,7 +177,7 @@ class VehiculosRepositoryImpl(
      * @author IvanRoncoCebadera
      * @param nuevoValor el nuevo valor a aplicar a la tbla vehículo
      */
-    fun resetearValorAutoIncrementDeLaTablaVehículo(nuevoValor: Long){
+    fun resetearValorAutoIncrementDeLaTablaVehiculo(nuevoValor: Long){
         logger.debug { "Se resetea el valor del autonumérico de la tabla de vehículo a: $nuevoValor" }
         database.connection.use {
             val sql = "ALTER TABLE vehiculo AUTO_INCREMENT = ?;"
