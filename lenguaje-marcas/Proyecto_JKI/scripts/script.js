@@ -50,13 +50,6 @@ function validarFormulario() {
     return regex.test(matricula);
   }
 
-  function limpiarFormulario() {
-    document.getElementById("nombre").innerHTML = "";
-    document.getElementById("apellidos").innerHTML = "";
-    document.getElementById("email").innerHTML = "";
-    document.getElementById("telefono").innerHTML = "";
-    document.getElementById("matricula").innerHTML = "";
-    document.getElementById("tipo_vehiculo").innerHTML = "OTRO"
-  }
+
 
   
