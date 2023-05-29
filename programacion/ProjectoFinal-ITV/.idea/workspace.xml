@@ -5,17 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e71dec7f-69a7-4d4f-891f-e177356e1cd3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/f/5f41aab09eb002df2c56554723fa802db7194a4a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/f/5f41aab09eb002df2c56554723fa802db7194a4a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/files/informes/informesTest/informe1.html" beforeDir="false" afterPath="$PROJECT_DIR$/files/informes/informesTest/informe1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/files/informes/informesTest/informe1.json" beforeDir="false" afterPath="$PROJECT_DIR$/files/informes/informesTest/informe1.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/files/informes/informesTest/informes.json" beforeDir="false" afterPath="$PROJECT_DIR$/files/informes/informesTest/informes.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/example/projectofinalitv/repositories/informe/InformeRepositoryImplTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/example/projectofinalitv/repositories/informe/InformeRepositoryImplTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/example/projectofinalitv/repositories/trabajador/TrabajadoresRepositoryImplTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/example/projectofinalitv/repositories/trabajador/TrabajadoresRepositoryImplTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/MainApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/MainApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/utils/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/utils/Utils.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +74,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.Tests in 'com.example.projectofinalitv'">
+  <component name="RunManager" selected="Gradle.ProjectoFinal-ITV [run]">
     <configuration name="ProjectoFinal-ITV [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -195,8 +190,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Tests in 'com.example.projectofinalitv'" />
         <item itemvalue="Gradle.ProjectoFinal-ITV [run]" />
+        <item itemvalue="Gradle.Tests in 'com.example.projectofinalitv'" />
         <item itemvalue="Gradle.TrabajadoresRepositoryImplTest" />
         <item itemvalue="Gradle.TrabajadoresRepositoryImplTest.getAll" />
         <item itemvalue="Gradle.ViewModelTest.updateInformeTest" />
@@ -219,6 +214,7 @@
       <workItem from="1685359962616" duration="1185000" />
       <workItem from="1685361641348" duration="67000" />
       <workItem from="1685370981137" duration="1497000" />
+      <workItem from="1685381527129" duration="1927000" />
     </task>
     <servers />
   </component>
@@ -235,25 +231,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/mapper/InformeMapper.kt</url>
-          <line>61</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-function">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/mapper/InformeMapper.kt</url>
-          <line>57</line>
-          <properties method="toInforme">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

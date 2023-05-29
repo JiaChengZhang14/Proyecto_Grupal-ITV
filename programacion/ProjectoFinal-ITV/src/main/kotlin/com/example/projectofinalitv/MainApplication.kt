@@ -11,7 +11,7 @@ import org.koin.core.context.startKoin
 
 private val logger = KotlinLogging.logger {  }
 
-class MainApplication : Application(), KoinComponent {
+class MainApplication : Application() {
 
     init {
         logger.debug { "Se inicia la aplicacion y junto a ella koin" }

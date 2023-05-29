@@ -11,6 +11,11 @@ import java.time.LocalDateTime
 
 private val logger = KotlinLogging.logger {  }
 
+/**
+ * Funcion que segun un string nos da el enum adecuado
+ * @author IvanRoncoCebadera
+ * @return el enum que sea adecuado
+ */
 fun String.getEspecialidad(): Especialidad {
     logger.debug { "Conseguimos la especialidad del trabajador según el texto: $this" }
     return when(this.uppercase()){
