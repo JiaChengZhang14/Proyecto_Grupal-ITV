@@ -8,7 +8,7 @@
   <script src = "scripts/script.js"></script>
 </head>
 <body>
-  <form action="">
+  <form action="mailto:kekimat12@gmail.com" method="post" target="_blank">
     <fieldset>
         <legend><h2>Contacto</h2></legend>
         <section>
@@ -28,12 +28,16 @@
       
               <label for="tipo_vehiculo">Tipo de vehículo:</label>
               <select id="tipo_vehiculo" name="tipo_vehiculo" required>
+                <option value="OTRO">OTRO</option>
                 <option value="TURISMO">TURISMO</option>
                 <option value="FURGONETA">FURGONETA</option>
                 <option value="CAMION">CAMION</option>
                 <option value="MOTOCICLETA">MOTOCICLETA</option>
               </select><br><br>
               <input type="submit" value="Enviar" onclick="validarFormulario()">
+              <input type="reset" value="Reset">
+              <a href="/Proyecto_JKI/index.html"><input type="button" value="Cancelar"></a>
+
           </section>
     </fieldset>
   </form>

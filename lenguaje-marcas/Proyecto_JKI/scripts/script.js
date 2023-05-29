@@ -34,7 +34,7 @@ function validarFormulario() {
 
   function validarEmail(email) {
     // Expresión regular para validar el formato de email
-    var regex = /\S+@\S+\.\S+/;
+    var regex = /^[^@]+@[^@]+.[a-zA-Z]{2,}$/;
     return regex.test(email);
   }
 
@@ -46,6 +46,17 @@ function validarFormulario() {
 
   function validarMatricula(matricula) {
     // Expresión regular para validar el formato de matrícula (4 letras y 3 números)
-    var regex = /^\d{4}[A-Z]{3}$/;
+    var regex = /^[BCDFGHJKLMNPRSTVWXYZ]{4}[0-9]{3}$/;
     return regex.test(matricula);
   }
+
+  function limpiarFormulario() {
+    document.getElementById("nombre").innerHTML = "";
+    document.getElementById("apellidos").innerHTML = "";
+    document.getElementById("email").innerHTML = "";
+    document.getElementById("telefono").innerHTML = "";
+    document.getElementById("matricula").innerHTML = "";
+    document.getElementById("tipo_vehiculo").innerHTML = "OTRO"
+  }
+
+  
