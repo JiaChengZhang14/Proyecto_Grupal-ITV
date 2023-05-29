@@ -84,3 +84,142 @@ select * from informe;
 select * from estacionitv;
 select * from vehiculo;
 select * from propietario;
+
+
+/*Procedimientos y funciones del apartado de Bases de Datos del Proyecto ITV*/
+
+use empresaitv;
+
+-- PROCEDIMIENTO 1
+delimiter $$
+drop procedure if exists listWorkersByStation $$
+create procedure listWorkersByStation(stationId INT)
+begin
+    declare l_last_row_fetched int;
+    declare id int;
+    declare c1 cursor for select id_trabajador from trabajador where id_itv = stationId;
+    declare continue handler for not found set l_last_row_fetched = 1;
+    set l_last_row_fetched = 0;
+    open c1;
+    bucle: WHILE l_last_row_fetched <> 1 do
+        fetch c1 into id;
+        select * from Trabajador where id_trabajador = id;
+    end WHILE bucle;
+    close c1;
+end ;$$
+
+-- PROCEDUIMIENTO 2
+delimiter $$
+drop procedure if exists insertarInformeCompleto $$
+create procedure insertarInformeCompleto (idInforme int(11), fechaInicio text, fechaFin text, idVehiculo int(11), idTrabajador int(11), favorable text, frenado decimal(4,2), contaminacion decimal(4,2), interior text, luces text,
+														dniPropietario char(9), nombrePropietario varchar(50), apellidosPropietario varchar(50), telefonoPropietario char(9), emailPropietario varchar(50),
+														trabajadorIdItv int(11), nombreTrabajador varchar(50), telefonoTrabajador char(9), emailTrabajador varchar(50),
+														nombreUsuario varchar(50), contraseñaUsuario varchar(50), fechaContratacion text, especialidadTrabajador varchar(20), salarioTrabajador decimal(6,2), idResponsable int(11),
+														matriculaVehiculo char(7), marcaVehiculo varchar(50), modeloVehiculo varchar(50), fechaMatriculacionVehiculo text, fechaUltimaRevisionVehiculo text, tipoMotorVehiculo varchar(15), tipoVehiculoVehiculo varchar(15), IdItvPedida int(11))
+    begin
+    if(trabajadorIdItv = IdItvPedida) THEN
+			if((SELECT count(*) from propietario where dni = dniPropietario) = 0) then
+            INSERT INTO propietario values (dniPropietario, nombrePropietario, apellidosPropietario, telefonoPropietario, emailPropietario);
+            else
+            UPDATE propietario set nombre = nombrePropietario, apellidos = apellidosPropietario, telefono = telefonoPropietario, email = emailPropietario
+            WHERE dni = dniPropietario;
+            end if;
+
+            if((SELECT count(*) from vehiculo where id_vehiculo = idVehiculo) = 0) then
+            INSERT INTO vehiculo values (idVehiculo, matriculaVehiculo, dniPropietario, marcaVehiculo, modeloVehiculo, fechaMatriculacionVehiculo,
+										fechaUltimaRevisionVehiculo, tipoMotorVehiculo, tipoVehiculoVehiculo);
+            else
+            UPDATE vehiculo set matricula = matriculaVehiculo, id_propietario = dniPropietario, marca = marcaVehiculo, modelo = modeloVehiculo,
+								fecha_matriculacion = fechaMatriculacionVehiculo, fecha_ultima_revision = fechaUltimaRevisionVehiculo, tipo_motor = tipoMotorVehiculo,
+                                tipo_vehiculo = tipoVehiculoVehiculo
+            WHERE id_vehiculo = idVehiculo;
+            end if;
+            --
+            if((SELECT count(*) from trabajador where id_trabajador = idTrabajador) = 0) then
+            call insertTrabajadorEncriptandoContraseña(idTrabajador, trabajadorIdItv, nombreTrabajador, telefonoTrabajador, emailTrabajador,
+													nombreUsuario, contraseñaUsuario, fechaContratacion, especialidadTrabajador, salarioTrabajador,
+                                                    idResponsable);
+            else
+            call updateTrabajadorEncriptandoContraseña(idTrabajador, trabajadorIdItv, nombreTrabajador, telefonoTrabajador, emailTrabajador,
+													nombreUsuario, contraseñaUsuario, fechaContratacion, especialidadTrabajador, salarioTrabajador,
+                                                    idResponsable);
+            end if;
+            INSERT INTO informe values (idInforme, fechaInicio, fechaFin, idVehiculo, idTrabajador, favorable, frenado, contaminacion, interior, luces);
+        end if;
+
+    end $$
+
+-- CREACION DE TABLA + TRIGGER
+
+-- tabla que sirve como almacen de informes
+create table if not exists informesBeforeUpdate(
+	id_informe int(11),
+    fecha_inicio DATETIME,
+    fecha_final DATETIME,
+    id_vehiculo  char(7),
+    id_trabajador int,
+    favorable text,
+    frenado decimal(4,2),
+    contaminacion decimal(4,2),
+    interior text,
+    luces text
+);
+
+-- Trigger que hace una guarda los datos antigüos de la tabla informe cada vez que se introduce un informe nuevo
+delimiter $$
+drop trigger if exists save_before_update $$
+create trigger save_before_update after update on informe
+    for each row
+    begin
+        insert into informesBeforeUpdate(id_informe, fecha_inicio, fecha_final, id_vehiculo, id_trabajador, favorable, frenado, contaminacion, interior, luces)
+            values (old.id_informe, old.fecha_inicio, old.fecha_final, old.id_vehiculo, old.id_trabajador, old.favorable, old.frenado, old.contaminacion,
+					old.interior, old.luces) ;
+    end ;$$
+
+-- EVENTO que hace un borrado de la tabla informes cada dos meses
+delimiter $$
+DROP EVENT IF EXISTS borrado_informes_bimestral $$
+CREATE EVENT borrado_informes_bimestral ON SCHEDULE AT CURRENT_TIMESTAMP + INTERVAL 2 month
+    DO
+    BEGIN
+    DELETE FROM informe;
+    END; $$
+
+set global event_scheduler = on;
+
+-- Procedimiento que inserta un trabajador a la tabla trabajador y encripta su contraseña
+delimiter $$
+drop procedure if exists insertTrabajadorEncriptandoContraseña; $$
+create procedure insertTrabajadorEncriptandoContraseña
+(id_trabajador int(11), id_itv int(11), nombre varchar(50), telefono char(9), email varchar(50), nombre_usuario varchar(50), contraseña_usuario varchar(50), fecha_contratacion date,
+especialidad varchar(20), salario decimal(6, 2), id_responsable int(11))
+begin
+    insert into trabajador values
+    (id_trabajador, id_itv, nombre, telefono, email, nombre_usuario, MD5(contraseña_usuario), fecha_contratacion, especialidad, salario, id_responsable);
+end; $$
+
+-- Procedimiento que actualiza la tabla trabajador y encripta su contraseña
+delimiter $$
+drop procedure if exists updateTrabajadorEncriptandoContraseña; $$
+create procedure updateTrabajadorEncriptandoContraseña
+(id_trabajadorP int(11), id_itvP int(11), nombreP varchar(50), telefonoP char(9), emailP varchar(50), nombre_usuarioP varchar(50), contraseña_usuarioP varchar(50), fecha_contratacionP date,
+especialidadP varchar(20), salarioP decimal(6, 2), id_responsableP int(11))
+begin
+    update trabajador set id_itv = id_itvP, nombre = nombreP, telefono = telefonoP, email = emailP, nombre_usuario = nombre_usuarioP,
+    contraseña_usuario = MD5(contraseña_usuarioP), fecha_contratacion = fecha_contratacionP, especialidad = especialidadP, salario = salarioP, id_responsable = id_responsableP
+    where id_trabajador = id_trabajadorP;
+end; $$
+
+-- Comprobacion de procedimientos
+-- Procedimiento 1
+call listWorkersByStation(3);
+
+-- Procedimiento 2
+call insertarInformeCompleto(4, '2021-11-24 11:57:11', '2022-05-24 12:00:12', 3, 4, 'apto', 9.10, 32.12, 'no apto', 'apto',
+											'33456556J', 'Pedro', 'Marquez', '655409907', 'aasdasd@email.com',
+											3, 'Julian', '677758432', 'aasdasd@email.com', 'julian', 'contrasenia', '2012-05-24', 'motor', 1233.50, 1,
+											'SSSS222', 'Opel', '"Corsa', '2012-12-24', '2017-05-24 11:58:21', 'diesel', 'turismo', 3
+											);
+-- para el trigger
+update informe set luces = 'no apto' where id_informe = 4;
+select * from informesbeforeupdate;
