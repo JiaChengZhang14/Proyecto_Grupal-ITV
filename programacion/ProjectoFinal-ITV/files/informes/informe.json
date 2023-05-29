@@ -1,0 +1,23 @@
+{
+  "id_informe": "11",
+  "fecha_inicial": "2023-05-01T13:00",
+  "fecha_final": "2023-05-01T13:30",
+  "trabajador_id": "1",
+  "vehiculo": {
+    "id_vehiculo": "2",
+    "matricula": "CCCC123",
+    "marca": "Toyota",
+    "modelo": "Azul",
+    "fecha_matriculacion": "2023-05-27",
+    "fecha_ultima_revision": "",
+    "tipo_motor": "ELECTRICO",
+    "tipo_vehiculo": "TURISMO",
+    "propietario": {
+      "dni": "12345678A",
+      "nombre": "Iván",
+      "apellidos": "Ronco Cebadera",
+      "telefono": "675829302",
+      "email": "ivan@gmail.com"
+    }
+  }
+}

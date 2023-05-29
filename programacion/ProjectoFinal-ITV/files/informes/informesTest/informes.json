@@ -1,0 +1,58 @@
+[
+  {
+    "id_informe": "1",
+    "fecha_inicial": "2023-05-01T09:00",
+    "fecha_final": "2023-05-01T10:30",
+    "favorable": "apto",
+    "frenado": "8,50",
+    "contaminacion": "35,00",
+    "interior": "apto",
+    "luces": "apto",
+    "trabajador_id": "1",
+    "vehiculo": {
+      "id_vehiculo": "1",
+      "matricula": "FBCD123",
+      "marca": "Ford",
+      "modelo": "Focus",
+      "fecha_matriculacion": "2020-01-01",
+      "fecha_ultima_revision": "2023-05-01T09:00",
+      "tipo_motor": "GASOLINA",
+      "tipo_vehiculo": "TURISMO",
+      "propietario": {
+        "dni": "12345678A",
+        "nombre": "Juan",
+        "apellidos": "Pérez",
+        "telefono": "123456789",
+        "email": "juan@example.com"
+      }
+    }
+  },
+  {
+    "id_informe": "2",
+    "fecha_inicial": "2023-05-02T14:00",
+    "fecha_final": "2023-05-02T15:30",
+    "favorable": "no apto",
+    "frenado": "6,00",
+    "contaminacion": "40,00",
+    "interior": "no apto",
+    "luces": "apto",
+    "trabajador_id": "2",
+    "vehiculo": {
+      "id_vehiculo": "2",
+      "matricula": "WXYZ987",
+      "marca": "Volkswagen",
+      "modelo": "Golf",
+      "fecha_matriculacion": "2018-06-15",
+      "fecha_ultima_revision": "2023-05-02T14:00",
+      "tipo_motor": "DIESEL",
+      "tipo_vehiculo": "TURISMO",
+      "propietario": {
+        "dni": "98765432B",
+        "nombre": "María",
+        "apellidos": "López",
+        "telefono": "987654321",
+        "email": "maria@example.com"
+      }
+    }
+  }
+]

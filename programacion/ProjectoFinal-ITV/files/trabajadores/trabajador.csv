@@ -1,0 +1,3 @@
+idTrabajador;idEstacion;nombre;telefono;email;nombreUsuario;contraseñaUsuario;fechaContratacion;especialidades;idResponsable;informes;salario
+1;3;ivan;689444345;ivan@email.com;ivirc;contra;2012-05-24;[MOTOR|RESPONSABLE];1;[2023-05-01T13:00, 2023-05-01T13:30, , 0,00, 0,00, , , (2~CCCC123~Toyota~Azul~2023-05-27~null~ELECTRICO~TURISMO~[12345678A||Iván||Ronco Cebadera||ivan@gmail.com||675829302])]|[2023-05-03T18:30, 2023-05-03T19:00, , 0,00, 0,00, , , (3~BBBB456~Peugeot~Azul~2023-05-27~null~DIESEL~TURISMO~[98765432Z||Kevin David||Matute Obando||kevin@gmail.com||857384958])];3000.0
+2;3;ivan;689444345;ivanR@email.com;iviRrc;contrRa;2012-05-24;[MOTOR];1;;2000.0
