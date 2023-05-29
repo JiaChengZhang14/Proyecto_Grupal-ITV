@@ -44,6 +44,11 @@ class TrabajadorStorageCsv(
         }
     }
 
+    /**
+     * Funcion que pasa una lista de informes a csv
+     * @author Kevin David Matute
+     * @return devuelve un String
+     */
     private fun List<Informe>.toCsv(): String {
         logger.debug { "Se transforma la lista de informes en un string para el csv" }
         return this.map {
@@ -60,10 +65,20 @@ class TrabajadorStorageCsv(
         }.joinToString(separator = "|")
     }
 
+    /**
+     * Funcion que pasa un vehiculo a csv
+     * @author Kevin David Matute
+     * @return devuelve un String
+     */
     private fun Vehiculo.toCsv(): String {
         return "(${this.id}~${this.matricula}~${this.marca}~${this.modelo}~${this.fechaMatriculacion}~${this.fechaUltimaRevision}~${this.tipoMotorText}~${this.tipoVehiculoText}~${this.propietario.toCsv()})"
     }
 
+    /**
+     * Funcion que pasa un propietario a csv
+     * @author Kevin David Matute
+     * @return devuelve un String
+     */
     private fun Propietario.toCsv(): String {
         return "[${this.dni}||${this.nombre}||${this.apellidos}||${this.email}||${this.telefono}]"
     }

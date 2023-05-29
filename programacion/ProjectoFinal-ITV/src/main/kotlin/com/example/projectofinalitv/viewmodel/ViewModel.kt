@@ -1,14 +1,17 @@
 package com.example.projectofinalitv.viewmodel
 
+import com.example.projectofinalitv.error.InformeError
 import com.example.projectofinalitv.error.PropietarioError
 import com.example.projectofinalitv.error.VehiculoError
-import com.example.projectofinalitv.mapper.toPropietario
-import com.example.projectofinalitv.mapper.toPropietarioReference
-import com.example.projectofinalitv.mapper.toVehiculoReference
+import com.example.projectofinalitv.mapper.*
 import com.example.projectofinalitv.models.*
+import com.example.projectofinalitv.repositories.informe.IInformeRepository
 import com.example.projectofinalitv.repositories.propietario.IPropietarioRepository
 import com.example.projectofinalitv.repositories.trabajador.ITrabajadoresRepository
 import com.example.projectofinalitv.repositories.vehiculo.IVehiculosRepository
+import com.example.projectofinalitv.services.storage.informe.IInformeMultipleDataStorage
+import com.example.projectofinalitv.services.storage.informe.IInformeSingleDataStorage
+import com.example.projectofinalitv.services.storage.trabajador.ITrabajadorStorage
 import com.github.michaelbull.result.Err
 import com.github.michaelbull.result.Ok
 import com.github.michaelbull.result.Result
@@ -16,6 +19,7 @@ import com.github.michaelbull.result.andThen
 import javafx.beans.property.SimpleObjectProperty
 import mu.KotlinLogging
 import com.example.projectofinalitv.validator.validate
+import com.example.projectofinalitv.validator.validateInforme
 import com.example.projectofinalitv.validator.validatePropietario
 import java.time.LocalDate
 import java.time.LocalDateTime
@@ -25,7 +29,11 @@ private val logger = KotlinLogging.logger {  }
 class ViewModel(
     private val vehiculosRepository: IVehiculosRepository,
     private val trabajadoresRepository: ITrabajadoresRepository,
-    private val propietariosRepository: IPropietarioRepository
+    private val propietariosRepository: IPropietarioRepository,
+    private val informesRepository: IInformeRepository,
+    private val informesStorageJson: IInformeMultipleDataStorage,
+    private val informeStorageHtml: IInformeSingleDataStorage,
+    private val trabajadoresStorageCsv: ITrabajadorStorage
 ) {
 
     val state: SimpleObjectProperty<SharedState> = SimpleObjectProperty(SharedState())
@@ -34,7 +42,29 @@ class ViewModel(
         state.value = state.value.copy(
             vehiculos = vehiculosRepository.getAll(),
             propietarios = propietariosRepository.getAll(),
-            trabajadores = trabajadoresRepository.getAll()
+            trabajadores = trabajadoresRepository.getAll(),
+            intervalos = listOf(
+                "9:00:00-9:30:00",
+                "9:30:00-10:00:00",
+                "10:00:00-10:30:00",
+                "10:30:00-11:00:00",
+                "11:00:00-11:30:00",
+                "11:30:00-12:00:00",
+                "12:00:00-12:30:00",
+                "12:30:00-13:00:00",
+                "13:00:00-13:30:00",
+                "13:30:00-14:00:00",
+                "14:00:00-14:30:00",
+                "14:30:00-15:00:00",
+                "15:00:00-15:30:00",
+                "15:30:00-16:00:00",
+                "16:00:00-16:30:00",
+                "16:30:00-17:00:00",
+                "17:00:00-17:30:00",
+                "17:30:00-18:00:00",
+                "18:00:00-18:30:00",
+                "18:30:00-19:00:00"
+            )
         )
     }
 
@@ -60,7 +90,7 @@ class ViewModel(
      * @param vehiculos la lista de vehículos con la que actualizaremos el SharedState
      */
     fun updateSharedStateVehiculo(vehiculos: List<Vehiculo>) {
-        logger.debug { "Actualizamos el estado compartido tras la operación que modificó la base de datos" }
+        logger.debug { "Actualizamos el estado compartido tras la operación que modificó la tabla de vehículos" }
         state.value = state.value.copy(
             vehiculoReference = VehiculoReference(),
             vehiculos = vehiculos
@@ -71,7 +101,7 @@ class ViewModel(
      * función que llama al repositorio de vehículos para guardar un nuevo vehículo
      * @author IvanRoncoCebadera
      * @param vehiculo es el vehículo que se desea guardar
-     * @return si todo sale bien, el vehículo guardado, si algo sale mal, el error que haya ocurrido
+     * @return si el completo de la operación sale bien, el vehículo guardado, si algo sale mal, el error que haya ocurrido
      */
     fun saveVehiculo(vehiculo: Vehiculo): Result<Vehiculo, VehiculoError> {
         logger.debug { "Se llama al repositorio de vehiculos para añadir un nuevo vehículo" }
@@ -79,8 +109,9 @@ class ViewModel(
         var vehiculoC = vehiculo.copy(id = Vehiculo.VEHICULO_ID)
 
         return vehiculoC.validate(state.value.vehiculos).andThen {
-            updateSharedStateVehiculo(state.value.vehiculos.filter { it.id == vehiculoC.id } + vehiculoC)
-            Ok(vehiculosRepository.save(vehiculoC))
+            vehiculoC = vehiculosRepository.save(vehiculoC)
+            updateSharedStateVehiculo(state.value.vehiculos + vehiculoC)
+            Ok(vehiculoC)
         }
     }
 
@@ -88,7 +119,7 @@ class ViewModel(
      * función que llama al repositorio de vehículos para actualizar un vehículo
      * @author IvanRoncoCebadera
      * @param vehiculo es el vehículo que se desea actualizar
-     * @return si todo sale bien, el vehículo actualizado, si algo sale mal, el error que haya ocurrido
+     * @return si el completo de la operación sale bien, el vehículo actualizado, si algo sale mal, el error que haya ocurrido
      */
     fun updateVehiculo(vehiculo: Vehiculo): Result<Vehiculo, VehiculoError> {
         logger.debug { "Se llama al repositorio de vehiculos para actualizar un vehículo" }
@@ -107,16 +138,20 @@ class ViewModel(
     /**
      * función que llama al repositorio de vehículos para borrar un vehículo
      * @author IvanRoncoCebadera
-     * @return si todo sale bien, unit, si algo sale mal, el error que haya ocurrido
+     * @return si el completo de la operación sale bien, true, si algo sale mal, el error que haya ocurrido
      */
-    fun deleteVehiculo(idVehiculo: Long): Result<Boolean, VehiculoError> {
+    fun deleteVehiculo(id: Long): Result<Boolean, VehiculoError> {
         logger.debug { "Intentamos eliminar el vehículo actualmente seleccionado" }
 
-        if(!vehiculosRepository.deleteById(idVehiculo)){
-            return Err(VehiculoError.NotFound(idVehiculo.toString()))
+        if (toListaInformes().map { it.vehiculo.id }.contains(id)){
+            return Err(VehiculoError.VehiculoConCitas(id.toString()))
         }
 
-        updateSharedStateVehiculo(state.value.vehiculos.filter { it.id != idVehiculo })
+        if(!vehiculosRepository.deleteById(id)){
+            return Err(VehiculoError.NotFound(id.toString()))
+        }
+
+        updateSharedStateVehiculo(state.value.vehiculos.filter { it.id != id })
         return Ok(true)
     }
 
@@ -171,26 +206,10 @@ class ViewModel(
      */
     fun getPropietarioForVehiculo(dniPropietario: String): Propietario{
         logger.debug { "Se busca el propietario asociado al vehículo en creacion o edición" }
-        return state.value.propietarios.filter { it.dni == dniPropietario}.get(0)
+
+        return state.value.propietarios.filter { it.dni == dniPropietario}[0]
     }
 
-    /**
-
-    función que llama al repositorio de propietarios para borrar un propietario
-    @author IvanRoncoCebadera
-    @return si todo sale bien, unit, si algo sale mal, el error que haya ocurrido*/
-    fun deletePropietario(): Result<Boolean, PropietarioError> {
-        logger.debug { "Intentamos eliminar el propietario actualmente seleccionado" }
-
-        val propietario = state.value.propietarioReference
-
-        if(!propietariosRepository.deleteById(propietario.dni)){
-            return Err(PropietarioError.NotFound(propietario.dni))
-        }
-
-        updateSharedStatePropietario(state.value.propietarios.filter { it.dni != propietario.dni })
-        return Ok(true)
-    }
     /**
      * función que actualiza la parte del estado referente a los propietarios
      * @author IvanRoncoCebadera
@@ -205,40 +224,59 @@ class ViewModel(
     }
 
     /**
-     * función que llama al repositorio de vehículos para guardar un nuevo vehículo
+     * función que llama al repositorio de propietarios para guardar un nuevo vehículo
      * @author IvanRoncoCebadera
      * @param vehiculo es el vehículo que se desea guardar
-     * @return si todo sale bien, el vehículo guardado, si algo sale mal, el error que haya ocurrido
+     * @return si el completo de la operación sale bien, el vehículo guardado, si algo sale mal, el error que haya ocurrido
      */
     fun savePropietario(propietario: Propietario): Result<Propietario, PropietarioError> {
         logger.debug { "Se llama al repositorio de propietarios para añadir un nuevo propietario" }
 
-        var propietarioC = propietario.copy(dni = Propietario.PROPIETARIO_ID)
-
-        return propietarioC.validatePropietario(state.value.propietarios).andThen {
-            updateSharedStatePropietario(state.value.propietarios.filter { it.dni == propietarioC.dni } + propietarioC)
-            Ok(propietariosRepository.save(propietarioC))
+        return propietario.validatePropietario(state.value.propietarios).andThen {
+            updateSharedStatePropietario(state.value.propietarios + propietario)
+            Ok(propietariosRepository.save(propietario))
         }
     }
 
     /**
-     * función que llama al repositorio de vehículos para actualizar un vehículo
+     * función que llama al repositorio de propietarios para actualizar un vehículo
      * @author IvanRoncoCebadera
      * @param propietario es el vehículo que se desea actualizar
-     * @return si todo sale bien, el vehículo actualizado, si algo sale mal, el error que haya ocurrido
+     * @return si el completo de la operación sale bien, el vehículo actualizado, si algo sale mal, el error que haya ocurrido
      */
     fun updatePropietario(propietario: Propietario): Result<Propietario, PropietarioError> {
         logger.debug { "Se llama al repositorio de propietarios para actualizar un propietario" }
 
-        return propietario.validatePropietario(state.value.propietarios).andThen {
+        // Validamos que el propieario no se cambie el DNI a otro ya existente, pero puede tener su antiguo DNI
+        return propietario.validatePropietario(state.value.propietarios.filter { it.dni != propietario.dni }).andThen {
             //Si no se ha editado nigún cambio, no se guarda
             if(propietario == state.value.propietarioReference.toPropietario()){
                 return Err(PropietarioError.SameDataUpdate(propietario.dni))
             }
 
-            updateSharedStatePropietario(state.value.propietarios.filter { it.dni == propietario.dni } + propietario)
+            updateSharedStatePropietario(state.value.propietarios.filter { it.dni != propietario.dni } + propietario)
             Ok(propietariosRepository.save(propietario))
         }
+    }
+
+    /**
+     * función que llama al repositorio de propietarios para borrar un propietario
+     * @author IvanRoncoCebadera
+     * @return si el completo de la operación sale bien, true, si algo sale mal, el error que haya ocurrido
+     */
+    fun deletePropietario(dni: String): Result<Boolean, PropietarioError> {
+        logger.debug { "Intentamos eliminar el propietario actualmente seleccionado" }
+
+        if(state.value.vehiculos.map { it.propietario.dni }.contains(dni)){
+            return Err(PropietarioError.TodaviaExisteElVehiculo("El propietario de dni: $dni, aun está asociado a por lo menos un vehículo, por lo que no se puede borrar."))
+        }
+
+        if(!propietariosRepository.deleteById(dni)){
+            return Err(PropietarioError.NotFound(dni))
+        }
+
+        updateSharedStatePropietario(state.value.propietarios.filter { it.dni != dni })
+        return Ok(true)
     }
 
     /**
@@ -271,6 +309,236 @@ class ViewModel(
             }
     }
 
+    ////////////////////////////////////////////////////Informes\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\º
+
+    /**
+     * funcion que actializa el informe reference con los datos del informe seleccionado
+     * @author IvanRoncoCebadera
+     * @param informe es el informe que se ha seleccionado
+     */
+    fun onSelectedUpdateInformeReference(informe: Informe) {
+        logger.debug { "Actualizamos el estado compartido tras la operación que modificó la base de datos" }
+
+        val informes = mutableListOf<Informe>()
+
+        state.value.trabajadores.first { it.idTrabajador == informe.trabajadorId }
+            .informes.forEach { informeF ->
+                if (informeF.idInforme == informe.idInforme) {
+                    informes.add(informe)
+                } else {
+                    informes.add(informeF)
+                }
+            }
+        state.value = state.value.copy(
+            trabajadores =
+            state.value.trabajadores.map { trabajador ->
+                if(trabajador.idTrabajador == informe.trabajadorId){
+                    trabajador.copy(informes = informes)
+                }else{
+                    trabajador
+                }
+            },
+            informeReference = informe.toInformeReference()
+        )
+    }
+
+    /**
+     * Funcion que filtra la tabla de informes
+     * @param   matricula es la matricula del vehiculo
+     * @param fecha  es la fecha inicial del informe
+     * @param   tipoVehiculo es el tipo de vehiculo
+     * @return Devuelve la lista de informes
+     */
+    fun filtrarTablaInformes(matricula: String, fecha: String, tipoVehiculo: TipoVehiculo): List<Informe> {
+        logger.debug { "Filtramos la tabla de informes según la matricula: $matricula, la fecha inicial: $fecha y el tipo de vehículo: $tipoVehiculo " }
+        return toListaInformes()
+            .filter {
+                it.vehiculo.matricula.lowercase().contains(matricula.lowercase())
+            }
+            .filter {
+                it.fechaInicio.toString().lowercase().contains(fecha.lowercase())
+            }
+            .filter {
+                if (tipoVehiculo == TipoVehiculo.CUALQUIERA) {
+                    true
+                } else {
+                    it.vehiculo.tipoVehiculo == tipoVehiculo
+                }
+            }
+    }
+
+    /**
+     * función que consigue todos los informes según los trabajadores que hay en el SharedState
+     * @author IvanRoncoCebadera
+     * @return la lista de informe conseguida a partir de la lista de trbajajadores
+     */
+    fun toListaInformes(): List<Informe> {
+        logger.debug { "Conseguimos todos los informes a traves de los trabajadores" }
+        val informes = mutableListOf<Informe>()
+        state.value.trabajadores.forEach {
+            it.informes.forEach{informe ->
+                informes.add(informe)
+            }
+        }
+        return informes
+    }
+
+    /**
+     * Funcion que elimina un informe
+     * @param es el id del informe que se quiere eliminar
+     * @return Devuelve true si sale bien, y un error si sale mal
+     * @author Jiacheng Zhang, Kevin David Matute
+     */
+    fun deleteInforme(id: Long): Result<Boolean, InformeError> {
+        logger.debug { "Intentamos eliminar el informe actualmente seleccionado" }
+
+        if(!informesRepository.deleteInforme(id)){
+            return Err(InformeError.NotFound("No se ha encontrado al informe de id: $id"))
+        }
+
+        updateSharedStateInforme(state.value.trabajadores.map { trabajador ->
+            trabajador.copy(
+                informes = trabajador.informes.filter { it.idInforme != id }
+            )
+        })
+        return Ok(true)
+    }
+
+    /**
+     * Funcion que actualiza el estado compartido de informe
+     * @param trabajadores son los trabajadores
+     * @author Ivan Ronco Cebadera
+     */
+    private fun updateSharedStateInforme(trabajadores: List<Trabajador>) {
+        logger.debug { "Se actualiza el SharedState con los nuevo datos de los informes" }
+        state.value = state.value.copy(
+            informeReference = InformeReference(),
+            trabajadores = trabajadores
+        )
+    }
+
+    /**
+     * Funcion que crea informes
+     * @param  informe es el informe que se va a crear
+     * @author JiaCheng Zhang, Kevin David Matute
+     * @return si sale bien, devuelve un informe y si sale mal un error
+     */
+    fun createInforme(informe: Informe): Result<Informe, InformeError> {
+        logger.debug { "Se llama al repositorio de propietarios para añadir un nuevo informe" }
+
+        return informe.validateInforme(toListaInformes()).andThen {
+            val informeSaved = informesRepository.saveInforme(informe)
+            updateSharedStateInforme(state.value.trabajadores.map { trabajador ->
+                if(informeSaved.trabajadorId == trabajador.idTrabajador) {
+                    trabajador.copy(
+                        informes = trabajador.informes + informeSaved
+                    )
+                }else{
+                    trabajador
+                }
+            })
+            Ok(informesRepository.saveInforme(informeSaved))
+        }
+    }
+    /**
+     * Funcion que actualiza informes
+     * @param  informe es el informe que se va a actualizar
+     * @author JiaCheng Zhang, Kevin David Matute
+     * @return si sale bien, devuelve un informe y si sale mal un error
+     */
+    fun updateInforme(informe: Informe): Result<Informe, InformeError> {
+        logger.debug { "Se llama al repositorio de propietarios para actualizar un informe" }
+
+        // Validamos que el propieario no se cambie el DNI a otro ya existente, pero puede tener su antiguo DNI
+        return informe.validateInforme(toListaInformes().filter { it.idInforme != informe.idInforme }).andThen {
+            //Si no se ha editado nigún cambio, no se guarda
+            if(informe == state.value.informeReference.toInforme()){
+                return Err(InformeError.SameDataUpdate("No has cambiado ningún dato del informe de id: ${informe.idInforme}"))
+            }
+
+            val informesSaved = informesRepository.saveInforme(informe)
+
+            if(informe.trabajadorId != state.value.informeReference.trabajadorId){
+                deleteInformeFromTrabajador(state.value.informeReference.idInforme, state.value.informeReference.trabajadorId)
+            }
+
+            updateSharedStateInforme(
+                state.value.trabajadores.map { trabajador ->
+                    if(informesSaved.trabajadorId == trabajador.idTrabajador) {
+                        trabajador.copy(
+                            informes = trabajador.informes.filter { it.idInforme != informesSaved.idInforme } + informesSaved
+                        )
+                    }else{
+                        trabajador
+                    }
+                }
+            )
+            Ok(informesSaved)
+        }
+    }
+
+    /**
+     * Funcion que elimina un inforne de un trabajador
+     * @param informeId es el id del informe
+     * @param trabajadorId es el id del trabajador
+     * @author JiaCHeng Zhang, Kevin David Matute
+     */
+    private fun deleteInformeFromTrabajador(informeId: Long, trabajadorId: Long) {
+        state.value = state.value.copy(
+            trabajadores = state.value.trabajadores.map {trabajador ->
+                if (trabajadorId == trabajador.idTrabajador) {
+                    trabajador.copy(
+                        informes = trabajador.informes.filter { it.idInforme != informeId }
+                    )
+                } else {
+                    trabajador
+                }
+            }
+        )
+    }
+
+    /**
+     * funcion llama al storage json
+     * @author JiaCheng Zhang, Kevin David Matute
+     */
+    fun exportarCitasAJSON(){
+        logger.debug { "Exportamos todos las citas a un fichero JSON." }
+        informesStorageJson.exportMultipleData(toListaInformes())
+    }
+
+  /**
+     * funcion llama al storage json
+     * @author JiaCheng Zhang, Kevin David Matute
+     */
+    fun exportarCitaAJSON(cita: Informe?){
+        logger.debug { "Exportamos la cita a un fichero JSON." }
+        if(cita != null){
+            informesStorageJson.exportSingleData(cita)
+        }
+    }
+
+    /**
+     * funcion llama al storage html
+     * @author JiaCheng Zhang, Kevin David Matute
+     */
+    fun exportarCitaAHTML(cita: Informe?){
+        logger.debug { "Exportamos la cita a un fichero HTML." }
+        if(cita != null){
+            informeStorageHtml.exportSingleData(cita)
+        }
+    }
+
+    //////////////////////////////////////////////////Trabajador\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+    /**
+     * funcion llama al storage csv
+     * @author JiaCheng Zhang, Kevin David Matute
+     */
+    fun exportarTrabajadoresACSV(){
+        logger.debug { "Exportamos todos los trabajadores a un fichero CSV." }
+        trabajadoresStorageCsv.exportMultipleData(state.value.trabajadores)
+    }
+
 }
 
 
@@ -284,21 +552,21 @@ data class SharedState(
     val informeReference: InformeReference = InformeReference(),
     val tipoOperacion: TipoOperacion = TipoOperacion.AÑADIR,
     val tiposDeVehiculos: List<String> = TipoVehiculo.values().map { it.toString() },
-    val tiposDeMotores: List<String> = TipoMotor.values().map { it.toString() }
-){
-
-}
+    val tiposDeMotores: List<String> = TipoMotor.values().map { it.toString() },
+    val intervalos: List<String> = emptyList()
+)
 
 data class InformeReference (
-    val fechaInicial: LocalDateTime? = null,
+    val idInforme: Long = Informe.INFORME_ID,
+    val fechaInicio: LocalDateTime? = null,
     val fechaFinal: LocalDateTime? = null,
-    val favorable: String = "",
-    val frenado: String = "",
-    val contaminacion: String = "",
-    val interior: String = "",
-    val luces: String = "",
-    val idTrabajador: Long = -1L,
-    val tipoVehiculo: TipoVehiculo = TipoVehiculo.OTRO
+    val favorable: IsApto = IsApto.NOT_CHOOSEN,
+    val frenado: Double? = null,
+    val contaminacion: Double? = null,
+    val interior: IsApto = IsApto.NOT_CHOOSEN,
+    val luces: IsApto = IsApto.NOT_CHOOSEN,
+    val vehiculo: Vehiculo? = null,
+    val trabajadorId: Long = Trabajador.TRABAJADOR_ID
 )
 
 enum class TipoOperacion {
@@ -307,7 +575,7 @@ enum class TipoOperacion {
 
 //Tras terminar el ejercicio si este objeto sigue teniendo lo mismo que Propietario, borrarlo y poner Propietario
 data class PropietarioReference(
-    val dni: String = Propietario.PROPIETARIO_ID,
+    val dni: String = "",
     val nombre: String = "",
     val apellidos: String = "",
     val telefono: String = "",
@@ -339,6 +607,6 @@ data class TrabajadorReference(
     val fechaContratacion: LocalDate = LocalDate.now(),
     var especialidades: List<Especialidad> = listOf(),
     val idResponsable: Long = -1L,
-    val informe: List<Informe> = listOf()
+    val informes: List<Informe> = emptyList()
 )
 

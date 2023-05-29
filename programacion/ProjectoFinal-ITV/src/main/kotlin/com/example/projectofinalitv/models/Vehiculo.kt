@@ -18,38 +18,14 @@ data class Vehiculo(
         const val VEHICULO_ID = -1L
     }
 
+
+
     val tipoMotorText get() = tipoMotor.toString()
 
     val tipoVehiculoText get() = tipoVehiculo.toString()
 
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (javaClass != other?.javaClass) return false
-
-        other as Vehiculo
-
-        if (id != other.id) return false
-        if (matricula != other.matricula) return false
-        if (marca != other.marca) return false
-        if (modelo != other.modelo) return false
-        if (fechaMatriculacion != other.fechaMatriculacion) return false
-        if (fechaUltimaRevision != other.fechaUltimaRevision) return false
-        if (tipoMotor != other.tipoMotor) return false
-        if (tipoVehiculo != other.tipoVehiculo) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = id.hashCode()
-        result = 31 * result + matricula.hashCode()
-        result = 31 * result + marca.hashCode()
-        result = 31 * result + modelo.hashCode()
-        result = 31 * result + fechaMatriculacion.hashCode()
-        result = 31 * result + (fechaUltimaRevision?.hashCode() ?: 0)
-        result = 31 * result + tipoMotor.hashCode()
-        result = 31 * result + tipoVehiculo.hashCode()
-        return result
+    override fun toString(): String {
+        return "Vehiculo(id=$id, matricula='$matricula', propietario=$propietario)"
     }
 
 

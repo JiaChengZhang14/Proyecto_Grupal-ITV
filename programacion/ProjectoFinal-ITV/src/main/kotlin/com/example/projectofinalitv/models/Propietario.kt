@@ -7,10 +7,6 @@ data class Propietario(
     val telefono: String,
     val email: String
 ){
-    companion object{
-        const val PROPIETARIO_ID = ""
-    }
-
     override fun toString(): String {
         return "Propietario(dni='$dni', nombre='$nombre')"
     }

@@ -21,6 +21,9 @@ data class Trabajador(
     init {
         comprobarSiEsElResponsable()
     }
+
+
+
     /**
      * función que comprueba si el trabajador es el responsable, en caso afirmativo le añade esa responsabilidad
      * @author IvanRoncoCebadera
@@ -42,7 +45,7 @@ data class Trabajador(
             resultado += it.paga
         }
         // Dividido por tres ya qu sumamos 100€ al salario por cada tres años de antigüedad
-        repeat(calcularAñosContratados()/3){
+        repeat(calcularAniosContratados()/3){
             resultado += 100
         }
         return resultado
@@ -52,8 +55,12 @@ data class Trabajador(
      * @author IvanRoncoCebadera
      * @return el número de años totales que tiene de antigüedad en la empresa el trabajador
      */
-    private fun calcularAñosContratados(): Int {
+    private fun calcularAniosContratados(): Int {
         return LocalDate.now().year-fechaContratacion.year
+    }
+
+    override fun toString(): String {
+        return "Trabajador(idTrabajador=$idTrabajador, idEstacion=$idEstacion, nombre='$nombre', salario=$salario, informes=$informes)"
     }
 }
 

@@ -3,27 +3,15 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="403.0" prefWidth="807.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.example.projectofinalitv.controllers.propietario.PropietarioViewController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="481.0" prefWidth="807.0" style="-fx-background-color: #81C6E6; -fx-border-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectofinalitv.controllers.propietario.PropietarioViewController">
    <children>
-      <MenuBar prefHeight="25.0" prefWidth="653.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="App">
-            <items>
-              <MenuItem fx:id="menuCloseBoton" mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
       <HBox alignment="TOP_RIGHT" prefHeight="464.0" prefWidth="807.0">
          <children>
             <VBox prefHeight="421.0" prefWidth="494.0">
@@ -31,12 +19,12 @@
                   <HBox alignment="CENTER" prefHeight="45.0" prefWidth="390.0" spacing="10.0">
                      <children>
                         <Label text="DNI:" />
-                        <TextField fx:id="textFieldMatricula" prefHeight="25.0" prefWidth="130.0" />
+                        <TextField fx:id="textFieldMatricula" prefHeight="25.0" prefWidth="130.0" style="-fx-border-color: black;" />
                         <Label text="Nombre:" />
-                        <TextField fx:id="textFieldNombre" />
+                        <TextField fx:id="textFieldNombre" style="-fx-border-color: black;" />
                      </children>
                   </HBox>
-                  <TableView fx:id="tablaPropietario" prefHeight="429.0" prefWidth="494.0">
+                  <TableView fx:id="tablaPropietario" prefHeight="429.0" prefWidth="494.0" style="-fx-border-color: black;">
                      <columns>
                         <TableColumn fx:id="columnaDni" prefWidth="134.0" text="DNI" />
                         <TableColumn fx:id="columnaNombre" prefWidth="198.0" text="Nombre" />
@@ -52,40 +40,49 @@
                         <HBox alignment="CENTER" prefHeight="67.0" prefWidth="301.0" spacing="10.0">
                            <children>
                               <Label text="DNI:" />
-                              <TextField fx:id="dni" disable="true" prefHeight="25.0" prefWidth="142.0" />
+                              <TextField fx:id="dni" disable="true" prefHeight="25.0" prefWidth="142.0" style="-fx-border-color: black;" />
                            </children>
                         </HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="237.0" spacing="10.0">
                            <children>
                               <Label prefHeight="17.0" prefWidth="123.0" text="Nombre:" />
-                              <TextField fx:id="nombre" disable="true" prefHeight="25.0" prefWidth="154.0" />
+                              <TextField fx:id="nombre" disable="true" prefHeight="25.0" prefWidth="154.0" style="-fx-border-color: black;" />
                            </children>
                         </HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="237.0" spacing="10.0">
                            <children>
                               <Label prefHeight="17.0" prefWidth="125.0" text="Apellidos:" />
-                              <TextField fx:id="apellidos" disable="true" prefHeight="25.0" prefWidth="151.0" />
+                              <TextField fx:id="apellidos" disable="true" prefHeight="25.0" prefWidth="151.0" style="-fx-border-color: black;" />
                            </children>
                         </HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="237.0" spacing="10.0">
                            <children>
                               <Label prefHeight="17.0" prefWidth="125.0" text="Teléfono:" />
-                              <TextField fx:id="telefono" disable="true" prefHeight="25.0" prefWidth="151.0" />
+                              <TextField fx:id="telefono" disable="true" prefHeight="25.0" prefWidth="151.0" style="-fx-border-color: black;" />
                            </children>
                         </HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="237.0" spacing="10.0">
                            <children>
                               <Label prefHeight="17.0" prefWidth="126.0" text="Email:" />
-                              <TextField fx:id="email" disable="true" prefHeight="25.0" prefWidth="149.0" />
+                              <TextField fx:id="email" disable="true" prefHeight="25.0" prefWidth="149.0" style="-fx-border-color: black;" />
                            </children>
                         </HBox>
                      </children>
                   </VBox>
-                  <HBox alignment="CENTER" prefHeight="56.0" prefWidth="261.0" spacing="20.0" style="-fx-border-style: solid; -fx-border-radius: 10px;">
+                  <HBox alignment="CENTER" prefHeight="56.0" prefWidth="261.0" spacing="20.0" style="-fx-border-style: solid; -fx-border-radius: 10px; -fx-background-color: #79BAD8;">
                      <children>
-                        <Button fx:id="botonAñadir" mnemonicParsing="false" text="Añadir" />
-                        <Button fx:id="botonEditar" mnemonicParsing="false" text="Editar" />
-                        <Button fx:id="botonBorrar" mnemonicParsing="false" text="Borrar" />
+                        <Button fx:id="botonAñadir" mnemonicParsing="false" style="-fx-border-color: black;" text="Añadir">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Button>
+                        <Button fx:id="botonEditar" mnemonicParsing="false" style="-fx-border-color: black;" text="Editar">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Button>
+                        <Button fx:id="botonBorrar" mnemonicParsing="false" style="-fx-border-color: black;" text="Borrar">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Button>
                      </children>
                      <VBox.margin>
                         <Insets bottom="5.0" top="5.0" />

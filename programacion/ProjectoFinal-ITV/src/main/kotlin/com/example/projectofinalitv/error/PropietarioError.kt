@@ -9,4 +9,5 @@ sealed class PropietarioError(val message: String) {
     class EmailNoValido(message: String): PropietarioError("El email '$message', no es válido.")
     class SameDataUpdate(message: String): PropietarioError("No has cambiado ningún dato al editar el propietario de dni: $message")
     class NotFound(message: String): PropietarioError("El propietario de dni: $message, no fue encontrado")
+    class TodaviaExisteElVehiculo(message: String) : PropietarioError(message)
 }

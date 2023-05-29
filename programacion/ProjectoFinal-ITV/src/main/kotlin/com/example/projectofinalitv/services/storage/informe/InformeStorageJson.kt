@@ -13,13 +13,12 @@ import java.io.File
 import java.nio.file.Files
 import java.nio.file.Path
 
-
 class InformeStorageJson(
     private val configApp: ConfigApp
-): IInformeSingleDataStorage, IInformeMultipleDataStorage {
+): IInformeMultipleDataStorage {
 
     private val logger = KotlinLogging.logger { }
-    private var filePath = configApp.APP_FILE_PATH+File.separator+"informes"
+    var filePath = configApp.APP_FILE_PATH+File.separator+"informes"
 
     /**
      * funciÃ³n que exporta los datos de un informe a un json
@@ -28,7 +27,10 @@ class InformeStorageJson(
      */
     override fun exportSingleData(data: Informe): Result<Informe, InformeError> {
         logger.debug { "Guardando informe en fichero json" }
-        val file = File(filePath+File.separator+"informe.json")
+
+        val contador = conseguirContadorActual()
+
+        val file = File(filePath+File.separator+"informe$contador.json")
         if (!file.exists()){
             Files.createDirectories(Path.of(filePath))
         }
@@ -43,10 +45,29 @@ class InformeStorageJson(
     }
 
     /**
-     * función que exporta una lista de informes a Json
-     * @param data es la lista de informes que se quiere exportar
+     * función que consigue el contador del número actual de los fiheros de informe.json
+     * @author IvánRoncoCebadera
+     * @return el número actual a incluir en el nombre del nuevo fichero informe.json
+     */
+    private fun conseguirContadorActual(): Int {
+        val regexNum = Regex("[0-9]*")
+        val posiblesNumeros = Files.list(Path.of(filePath)).map { it.toString() }.filter { it.contains(".json") }
+            .map { it.removePrefix(filePath + File.separator + "informe") }
+            .map { it.removeSuffix(".json") }
+            .filter { it.matches(regexNum) && it != "" }.toList()
+        if (posiblesNumeros.isNotEmpty()) {
+            val numero = posiblesNumeros.map { it.toInt() }.maxOrNull()
+            if (numero != null) {
+                return numero + 1
+            }
+        }
+        return 1
+    }
+
+    /**
+     * funciÃ³n que exporta los datos de una lista de informes a un json
      * @author JiaCheng Zhang
-     * @return En caso de que haya salido bien la exportacion, devolverá la lista que se ha introducido por parametros, en caso negativo, se devolverá un error
+     * @return devuelve la lista de informes si se ha conseguido guardar y si no devuelve un error (Aplico Railway Oriented Programming)
      */
     override fun exportMultipleData(data: List<Informe>): Result<List<Informe>, InformeError> {
         logger.debug { "Guardando informes en fichero json" }

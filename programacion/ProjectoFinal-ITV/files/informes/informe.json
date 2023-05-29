@@ -1,27 +1,23 @@
 {
-  "fechaInicio": "2023-05-01T09:00",
-  "fechaFinal": "2023-05-01T10:30",
-  "favorable": "apto",
-  "frenado": "8,50",
-  "contaminacion": "35,00",
-  "interior": "apto",
-  "luces": "apto",
-  "trabajador": "1",
+  "id_informe": "11",
+  "fecha_inicial": "2023-05-01T13:00",
+  "fecha_final": "2023-05-01T13:30",
+  "trabajador_id": "1",
   "vehiculo": {
-    "id": "1",
-    "matricula": "FBCD123",
-    "marca": "Ford",
-    "modelo": "Focus",
-    "fechaMatriculacion": "2020-01-01",
-    "fechaUltimaRevision": "2023-05-01T09:00",
-    "tipoMotor": "GASOLINA",
-    "tipoVehiculo": "TURISMO",
+    "id_vehiculo": "2",
+    "matricula": "CCCC123",
+    "marca": "Toyota",
+    "modelo": "Azul",
+    "fecha_matriculacion": "2023-05-27",
+    "fecha_ultima_revision": "",
+    "tipo_motor": "ELECTRICO",
+    "tipo_vehiculo": "TURISMO",
     "propietario": {
       "dni": "12345678A",
-      "nombre": "Juan",
-      "apellidos": "Pérez",
-      "telefono": "123456789",
-      "email": "juan@example.com"
+      "nombre": "Iván",
+      "apellidos": "Ronco Cebadera",
+      "telefono": "675829302",
+      "email": "ivan@gmail.com"
     }
   }
 }

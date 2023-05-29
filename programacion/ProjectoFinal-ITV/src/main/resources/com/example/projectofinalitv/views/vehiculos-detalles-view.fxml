@@ -10,15 +10,16 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox prefHeight="544.0" prefWidth="354.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectofinalitv.controllers.vehiculo.VehiculosDetallesController">
+<VBox prefHeight="544.0" prefWidth="354.0" style="-fx-background-color: #81C6E6; -fx-border-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectofinalitv.controllers.vehiculo.VehiculosDetallesController">
    <children>
       <VBox prefHeight="460.0" prefWidth="331.0" spacing="10.0">
          <children>
             <HBox alignment="CENTER" prefHeight="80.0" prefWidth="261.0" spacing="10.0">
                <children>
                   <Label text="ID:" />
-                  <TextField fx:id="idVehiculo" disable="true" prefHeight="25.0" prefWidth="62.0" />
+                  <TextField fx:id="idVehiculo" disable="true" prefHeight="25.0" prefWidth="62.0" style="-fx-border-color: black;" />
                   <ImageView fx:id="imagenVehiculo" fitHeight="90.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/not_found.png" />
@@ -29,68 +30,80 @@
             <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="237.0" spacing="10.0">
                <children>
                   <Label prefHeight="17.0" prefWidth="142.0" text="Matricula:" />
-                  <TextField fx:id="matricula" prefHeight="25.0" prefWidth="150.0" />
+                  <TextField fx:id="matricula" prefHeight="25.0" prefWidth="150.0" style="-fx-border-color: black;" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="237.0" spacing="10.0">
                <children>
                   <Label prefHeight="17.0" prefWidth="142.0" text="Marca:" />
-                  <TextField fx:id="marca" prefHeight="25.0" prefWidth="151.0" />
+                  <TextField fx:id="marca" prefHeight="25.0" prefWidth="151.0" style="-fx-border-color: black;" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="237.0" spacing="10.0">
                <children>
                   <Label prefHeight="17.0" prefWidth="143.0" text="Modelo" />
-                  <TextField fx:id="modelo" prefHeight="25.0" prefWidth="151.0" />
+                  <TextField fx:id="modelo" prefHeight="25.0" prefWidth="151.0" style="-fx-border-color: black;" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="237.0" spacing="10.0">
                <children>
                   <Label prefHeight="17.0" prefWidth="142.0" text="Tipo motor:" />
-                  <ComboBox fx:id="tipoMotor" prefHeight="25.0" prefWidth="149.0" />
+                  <ComboBox fx:id="tipoMotor" prefHeight="25.0" prefWidth="149.0" style="-fx-border-color: black;" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="237.0" spacing="10.0">
                <children>
                   <Label prefHeight="17.0" prefWidth="143.0" text="Tipo Vehículo:" />
-                  <ComboBox fx:id="tipoVehiculo" prefHeight="25.0" prefWidth="149.0" />
+                  <ComboBox fx:id="tipoVehiculo" prefHeight="25.0" prefWidth="149.0" style="-fx-border-color: black;" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="253.0" spacing="20.0">
                <children>
                   <Label prefHeight="17.0" prefWidth="134.0" text="Fecha matriculación:" />
-                  <DatePicker fx:id="fechaMatriculacion" editable="false" />
+                  <DatePicker fx:id="fechaMatriculacion" editable="false" style="-fx-border-color: black;" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="301.0" spacing="10.0">
                <children>
                   <Label prefHeight="17.0" prefWidth="144.0" text="Ultima revisión:" />
-                  <DatePicker fx:id="fechaUltimaRevision" editable="false" />
+                  <DatePicker fx:id="fechaUltimaRevision" editable="false" style="-fx-border-color: black;" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="81.0" prefWidth="331.0">
                <children>
                   <Label prefHeight="17.0" prefWidth="154.0" text="Intervalo de tiempo:" />
-                  <ComboBox fx:id="intervalosDeTiempo" prefHeight="25.0" prefWidth="149.0" />
+                  <ComboBox fx:id="intervalosDeTiempo" prefHeight="25.0" prefWidth="149.0" style="-fx-border-color: black;" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="101.0" prefWidth="331.0">
                <children>
                   <VBox alignment="CENTER" prefHeight="62.0" prefWidth="342.0" spacing="10.0">
                      <children>
-                        <Label prefHeight="17.0" prefWidth="155.0" text="Selecctor de propietarios:" underline="true" />
-                        <ComboBox fx:id="propietarios" prefHeight="25.0" prefWidth="344.0" />
+                        <Label prefHeight="18.0" prefWidth="142.0" text="Selector de propietarios:" underline="true">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                        <ComboBox fx:id="propietarios" prefHeight="25.0" prefWidth="344.0" style="-fx-border-color: black;" />
                      </children>
                   </VBox>
                </children>
             </HBox>
          </children>
       </VBox>
-      <HBox alignment="CENTER" prefHeight="56.0" prefWidth="261.0" spacing="20.0" style="-fx-border-style: solid; -fx-border-radius: 10px;">
+      <HBox alignment="CENTER" prefHeight="56.0" prefWidth="261.0" spacing="20.0" style="-fx-border-style: solid; -fx-border-radius: 10px; -fx-background-color: #79BAD8;">
          <children>
-            <Button fx:id="botonAceptar" mnemonicParsing="false" text="Aceptar" />
-            <Button fx:id="botonLimpiar" mnemonicParsing="false" text="Limpiar" />
-            <Button fx:id="botonCancelar" mnemonicParsing="false" text="Cancelar" />
+            <Button fx:id="botonAceptar" mnemonicParsing="false" style="-fx-border-color: black;" text="Aceptar">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="botonLimpiar" mnemonicParsing="false" style="-fx-border-color: black;" text="Limpiar">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="botonCancelar" mnemonicParsing="false" style="-fx-border-color: black;" text="Cancelar">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
          </children>
          <VBox.margin>
             <Insets bottom="5.0" top="5.0" />

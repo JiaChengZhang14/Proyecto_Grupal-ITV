@@ -28,9 +28,6 @@ class VehiculosViewController: KoinComponent {
     private val viewModel: ViewModel by inject()
 
     @FXML
-    private lateinit var menuCloseBoton: MenuItem
-
-    @FXML
     private lateinit var textFieldMatricula: TextField
 
     @FXML
@@ -128,9 +125,6 @@ class VehiculosViewController: KoinComponent {
 
         eventosDeLaTabla()
 
-        menuCloseBoton.setOnAction {
-            onCloseActionClick(it)
-        }
 
         botonAñadir.setOnAction {
             onClickAniadirVehiculo()

@@ -17,7 +17,7 @@ class InformeStorageHtml(
     private val configApp: ConfigApp
 ) : IInformeSingleDataStorage{
 
-    private var filePath = configApp.APP_FILE_PATH+File.separator+"informes"
+    var filePath = configApp.APP_FILE_PATH+File.separator+"informes"
 
     /**
      * Funcion que exporta los datos de un informe a un fichero HTML
@@ -27,7 +27,9 @@ class InformeStorageHtml(
     override fun exportSingleData(data: Informe): Result<Informe, InformeError> {
         logger.debug { "Exportando informe a HTML" }
 
-        val file = File(filePath+File.separator+"informe.html")
+        val contador = conseguirContadorActual()
+
+        val file = File(filePath+File.separator+"informe$contador.html")
         if (!file.exists()){
             Files.createDirectories(Path.of(filePath))
         }
@@ -54,6 +56,25 @@ class InformeStorageHtml(
         }catch (e: Exception){
             Err(InformeError.ExportingError("Ha ocurrido un error al tratar de exportar el informe seleccionado a HTML"))
         }
+    }
 
+    /**
+     * función que consigue el contador del número actual de los fiheros de informe.html
+     * @author IvánRoncoCebadera
+     * @return el número actual a incluir en el nombre del nuevo fichero informe.html
+     */
+    private fun conseguirContadorActual(): Int {
+        val regexNum = Regex("[0-9]*")
+        val posiblesNumeros = Files.list(Path.of(filePath)).map { it.toString() }.filter { it.contains(".html") }
+            .map { it.removePrefix(filePath + File.separator + "informe") }
+            .map { it.removeSuffix(".html") }
+            .filter { it.matches(regexNum) && it != "" }.toList()
+        if (posiblesNumeros.isNotEmpty()) {
+            val numero = posiblesNumeros.map { it.toInt() }.maxOrNull()
+            if (numero != null) {
+                return numero + 1
+            }
+        }
+        return 1
     }
 }

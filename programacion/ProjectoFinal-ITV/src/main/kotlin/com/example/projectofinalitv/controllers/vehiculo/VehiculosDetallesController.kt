@@ -118,31 +118,8 @@ class VehiculosDetallesController: KoinComponent {
         tipoMotor.items = FXCollections.observableArrayList(viewModel.state.value.tiposDeMotores.filter { it != TipoMotor.CUALQUIERA.toString() })
         tipoVehiculo.items = FXCollections.observableArrayList(viewModel.state.value.tiposDeVehiculos.filter { it != TipoVehiculo.CUALQUIERA.toString() })
 
-        intervalosDeTiempo.items = FXCollections.observableArrayList(
-            listOf(
-                "",
-            "9:00:00-9:30:00",
-            "9:30:00-10:00:00",
-            "10:00:00-10:30:00",
-            "10:30:00-11:00:00",
-            "11:00:00-11:30:00",
-            "11:30:00-12:00:00",
-            "12:00:00-12:30:00",
-            "12:30:00-13:00:00",
-            "13:00:00-13:30:00",
-            "13:30:00-14:00:00",
-            "14:00:00-14:30:00",
-            "14:30:00-15:00:00",
-            "15:00:00-15:30:00",
-            "15:30:00-16:00:00",
-            "16:00:00-16:30:00",
-            "16:30:00-17:00:00",
-            "17:00:00-17:30:00",
-            "17:30:00-18:00:00",
-            "18:00:00-18:30:00",
-            "18:30:00-19:00:00"
-            )
-        )
+        intervalosDeTiempo.items = FXCollections.observableArrayList(viewModel.state.value.intervalos)
+        intervalosDeTiempo.selectionModel.select(null)
 
         propietarios.items = FXCollections.observableArrayList(viewModel.state.value.propietarios)
         propietarios.selectionModel.selectFirst()
@@ -167,7 +144,11 @@ class VehiculosDetallesController: KoinComponent {
                 it.toLocalDate()
             }
             intervalosDeTiempo.selectionModel.select(
-                if(intervalos.first.first != -1)"${intervalos.first.first}:${intervalos.first.second}:00-${intervalos.second.first}:${intervalos.second.second}:00" else ""
+                if(intervalos.first.first != -1){
+                    "${intervalos.first.first}:${if(intervalos.first.second.toString() == "0") "00" else intervalos.first.second}:00-${intervalos.second.first}:${if(intervalos.second.second.toString() == "0") "00" else intervalos.second.second}:00"
+                } else {
+                    ""
+                }
             )
 
             tipoMotor.selectionModel.select(viewModel.state.value.vehiculoReference.tipoMotor.toString())
@@ -177,7 +158,7 @@ class VehiculosDetallesController: KoinComponent {
             //Si hemos elegido añadir, en el combo box empezmos por defecto en la primera opción
             tipoMotor.selectionModel.selectLast()
             tipoVehiculo.selectionModel.selectLast()
-            propietarios.selectionModel.selectFirst()
+            propietarios.selectionModel.select(null)
         }
     }
 
@@ -233,12 +214,12 @@ class VehiculosDetallesController: KoinComponent {
     /**
      * función que valida todos los datos seleccionados y que crea el VehiculoReference correspondiente a esos datos
      * @author IvanRoncoCebadera
-     * @return el VehiculoReference si todo a salido bien, o en caso de que algún campo no sea válido, el error indicando que campo es erroneo
+     * @return el VehiculoReference si el completo de la operación a salido bien, o en caso de que algún campo no sea válido, el error indicando que campo es erroneo
      */
     private fun generatedVehiculo(): Result<VehiculoReference, VehiculoError> {
         logger.debug { "Generamos un vehículo según los campos que tenemos, tras validar todo" }
 
-        val regexMatricula = Regex("[0-9]{3}[BCDFGHJKLMNPRSTVWXYZ]{3}")
+        val regexMatricula = Regex("[BCDFGHJKLMNPRSTVWXYZ]{4}[0-9]{3}")
         require(matricula.text.matches(regexMatricula)){
             return Err(VehiculoError.MatriculaNoValida(matricula.text))
         }
@@ -251,8 +232,14 @@ class VehiculosDetallesController: KoinComponent {
         if(fechaMatriculacion.value.isAfter(LocalDate.now())){
             return Err(VehiculoError.FechaMatriculacionNoValida(fechaMatriculacion.value))
         }
-        if(fechaUltimaRevision.value.isAfter(LocalDate.now())){
-            return Err(VehiculoError.FechaMatriculacionNoValida(fechaUltimaRevision.value))
+        if(fechaUltimaRevision.value != null && (fechaUltimaRevision.value.isAfter(LocalDate.now()) || fechaUltimaRevision.value.isBefore(fechaMatriculacion.value))){
+            return Err(VehiculoError.FechaUltimaRevisionNoValida(fechaUltimaRevision.value.toString()))
+        }
+        if(fechaUltimaRevision.value != null && intervalosDeTiempo.selectionModel.selectedItem != null && !intervalosDeTiempo.items.map { it.toString() }.contains(intervalosDeTiempo.selectionModel.selectedItem.toString())){
+            return Err(VehiculoError.IntervaloNoValido(intervalosDeTiempo.selectionModel.selectedItem.toString()))
+        }
+        if(fechaUltimaRevision.value != null && intervalosDeTiempo.selectionModel.selectedItem == null){
+            return Err(VehiculoError.IntervaloNoValido(""))
         }
 
         return Ok(VehiculoReference(
@@ -300,7 +287,7 @@ class VehiculosDetallesController: KoinComponent {
         modelo.text = ""
         tipoMotor.selectionModel.selectLast()
         tipoVehiculo.selectionModel.selectLast()
-        propietarios.selectionModel.selectFirst()
+        propietarios.selectionModel.select(null)
         fechaMatriculacion.value = null
         fechaUltimaRevision.value = null
         intervalosDeTiempo.selectionModel.selectFirst()

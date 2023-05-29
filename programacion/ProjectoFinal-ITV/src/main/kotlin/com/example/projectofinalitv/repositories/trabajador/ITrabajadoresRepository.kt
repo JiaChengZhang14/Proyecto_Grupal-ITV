@@ -2,6 +2,6 @@ package com.example.projectofinalitv.repositories.trabajador
 
 import com.example.projectofinalitv.models.Trabajador
 
-interface ITrabajadoresRepository{
+fun interface ITrabajadoresRepository{
     fun getAll(): List<Trabajador>
 }

@@ -169,7 +169,7 @@ class VehiculosRepositoryImpl(
                 res = stm.executeUpdate()
             }
         }
-        return res >= 1
+        return res > 0
     }
 
     /**

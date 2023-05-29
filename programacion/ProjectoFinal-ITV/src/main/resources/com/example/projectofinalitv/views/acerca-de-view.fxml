@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="409.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectofinalitv.controllers.acercaDe.AcercaDeViewController">
+<AnchorPane prefHeight="409.0" prefWidth="600.0" style="-fx-background-color: #81C6E6; -fx-border-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectofinalitv.controllers.acercaDe.AcercaDeViewController">
    <children>
       <Label layoutX="40.0" layoutY="25.0" prefHeight="82.0" prefWidth="227.0" text="Acerca de ITC">
          <font>
@@ -23,7 +23,7 @@
             <Image url="@../images/ITC.png" />
          </image>
       </ImageView>
-      <TextArea editable="false" layoutX="34.0" layoutY="107.0" prefHeight="82.0" prefWidth="394.0" text="En ITC nos dedicamos a la inspección de vehiculos princpalmente.&#10;Ofrecemos servicios de gestion de vehiculos junto a sus respectivos &#10;propietarios y proporcionamos informes en distintos formatos &#10;(HTML, JSON)" />
+      <TextArea editable="false" layoutX="34.0" layoutY="107.0" prefHeight="82.0" prefWidth="394.0" style="-fx-border-color: black;" text="En ITC nos dedicamos a la inspección de vehiculos princpalmente.&#10;Ofrecemos servicios de gestion de vehiculos junto a sus respectivos &#10;propietarios y proporcionamos informes en distintos formatos &#10;(HTML, JSON)" />
       <Label layoutX="142.0" layoutY="233.0" prefHeight="30.0" prefWidth="178.0" text="Enlaces de interés:">
          <font>
             <Font size="20.0" />

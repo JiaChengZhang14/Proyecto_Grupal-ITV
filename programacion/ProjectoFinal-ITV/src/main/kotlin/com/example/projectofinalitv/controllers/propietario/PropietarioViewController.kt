@@ -1,10 +1,7 @@
 package com.example.projectofinalitv.controllers.propietario
 
 import com.example.projectofinalitv.models.Propietario
-import com.example.projectofinalitv.models.Trabajador
-import com.example.projectofinalitv.models.Vehiculo
 import com.example.projectofinalitv.routes.RoutesManager
-import com.example.projectofinalitv.utils.getResourceAsStream
 import com.example.projectofinalitv.viewmodel.SharedState
 import com.example.projectofinalitv.viewmodel.TipoOperacion
 import com.example.projectofinalitv.viewmodel.ViewModel
@@ -15,7 +12,6 @@ import javafx.event.Event
 import javafx.fxml.FXML
 import javafx.scene.control.*
 import javafx.scene.control.cell.PropertyValueFactory
-import javafx.scene.image.Image
 import mu.KotlinLogging
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
@@ -68,8 +64,6 @@ class PropietarioViewController: KoinComponent {
     @FXML
     private lateinit var textFieldMatricula: TextField
 
-    @FXML
-    private lateinit var menuCloseBoton: MenuItem
 
     @FXML
     private fun initialize(){
@@ -104,9 +98,6 @@ class PropietarioViewController: KoinComponent {
 
         eventosDeLaTabla()
 
-        menuCloseBoton.setOnAction {
-            onCloseActionClick(it)
-        }
 
         botonAñadir.setOnAction {
             onClickAniadirPropietario()
@@ -151,7 +142,7 @@ class PropietarioViewController: KoinComponent {
         oldstate: SharedState,
         newstate: SharedState
     ) {
-        if(oldstate.vehiculos != newstate.vehiculos){
+        if(oldstate.propietarios != newstate.propietarios){
             logger.debug { "Se actualizán los datos de la tabla" }
             tablaPropietario.selectionModel.clearSelection()
             tablaPropietario.items = FXCollections.observableArrayList(viewModel.state.value.propietarios)
@@ -213,7 +204,7 @@ class PropietarioViewController: KoinComponent {
             contentText = "¿Seguro que deseas eliminar al propietario de dni: $id?"
         }.showAndWait().ifPresent{
             if(it == ButtonType.OK){
-                viewModel.deletePropietario()
+                viewModel.deletePropietario(id)
                     .onSuccess {
                         Alert(Alert.AlertType.INFORMATION).apply {
                             title = "Operación terminada"

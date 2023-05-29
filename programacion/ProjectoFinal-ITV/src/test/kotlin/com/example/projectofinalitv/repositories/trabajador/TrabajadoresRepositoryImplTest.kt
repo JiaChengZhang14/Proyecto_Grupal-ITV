@@ -102,7 +102,7 @@ internal class TrabajadoresRepositoryImplTest {
             "juan@example.com",
             "juancito",
             "contraseña1",
-            LocalDate.now(),
+            "2023-05-27".toLocalDate(),
             listOf(Especialidad.ADMINISTRACION),
             1,
             listOf(informe)
@@ -115,7 +115,7 @@ internal class TrabajadoresRepositoryImplTest {
             "maria@example.com",
             "marialo",
             "contraseña2",
-            LocalDate.now(),
+            "2023-05-27".toLocalDate(),
             listOf(Especialidad.MECANICA),
             1,
             listOf(informe2)

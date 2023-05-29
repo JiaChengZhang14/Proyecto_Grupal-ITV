@@ -1,18 +1,10 @@
 package com.example.projectofinalitv.controllers.propietario
 
 import com.example.projectofinalitv.error.PropietarioError
-import com.example.projectofinalitv.error.VehiculoError
-import com.example.projectofinalitv.mapper.getTipoMotor
-import com.example.projectofinalitv.mapper.getTipoVehiculo
 import com.example.projectofinalitv.mapper.toPropietario
-import com.example.projectofinalitv.mapper.toVehiculo
-import com.example.projectofinalitv.models.Propietario
-import com.example.projectofinalitv.models.Vehiculo
 import com.example.projectofinalitv.routes.RoutesManager
-import com.example.projectofinalitv.utils.toLocalDateTimeFromFechaHora
 import com.example.projectofinalitv.viewmodel.PropietarioReference
 import com.example.projectofinalitv.viewmodel.TipoOperacion
-import com.example.projectofinalitv.viewmodel.VehiculoReference
 import com.example.projectofinalitv.viewmodel.ViewModel
 import com.github.michaelbull.result.*
 import javafx.event.Event
@@ -24,7 +16,6 @@ import javafx.scene.control.TextField
 import mu.KotlinLogging
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
-import java.time.LocalDate
 
 private val logger = KotlinLogging.logger {  }
 
@@ -155,7 +146,7 @@ class PropietarioDetallesController: KoinComponent {
     /**
      * función que valida todos los datos seleccionados y que crea el PropietarioReference correspondiente a esos datos
      * @author IvanRoncoCebadera
-     * @return el PropietarioReference si todo a salido bien, o en caso de que algún campo no sea válido, el error indicando que campo es erroneo
+     * @return el PropietarioReference si el completo de la operación a salido bien, o en caso de que algún campo no sea válido, el error indicando que campo es erroneo
      */
     private fun generatedPropietario(): Result<PropietarioReference, PropietarioError> {
         logger.debug { "Generamos un propietario según los campos que tenemos, tras validar todo" }
@@ -174,7 +165,7 @@ class PropietarioDetallesController: KoinComponent {
         require(telefono.text.matches(regexTelefono)){
             return Err(PropietarioError.TelefonoNoValido(telefono.text))
         }
-        val regexEmail = Regex(".*[@gmail.com]")
+        val regexEmail = Regex("^[^@]+@[^@]+\\.[a-zA-Z]{2,}\$")
         require(email.text.matches(regexEmail)){
             return Err(PropietarioError.EmailNoValido(email.text))
         }

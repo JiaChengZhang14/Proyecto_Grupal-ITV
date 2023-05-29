@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e71dec7f-69a7-4d4f-891f-e177356e1cd3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/5/05877c4dc25d1c878548a9d5f82e8ecc2e91f375" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/5/05877c4dc25d1c878548a9d5f82e8ecc2e91f375" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/b/0b327096b94aaeb34edc4353f6ca8e26c6e662e3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/1/11a80e29700b74e91f4c7ce6878289f83f54cbde" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/1/11a80e29700b74e91f4c7ce6878289f83f54cbde" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/d/1d1734a7d4b6b6f9452c0bf6d32a3d6ee7bc0160" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/d/1d1734a7d4b6b6f9452c0bf6d32a3d6ee7bc0160" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/2/229391fdad1beb2e44c21ada8699aa79e630f954" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/2/229391fdad1beb2e44c21ada8699aa79e630f954" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/b/3bb39f6336f08576304d03536edc53892ed698a6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/3/4334e4e6e4b2d62b250671615edcb42447a4787f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/6/56152767954dbc485164cb554941f7f3528d2f09" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/f/5fec074c2bbe1fb8d076cdaebd7c8a2a4b5dffe0" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/f/5fec074c2bbe1fb8d076cdaebd7c8a2a4b5dffe0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/1/617cc2815fa2f80d387bd4203ea241e1223856ad" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/1/617cc2815fa2f80d387bd4203ea241e1223856ad" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/7/6757017a454437acee51604e7d9216ae8d02b368" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/7/6757017a454437acee51604e7d9216ae8d02b368" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/4/9424c03a1087f4174488c49e19ca2a9e10d4629e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/6/a69f3df8766202088c46044f321452d5c78e9ef7" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/6/a69f3df8766202088c46044f321452d5c78e9ef7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/a/ca6fcfb3b86677bd95aac00f4ec8d10bf6c821a5" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/a/ca6fcfb3b86677bd95aac00f4ec8d10bf6c821a5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/0/d0c7f66eab20acfdd14a8f711e0c4313d0ce7789" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/0/d0c7f66eab20acfdd14a8f711e0c4313d0ce7789" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/4/d4647a40214f1e2db10506407a2d2c28234713b1" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/4/d4647a40214f1e2db10506407a2d2c28234713b1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/0/f07866736216be0ee2aba49e392191aeae700a35" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/7/f73c98bc09522cd9c276a54432bd889f658b50cb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/7/f73c98bc09522cd9c276a54432bd889f658b50cb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/d/fd91e6654945ac611655189629cff1c7a082e55d" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/d/fd91e6654945ac611655189629cff1c7a082e55d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/b/0b327096b94aaeb34edc4353f6ca8e26c6e662e3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/b/3bb39f6336f08576304d03536edc53892ed698a6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/3/4334e4e6e4b2d62b250671615edcb42447a4787f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/6/56152767954dbc485164cb554941f7f3528d2f09" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/4/9424c03a1087f4174488c49e19ca2a9e10d4629e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/0/f07866736216be0ee2aba49e392191aeae700a35" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/informes/informe.html" beforeDir="false" afterPath="$PROJECT_DIR$/files/informes/informe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/informes/informe.json" beforeDir="false" afterPath="$PROJECT_DIR$/files/informes/informe.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/informes/informes.json" beforeDir="false" afterPath="$PROJECT_DIR$/files/informes/informes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/trabajadores/trabajador.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/trabajadores/trabajador.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/MainApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/MainApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/config/ConfigApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/config/ConfigApp.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/controllers/acercaDe/AcercaDeViewController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/controllers/acercaDe/AcercaDeViewController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/controllers/cita/CitasViewController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/controllers/cita/CitasViewController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/controllers/detalles/DetallesViewController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/controllers/propietario/PropietarioDetallesController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/controllers/propietario/PropietarioDetallesController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/controllers/propietario/PropietarioViewController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/controllers/propietario/PropietarioViewController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/controllers/vehiculo/VehiculosDetallesController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/controllers/vehiculo/VehiculosDetallesController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/controllers/vehiculo/VehiculosViewController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/controllers/vehiculo/VehiculosViewController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/di/MyModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/di/MyModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/dto/InformeDTO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/dto/InformeDTO.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/dto/TrabajadorDTO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/dto/TrabajadorDTO.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/dto/VehiculoDTO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/dto/VehiculoDTO.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/error/InformeError.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/error/InformeError.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/error/PropietarioError.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/error/PropietarioError.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/error/VehiculoError.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/error/VehiculoError.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/mapper/InformeMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/mapper/InformeMapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/models/Informe.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/models/Informe.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/models/Propietario.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/models/Propietario.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/models/Trabajador.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/models/Trabajador.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/models/Vehiculo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/models/Vehiculo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/repositories/informe/InformeRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/repositories/informe/InformeRepositoryImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/repositories/propietario/PropietarioRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/repositories/propietario/PropietarioRepositoryImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/repositories/trabajador/ITrabajadoresRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/repositories/trabajador/ITrabajadoresRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/repositories/trabajador/TrabajadoresRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/repositories/trabajador/TrabajadoresRepositoryImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/repositories/vehiculo/VehiculosRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/repositories/vehiculo/VehiculosRepositoryImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/routes/RoutesManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/routes/RoutesManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/services/database/DatabaseManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/services/database/DatabaseManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/services/storage/base/ExportMultipleDataStorage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/services/storage/base/ExportMultipleDataStorage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/services/storage/base/ExportSingleDataStorage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/services/storage/base/ExportSingleDataStorage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/services/storage/informe/IInformeMultipleDataStorage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/services/storage/informe/IInformeMultipleDataStorage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/services/storage/informe/InformeStorageHtml.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/services/storage/informe/InformeStorageHtml.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/services/storage/informe/InformeStorageJson.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/services/storage/informe/InformeStorageJson.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/services/storage/trabajador/TrabajadorStorageCsv.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/services/storage/trabajador/TrabajadorStorageCsv.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/utils/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/utils/Utils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/validator/PropietarioValidator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/validator/PropietarioValidator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/validator/VehiculoValidator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/validator/VehiculoValidator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/viewmodel/ViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/viewmodel/ViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectofinalitv/images/github.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectofinalitv/images/github.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectofinalitv/views/acerca-de-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectofinalitv/views/acerca-de-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectofinalitv/views/citas-detalle-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectofinalitv/views/citas-detalle-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectofinalitv/views/citas-main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectofinalitv/views/citas-main-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectofinalitv/views/propietarios-detalles-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectofinalitv/views/propietarios-detalles-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectofinalitv/views/propietarios-main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectofinalitv/views/propietarios-main-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectofinalitv/views/vehiculos-detalles-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectofinalitv/views/vehiculos-detalles-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectofinalitv/views/vehiculos-main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectofinalitv/views/vehiculos-main-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/example/projectofinalitv/repositories/trabajador/TrabajadoresRepositoryImplTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/example/projectofinalitv/repositories/trabajador/TrabajadoresRepositoryImplTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/example/projectofinalitv/services/storage/informe/InformeStorageHtmlTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/example/projectofinalitv/services/storage/informe/InformeStorageJsonTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/example/projectofinalitv/services/storage/trabajador/TrabajadorStorageCsvTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/example/projectofinalitv/viewmodel/vehiculo/ViewModelTest.kt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ProjectoFinal-ITV" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ProjectoFinal-ITV" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ProjectoFinal-ITV" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2QPnHzzgLBe0ZmRlUBfwh1I06Wd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jiach/Desktop/ProjectoFinal-ITV&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Gradle.ProjectoFinal-ITV [run]">
+    <configuration name="ProjectoFinal-ITV [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tests in 'com.example.projectofinalitv'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.example.projectofinalitv.*&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="ViewModelTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.example.projectofinalitv.viewmodel.ViewModelTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="ViewModelTest.createInformeTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.example.projectofinalitv.viewmodel.ViewModelTest.createInformeTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="ViewModelTest.updateInformeTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.example.projectofinalitv.viewmodel.ViewModelTest.updateInformeTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.ProjectoFinal-ITV [run]" />
+        <item itemvalue="Gradle.Tests in 'com.example.projectofinalitv'" />
+        <item itemvalue="Gradle.ViewModelTest.updateInformeTest" />
+        <item itemvalue="Gradle.ViewModelTest" />
+        <item itemvalue="Gradle.ViewModelTest.createInformeTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e71dec7f-69a7-4d4f-891f-e177356e1cd3" name="Changes" comment="" />
+      <created>1685264003381</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1685264003381</updated>
+      <workItem from="1685264005025" duration="791000" />
+      <workItem from="1685264819234" duration="18833000" />
+      <workItem from="1685307065557" duration="600000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/mapper/InformeMapper.kt</url>
+          <line>61</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-function">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/mapper/InformeMapper.kt</url>
+          <line>57</line>
+          <properties method="toInforme">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

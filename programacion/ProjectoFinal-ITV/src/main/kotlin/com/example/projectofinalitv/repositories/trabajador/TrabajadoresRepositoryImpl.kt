@@ -9,17 +9,17 @@ import com.example.projectofinalitv.utils.toLocalDate
 import com.example.projectofinalitv.utils.toLocalDateTime
 import mu.KotlinLogging
 
-private val logger = KotlinLogging.logger { }
+private val logger = KotlinLogging.logger {  }
 
 class TrabajadoresRepositoryImpl(
     private val database: DatabaseManager
-) : ITrabajadoresRepository {
+): ITrabajadoresRepository {
 
     /**
      * funcion que obtiene todos los Trabajadores
      * @author KevinMatute & JiaCheng Zhang
      * @return una lista de los todos los trabajadores de la base de datos
-     */
+    */
     override fun getAll(): List<Trabajador> {
         logger.debug { "" }
         var trabajadores = mutableListOf<Trabajador>()
@@ -53,17 +53,22 @@ class TrabajadoresRepositoryImpl(
         return trabajadores
     }
 
-
+    /**
+     * Funcion que recupera todos los informe segun un trabajador
+     * @author JiaCHeng Zhang, Kevin David Matute
+     * @param   id , Es el id del trabajador
+     * @return Devuelve la lista de informes
+     */
     fun getAllInformesByTrabajadorId(id: Long): List<Informe> {
         logger.debug { "Se consiguen todos los informes del trabajador de id: $id" }
         val informes = mutableListOf<Informe>()
         database.connection.use {
             val sql = "SELECT * FROM informe WHERE id_trabajador = ?;"
 
-            it.prepareStatement(sql).use { stm ->
+            it.prepareStatement(sql).use {stm ->
                 stm.setLong(1, id)
                 var res = stm.executeQuery()
-                while (res.next()) {
+                while(res.next()){
                     informes.add(
                         Informe(
                             idInforme = res.getLong("id_informe"),

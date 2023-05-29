@@ -4,9 +4,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -14,19 +11,10 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="807.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.example.projectofinalitv.controllers.vehiculo.VehiculosViewController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="807.0" style="-fx-background-color: #81C6E6; -fx-border-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectofinalitv.controllers.vehiculo.VehiculosViewController">
    <children>
-      <MenuBar prefHeight="25.0" prefWidth="653.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="App">
-            <items>
-              <MenuItem fx:id="menuCloseBoton" mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
       <HBox alignment="TOP_RIGHT" prefHeight="464.0" prefWidth="807.0">
          <children>
             <VBox prefHeight="421.0" prefWidth="494.0">
@@ -34,9 +22,9 @@
                   <HBox alignment="CENTER" prefHeight="45.0" prefWidth="390.0" spacing="10.0">
                      <children>
                         <Label text="Matrícula" />
-                        <TextField fx:id="textFieldMatricula" prefHeight="25.0" prefWidth="130.0" />
-                        <ComboBox fx:id="comboBoxTipoVehiculo" prefHeight="25.0" prefWidth="122.0" />
-                        <ComboBox fx:id="comboBoxTipoMotor" prefHeight="25.0" prefWidth="131.0" />
+                        <TextField fx:id="textFieldMatricula" prefHeight="25.0" prefWidth="130.0" style="-fx-border-color: black;" />
+                        <ComboBox fx:id="comboBoxTipoVehiculo" prefHeight="25.0" prefWidth="122.0" style="-fx-border-color: black;" />
+                        <ComboBox fx:id="comboBoxTipoMotor" prefHeight="25.0" prefWidth="131.0" style="-fx-border-color: black;" />
                      </children>
                   </HBox>
                   <TableView fx:id="tablaVehiculo" prefHeight="429.0" prefWidth="494.0">
@@ -55,7 +43,7 @@
                         <HBox alignment="CENTER" prefHeight="80.0" prefWidth="261.0" spacing="10.0">
                            <children>
                               <Label text="ID:" />
-                              <TextField fx:id="idVehiculo" disable="true" prefHeight="25.0" prefWidth="62.0" />
+                              <TextField fx:id="idVehiculo" disable="true" prefHeight="25.0" prefWidth="62.0" style="-fx-border-color: black;" />
                               <ImageView fx:id="imagenVehiculo" fitHeight="90.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../images/not_found.png" />
@@ -63,61 +51,70 @@
                               </ImageView>
                            </children>
                         </HBox>
-                        <HBox alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="301.0" style="-fx-border-style: solid; -fx-border-radius: 10px;">
+                        <HBox alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="301.0" style="-fx-border-style: solid; -fx-border-radius: 10px; -fx-background-color: #79BAD8;">
                            <children>
                               <Label prefHeight="17.0" prefWidth="131.0" text="Dni del propietario:" underline="true" />
-                              <TextField fx:id="idPropietario" disable="true" editable="false" prefHeight="25.0" prefWidth="155.0" />
+                              <TextField fx:id="idPropietario" disable="true" editable="false" prefHeight="25.0" prefWidth="155.0" style="-fx-border-color: black;" />
                            </children>
                         </HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="237.0" spacing="10.0">
                            <children>
                               <Label prefHeight="17.0" prefWidth="123.0" text="Matricula:" />
-                              <TextField fx:id="matricula" disable="true" prefHeight="25.0" prefWidth="154.0" />
+                              <TextField fx:id="matricula" disable="true" prefHeight="25.0" prefWidth="154.0" style="-fx-border-color: black;" />
                            </children>
                         </HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="237.0" spacing="10.0">
                            <children>
                               <Label prefHeight="17.0" prefWidth="125.0" text="Marca:" />
-                              <TextField fx:id="marca" disable="true" prefHeight="25.0" prefWidth="151.0" />
+                              <TextField fx:id="marca" disable="true" prefHeight="25.0" prefWidth="151.0" style="-fx-border-color: black;" />
                            </children>
                         </HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="237.0" spacing="10.0">
                            <children>
                               <Label prefHeight="17.0" prefWidth="125.0" text="Modelo" />
-                              <TextField fx:id="modelo" disable="true" prefHeight="25.0" prefWidth="151.0" />
+                              <TextField fx:id="modelo" disable="true" prefHeight="25.0" prefWidth="151.0" style="-fx-border-color: black;" />
                            </children>
                         </HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="237.0" spacing="10.0">
                            <children>
                               <Label prefHeight="17.0" prefWidth="126.0" text="Tipo motor:" />
-                              <TextField fx:id="tipoMotor" disable="true" prefHeight="25.0" prefWidth="149.0" />
+                              <TextField fx:id="tipoMotor" disable="true" prefHeight="25.0" prefWidth="149.0" style="-fx-border-color: black;" />
                            </children>
                         </HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="237.0" spacing="10.0">
                            <children>
                               <Label prefHeight="17.0" prefWidth="127.0" text="Tipo Vehículo:" />
-                              <TextField fx:id="tipoVehiculo" disable="true" />
+                              <TextField fx:id="tipoVehiculo" disable="true" style="-fx-border-color: black;" />
                            </children>
                         </HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="253.0" spacing="20.0">
                            <children>
                               <Label prefHeight="17.0" prefWidth="116.0" text="Fecha matriculación:" />
-                              <TextField fx:id="fechaMatriculacion" disable="true" editable="false" prefHeight="25.0" prefWidth="151.0" />
+                              <TextField fx:id="fechaMatriculacion" disable="true" editable="false" prefHeight="25.0" prefWidth="151.0" style="-fx-border-color: black;" />
                            </children>
                         </HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="301.0" spacing="10.0">
                            <children>
                               <Label prefHeight="17.0" prefWidth="125.0" text="Ultima revisión:" />
-                              <TextField fx:id="fechaUltimaRevision" disable="true" editable="false" prefHeight="25.0" prefWidth="153.0" />
+                              <TextField fx:id="fechaUltimaRevision" disable="true" editable="false" prefHeight="25.0" prefWidth="153.0" style="-fx-border-color: black;" />
                            </children>
                         </HBox>
                      </children>
                   </VBox>
-                  <HBox alignment="CENTER" prefHeight="56.0" prefWidth="261.0" spacing="20.0" style="-fx-border-style: solid; -fx-border-radius: 10px;">
+                  <HBox alignment="CENTER" prefHeight="56.0" prefWidth="261.0" spacing="20.0" style="-fx-border-style: solid; -fx-border-radius: 10px; -fx-background-color: #79BAD8;">
                      <children>
-                        <Button fx:id="botonAñadir" mnemonicParsing="false" text="Añadir" />
-                        <Button fx:id="botonEditar" mnemonicParsing="false" text="Editar" />
-                        <Button fx:id="botonBorrar" mnemonicParsing="false" text="Borrar" />
+                        <Button fx:id="botonAñadir" mnemonicParsing="false" style="-fx-border-color: black;" text="Añadir">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Button>
+                        <Button fx:id="botonEditar" mnemonicParsing="false" style="-fx-border-color: black;" text="Editar">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Button>
+                        <Button fx:id="botonBorrar" mnemonicParsing="false" style="-fx-border-color: black;" text="Borrar">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Button>
                      </children>
                      <VBox.margin>
                         <Insets bottom="5.0" top="5.0" />

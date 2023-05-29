@@ -104,15 +104,18 @@ fun String.toLocalDateTime(): LocalDateTime? {
 }
 
 /**
- * función que toma la fecha y la hora para juntarlas en un LocalDateTime
- * @author IvanRoncoCebadera
- * @param fecha es la fecha
- * @param hora es la hora, minutos y segundos para crear el LocalDateTime
- * @return el LocalDateTime que resulta de juntar la hora y la fecha introducida
+
+función que toma la fecha y la hora para juntarlas en un LocalDateTime
+@author IvanRoncoCebadera
+@param fecha es la fecha
+@param hora es la hora, minutos y segundos para crear el LocalDateTime
+@return el LocalDateTime que resulta de juntar la hora y la fecha introducida
  */
-fun toLocalDateTimeFromFechaHora(fecha: LocalDate, hora: String): LocalDateTime {
+fun toLocalDateTimeFromFechaHora(fecha: LocalDate?, hora: String?): LocalDateTime? {
     logger.debug { "Creamos un LocalDateTime, apartir de: $fecha, y $hora" }
-    return "$fecha $hora".toLocalDateTime()!!
+    if(fecha == null) return null
+    if(hora == null) return null
+    return "$fecha ${hora.split("-")[0]}".toLocalDateTime()!!
 }
 
 /**

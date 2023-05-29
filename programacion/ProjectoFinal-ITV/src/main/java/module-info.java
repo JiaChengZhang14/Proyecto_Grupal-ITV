@@ -40,9 +40,6 @@ module com.example.projectofinalitv {
     opens com.example.projectofinalitv.controllers.propietario to javafx.fxml;
     exports com.example.projectofinalitv.controllers.propietario;
 
-    opens com.example.projectofinalitv.controllers.detalles to javafx.fxml;
-    exports com.example.projectofinalitv.controllers.detalles;
-
     opens com.example.projectofinalitv.controllers.acercaDe to javafx.fxml;
     exports com.example.projectofinalitv.controllers.acercaDe;
 }

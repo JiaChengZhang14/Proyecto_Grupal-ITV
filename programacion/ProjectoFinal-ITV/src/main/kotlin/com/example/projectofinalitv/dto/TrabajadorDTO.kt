@@ -7,7 +7,7 @@ data class TrabajadorDTO(
     val telefono: String,
     val email: String,
     val nombreUsuario: String,
-    val contraseñaUsuario: String,
+    val contraseniaUsuario: String,
     val fechaContratacion: String,
     var especialidades: List<String>,
     val idResponsable: String,

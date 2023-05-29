@@ -73,16 +73,6 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 }
 
-jar {
-    manifest {
-        attributes 'Main-Class': 'com.example.projectofinalitv.MainApplication'
-    }
-    from {
-        configurations["compileClasspath"].collect { it.isDirectory() ? it : zipTree(it) }
-    }
-    duplicatesStrategy = DuplicatesStrategy.INCLUDE
-}
-
 test {
     useJUnitPlatform()
 }

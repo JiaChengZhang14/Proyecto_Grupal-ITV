@@ -8,8 +8,6 @@ import com.example.projectofinalitv.models.Vehiculo
 import com.example.projectofinalitv.utils.toLocalDate
 import com.example.projectofinalitv.utils.toLocalDateTime
 import mu.KotlinLogging
-import java.nio.file.Files
-import java.nio.file.Path
 import java.sql.DriverManager
 
 private val logger = KotlinLogging.logger {  }
@@ -39,7 +37,7 @@ class DatabaseManager(
                 while (result.next()) {
                     vehiculo =
                         Vehiculo(
-                            id = result.getLong("id_vehiculo"),
+                            id = id,
                             matricula = result.getString("matricula"),
                             marca = result.getString("marca"),
                             modelo = result.getString("modelo"),

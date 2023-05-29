@@ -60,6 +60,12 @@ class InformeRepositoryImpl(
         }
     }
 
+    /**
+     * Funcion que actuliza los datos un informe en la base de datos
+     * @param informe es el informe con los datos actualizados
+     * @return devuelve el informe actualizado
+     * @author JiaCheng Zhang, Kevin David Matute
+     */
     private fun updateInforme(informe: Informe): Informe {
         logger.debug { "Se actualiza un informe" }
         database.connection.use {
@@ -67,11 +73,11 @@ class InformeRepositoryImpl(
             it.prepareStatement(sql).use { stm ->
                 stm.setObject(1, informe.fechaInicio)
                 stm.setObject(2, informe.fechaFinal)
-                stm.setString(3, informe.favorable!!.string)
-                stm.setDouble(4, informe.frenado!!)
-                stm.setDouble(5, informe.contaminacion!!)
-                stm.setString(6, informe.interior!!.string)
-                stm.setString(7, informe.luces!!.string)
+                stm.setString(3, informe.favorable?.string ?: "")
+                stm.setObject(4, informe.frenado)
+                stm.setObject(5, informe.contaminacion)
+                stm.setString(6, informe.interior?.string ?: "")
+                stm.setString(7, informe.luces?.string ?: "")
                 stm.setLong(8, informe.vehiculo.id)
                 stm.setLong(9, informe.trabajadorId)
                 stm.setLong(10, informe.idInforme)
@@ -82,6 +88,12 @@ class InformeRepositoryImpl(
         return informe
     }
 
+    /**
+     * Funcion que inserta un informe en la base de datos
+     * @param informe es el informe que se va a insertar
+     * @return devuelve el informe introducido
+     * @author JiaCheng Zhang, Kevin David Matute
+     */
     private fun insertInforme(informe: Informe): Informe {
         logger.debug { "Se inserta un nuevo informe" }
         var myId = -1L
@@ -92,11 +104,11 @@ class InformeRepositoryImpl(
                 stm.setObject(2, informe.fechaFinal)
                 stm.setLong(3, informe.vehiculo.id)
                 stm.setLong(4, informe.trabajadorId)
-                stm.setString(5, informe.favorable!!.string)
-                stm.setDouble(6, informe.frenado!!)
-                stm.setDouble(7, informe.contaminacion!!)
-                stm.setString(8, informe.interior!!.string)
-                stm.setString(9, informe.luces!!.string)
+                stm.setString(5, informe.favorable?.string ?: "")
+                stm.setObject(6, informe.frenado)
+                stm.setObject(7, informe.contaminacion)
+                stm.setString(8, informe.interior?.string ?: "")
+                stm.setString(9, informe.luces?.string ?: "")
 
                 stm.executeUpdate()
 
@@ -144,6 +156,11 @@ class InformeRepositoryImpl(
         return res >= 1
     }
 
+    /**
+     * funcion que restaura el valor del id autorincremental a un valor que se le introduce por parametros
+     * @param nuevoValor es el valor al que se quiere restaurar el id autorincremental
+     * @author JiaCheng Zhang & Kevin David Matute
+     */
     fun resetearValorAutoIncrementDeLaTablaVehiculo(nuevoValor: Long){
         logger.debug { "Se resetea el valor del autonumérico de la tabla de vehículo a: $nuevoValor" }
         database.connection.use {

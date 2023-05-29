@@ -9,13 +9,7 @@ private  val logger = KotlinLogging.logger {  }
 
 class ConfigApp {
 
-    var APP_URL =
-        readProperty("app.database.url") ?: "jdbc:mariadb://localhost:3306/empresaitv?serverTimezone=UTC"
-
-
-    val APP_TEST_URL by lazy {
-        readProperty("app.database_test.url") ?: "jdbc:mariadb://localhost:3306/empresaitvparatest?serverTimezone=UTC"
-    }
+    var APP_URL = readProperty("app.database.url") ?: "jdbc:mariadb://localhost:3306/empresaitv?serverTimezone=UTC"
 
     val APP_USER: String by lazy {
         readProperty("app.database.user") ?: "root"
