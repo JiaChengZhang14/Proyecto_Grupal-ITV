@@ -20,7 +20,7 @@ fun Informe.validateInforme(informes: List<Informe>): Result<Informe, InformeErr
         return Err(InformeError.SobrecargaCitas("No se pueden acepta mas citas en el intervalo ${this.fechaInicio}-${this.fechaFinal}."))
     }
 
-    if(informes.filter { it.vehiculo == this.vehiculo && it.fechaInicio.toLocalDate() == this.fechaInicio.toLocalDate() }.size == 1){
+    if(informes.filter { it.vehiculo == this.vehiculo && it.fechaInicio.toLocalDate() == this.fechaInicio.toLocalDate() }.isNotEmpty()){
         return Err(InformeError.SobrecargaCitas("El vehículo de matrícula: ${this.vehiculo.matricula}, ya tiene una cita el día ${this.fechaInicio.toLocalDate()}."))
     }
 
