@@ -5,26 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e71dec7f-69a7-4d4f-891f-e177356e1cd3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/4/143733e6aeb5a814fd6b5853e71066e219344e36" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/7/87378889a64914dca8fba18f162dc9dd4c92371d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/3/934f1ff9aa43e9ac5ebdb3e0ceb1267405f342e2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/5/b5725b8c93c60921a34d1e6ea133c3775476a96b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/a/ca6fcfb3b86677bd95aac00f4ec8d10bf6c821a5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/3/d301889953662f21b70619f898f50962053c14e8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/2/f2064934a563b2d896bfee286a9b3cc23e03cf20" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/f/5f41aab09eb002df2c56554723fa802db7194a4a" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/4/143733e6aeb5a814fd6b5853e71066e219344e36" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/7/87378889a64914dca8fba18f162dc9dd4c92371d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/3/934f1ff9aa43e9ac5ebdb3e0ceb1267405f342e2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/5/b5725b8c93c60921a34d1e6ea133c3775476a96b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/a/ca6fcfb3b86677bd95aac00f4ec8d10bf6c821a5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/3/d301889953662f21b70619f898f50962053c14e8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/2/f2064934a563b2d896bfee286a9b3cc23e03cf20" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/f/5f41aab09eb002df2c56554723fa802db7194a4a" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/files/informes/informesTest/informe1.html" beforeDir="false" afterPath="$PROJECT_DIR$/files/informes/informesTest/informe1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/files/informes/informesTest/informe1.json" beforeDir="false" afterPath="$PROJECT_DIR$/files/informes/informesTest/informe1.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/files/informes/informesTest/informes.json" beforeDir="false" afterPath="$PROJECT_DIR$/files/informes/informesTest/informes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/example/projectofinalitv/repositories/informe/InformeRepositoryImplTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/example/projectofinalitv/repositories/informe/InformeRepositoryImplTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/example/projectofinalitv/repositories/trabajador/TrabajadoresRepositoryImplTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/example/projectofinalitv/repositories/trabajador/TrabajadoresRepositoryImplTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +79,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.ProjectoFinal-ITV [run]">
+  <component name="RunManager" selected="Gradle.Tests in 'com.example.projectofinalitv'">
     <configuration name="ProjectoFinal-ITV [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -204,8 +195,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.ProjectoFinal-ITV [run]" />
         <item itemvalue="Gradle.Tests in 'com.example.projectofinalitv'" />
+        <item itemvalue="Gradle.ProjectoFinal-ITV [run]" />
         <item itemvalue="Gradle.TrabajadoresRepositoryImplTest" />
         <item itemvalue="Gradle.TrabajadoresRepositoryImplTest.getAll" />
         <item itemvalue="Gradle.ViewModelTest.updateInformeTest" />
@@ -227,6 +218,7 @@
       <workItem from="1685348631294" duration="2211000" />
       <workItem from="1685359962616" duration="1185000" />
       <workItem from="1685361641348" duration="67000" />
+      <workItem from="1685370981137" duration="1497000" />
     </task>
     <servers />
   </component>

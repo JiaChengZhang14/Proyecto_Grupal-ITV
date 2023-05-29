@@ -125,21 +125,16 @@ internal class TrabajadoresRepositoryImplTest {
 
 
     @BeforeAll
-    fun insertVehiculos(){
+    fun insertDatos(){
         vehiculoRepository.resetearValorAutoIncrementDeLaTablaVehiculo(1)
         vehiculos.forEach {
             vehiculoRepository.save(it)
         }
-    }
 
-    @BeforeAll
-    fun insertarPropietarios(){
         propietarios.forEach {
             propietarioRepository.save(it)
         }
-    }
-    @BeforeAll
-    fun insertarInformes(){
+
         informeRepository.resetearValorAutoIncrementDeLaTablaVehiculo(1)
         val informes = listOf(informe, informe2)
         informes.forEach {
@@ -147,16 +142,11 @@ internal class TrabajadoresRepositoryImplTest {
         }
     }
 
+
     @AfterAll
     fun eliminarVehiculos(){
         vehiculoRepository.deleteAll()
-    }
-    @AfterAll
-    fun eliminarPropietarios(){
         propietarioRepository.deleteAll()
-    }
-    @AfterAll
-    fun eliminarInformes(){
         informeRepository.deleteAllInformes()
     }
 

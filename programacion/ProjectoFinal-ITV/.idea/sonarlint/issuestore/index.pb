@@ -83,8 +83,6 @@ s
 Csrc/main/kotlin/com/example/projectofinalitv/error/VehiculoError.kt,f\2\f248fc83da8baedf9fd8499c2dae978e9e4a3a0e
 r
 Bsrc/main/kotlin/com/example/projectofinalitv/error/InformeError.kt,0\0\002dba2cc7406ce0aebefb70487c553edf0131bf
-–
-fsrc/test/kotlin/com/example/projectofinalitv/repositories/propietario/PropietarioRepositoryImplTest.kt,5\f\5f41aab09eb002df2c56554723fa802db7194a4a
 v
 Fsrc/main/kotlin/com/example/projectofinalitv/error/PropietarioError.kt,3\3\33542e4fda36d75a07454e727ae0fbaa0b967a37
 u

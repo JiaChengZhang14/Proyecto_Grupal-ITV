@@ -88,43 +88,27 @@ internal class InformeRepositoryImplTest {
     )
 
     @BeforeEach
-    fun insertarInformes() {
+    fun insertarDatos() {
         repositoryInforme.resetearValorAutoIncrementDeLaTablaVehiculo(1)
         repositoryInforme.saveInforme(informe)
 
-    }
-
-    @BeforeEach
-    fun insertVehiculos() {
         vehiculoRepository.resetearValorAutoIncrementDeLaTablaVehiculo(1)
         vehiculos.forEach {
             vehiculoRepository.save(it)
         }
-    }
 
-    @BeforeEach
-    fun insertarPropietarios() {
         propietarios.forEach {
             propietarioRepository.save(it)
         }
+
     }
 
-
     @AfterEach
-    fun eliminarVehiculos() {
+    fun eliminarDatos() {
         vehiculoRepository.deleteAll()
-    }
-
-    @AfterEach
-    fun eliminarPropietarios() {
         propietarioRepository.deleteAll()
-    }
-
-    @AfterEach
-    fun tearDownAfterAll() {
         repositoryInforme.deleteAllInformes()
     }
-
 
 
     @Test
