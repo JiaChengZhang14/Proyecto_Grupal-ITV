@@ -1,26 +1,26 @@
-package com.example.projectofinalitv.storage
+package com.example.projectofinalitv.services.storage.informe
 
 import com.example.projectofinalitv.config.ConfigApp
 import com.example.projectofinalitv.models.*
-import com.example.projectofinalitv.services.storage.informe.InformeStorageHtml
 import com.example.projectofinalitv.utils.toLocalDate
 import com.example.projectofinalitv.utils.toLocalDateTime
 import com.github.michaelbull.result.Ok
-import org.junit.jupiter.api.Test
-
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeAll
+import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
 import java.io.File
 
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
-internal class InformeStorageHtmlTest {
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+internal class InformeStorageJsonTest {
     private val configApp = ConfigApp()
     private var filePath = configApp.APP_FILE_PATH +File.separator+"informes"+File.separator+ "informesTest"
-    private val file = File(filePath + File.separator + "informe1.html")
-    private val storageHtml = InformeStorageHtml(configApp).apply {
-        filePath =  filePath+File.separator+"informesTest"
+
+    private val singleFile = File(filePath + File.separator+"informe1.json")
+    private val multiFile = File(filePath + File.separator + "informes.json")
+    private val storageJson =  InformeStorageJson(configApp).apply {
+        filePath = filePath+File.separator+"informesTest"
     }
 
 
@@ -86,18 +86,33 @@ internal class InformeStorageHtmlTest {
         2
     )
 
-    @BeforeAll
-    fun setUp() {
-        if (file.exists()){
-            file.delete()
+
+        @BeforeAll
+        fun setUp() {
+            if (singleFile.exists()){
+                singleFile.delete()
+            }
+            if (multiFile.exists()){
+                multiFile.delete()
+            }
         }
-    }
+
 
     @Test
     fun exportSingleData() {
-        println(file)
-        val res = storageHtml.exportSingleData(informe)
+        println(singleFile)
+        val res = storageJson.exportSingleData(informe)
         assertEquals(Ok(informe), res)
-        assertTrue(file.exists())
+        assertTrue(singleFile.exists())
+
     }
+
+    @Test
+    fun exportMultipleData() {
+        val informes = listOf(informe, informe2)
+        val res = storageJson.exportMultipleData(informes)
+        assertEquals(Ok(informes), res)
+        assertTrue(multiFile.exists())
+    }
+
 }

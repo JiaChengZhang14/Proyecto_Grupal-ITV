@@ -1,57 +1,85 @@
 [
   {
     "id_informe": "1",
-    "fecha_inicial": "2023-05-01T09:00",
-    "fecha_final": "2023-05-01T10:30",
+    "fecha_inicial": "2021-05-24T11:58:12",
+    "fecha_final": "2022-05-24T12:00:12",
     "favorable": "apto",
-    "frenado": "8,50",
-    "contaminacion": "35,00",
-    "interior": "apto",
+    "frenado": "6,10",
+    "contaminacion": "32,12",
+    "interior": "no apto",
     "luces": "apto",
     "trabajador_id": "1",
     "vehiculo": {
       "id_vehiculo": "1",
-      "matricula": "FBCD123",
-      "marca": "Ford",
-      "modelo": "Focus",
-      "fecha_matriculacion": "2020-01-01",
-      "fecha_ultima_revision": "2023-05-01T09:00",
-      "tipo_motor": "GASOLINA",
+      "matricula": "BBBB123",
+      "marca": "Renault",
+      "modelo": "Supra",
+      "fecha_matriculacion": "2013-11-24",
+      "fecha_ultima_revision": "2018-05-01T11:58",
+      "tipo_motor": "ELECTRICO",
       "tipo_vehiculo": "TURISMO",
       "propietario": {
-        "dni": "12345678A",
-        "nombre": "Juan",
-        "apellidos": "Pérez",
-        "telefono": "123456789",
-        "email": "juan@example.com"
+        "dni": "33456789A",
+        "nombre": "Ivan",
+        "apellidos": "Cebadera",
+        "telefono": "654899345",
+        "email": "soyjia@hotmail.es"
       }
     }
   },
   {
     "id_informe": "2",
-    "fecha_inicial": "2023-05-02T14:00",
-    "fecha_final": "2023-05-02T15:30",
-    "favorable": "no apto",
-    "frenado": "6,00",
-    "contaminacion": "40,00",
+    "fecha_inicial": "2021-11-24T11:57:12",
+    "fecha_final": "2022-05-24T12:00:12",
+    "favorable": "apto",
+    "frenado": "8,10",
+    "contaminacion": "32,12",
     "interior": "no apto",
     "luces": "apto",
-    "trabajador_id": "2",
+    "trabajador_id": "1",
     "vehiculo": {
-      "id_vehiculo": "2",
-      "matricula": "WXYZ987",
-      "marca": "Volkswagen",
-      "modelo": "Golf",
-      "fecha_matriculacion": "2018-06-15",
-      "fecha_ultima_revision": "2023-05-02T14:00",
+      "id_vehiculo": "1",
+      "matricula": "BBBB123",
+      "marca": "Renault",
+      "modelo": "Supra",
+      "fecha_matriculacion": "2013-11-24",
+      "fecha_ultima_revision": "2018-05-01T11:58",
+      "tipo_motor": "ELECTRICO",
+      "tipo_vehiculo": "TURISMO",
+      "propietario": {
+        "dni": "33456789A",
+        "nombre": "Ivan",
+        "apellidos": "Cebadera",
+        "telefono": "654899345",
+        "email": "soyjia@hotmail.es"
+      }
+    }
+  },
+  {
+    "id_informe": "4",
+    "fecha_inicial": "2021-11-24T11:57:11",
+    "fecha_final": "2022-05-24T12:00:12",
+    "favorable": "apto",
+    "frenado": "9,10",
+    "contaminacion": "32,12",
+    "interior": "no apto",
+    "luces": "no apto",
+    "trabajador_id": "4",
+    "vehiculo": {
+      "id_vehiculo": "3",
+      "matricula": "SSSS222",
+      "marca": "Opel",
+      "modelo": "\"Corsa",
+      "fecha_matriculacion": "2012-12-24",
+      "fecha_ultima_revision": "2017-05-24T11:58:21",
       "tipo_motor": "DIESEL",
       "tipo_vehiculo": "TURISMO",
       "propietario": {
-        "dni": "98765432B",
-        "nombre": "María",
-        "apellidos": "López",
-        "telefono": "987654321",
-        "email": "maria@example.com"
+        "dni": "33456556J",
+        "nombre": "Pedro",
+        "apellidos": "Marquez",
+        "telefono": "655409907",
+        "email": "aasdasd@email.com"
       }
     }
   }

@@ -1,0 +1,28 @@
+{
+  "id_informe": "2",
+  "fecha_inicial": "2021-11-24T11:57:12",
+  "fecha_final": "2022-05-24T12:00:12",
+  "favorable": "apto",
+  "frenado": "8,10",
+  "contaminacion": "32,12",
+  "interior": "no apto",
+  "luces": "apto",
+  "trabajador_id": "1",
+  "vehiculo": {
+    "id_vehiculo": "1",
+    "matricula": "BBBB123",
+    "marca": "Renault",
+    "modelo": "Supra",
+    "fecha_matriculacion": "2013-11-24",
+    "fecha_ultima_revision": "2018-05-01T11:58",
+    "tipo_motor": "ELECTRICO",
+    "tipo_vehiculo": "TURISMO",
+    "propietario": {
+      "dni": "33456789A",
+      "nombre": "Ivan",
+      "apellidos": "Cebadera",
+      "telefono": "654899345",
+      "email": "soyjia@hotmail.es"
+    }
+  }
+}

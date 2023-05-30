@@ -6,7 +6,6 @@ import com.example.projectofinalitv.routes.RoutesManager
 import javafx.application.Application
 import javafx.stage.Stage
 import mu.KotlinLogging
-import org.koin.core.component.KoinComponent
 import org.koin.core.context.startKoin
 
 private val logger = KotlinLogging.logger {  }

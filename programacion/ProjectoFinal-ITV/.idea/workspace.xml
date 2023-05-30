@@ -4,13 +4,137 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e71dec7f-69a7-4d4f-891f-e177356e1cd3" name="Changes" comment="">
+    <list default="true" id="11440888-3ab2-4d45-b09a-316d7202da71" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/0/002dba2cc7406ce0aebefb70487c553edf0131bf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/5/0508d02d0329ed1e150a6c06ec57966535dc3003" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/5/05877c4dc25d1c878548a9d5f82e8ecc2e91f375" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/6/0607ba7e7d940206bdc94e4c4dc1f14fe93d1fc5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/6/06f65155ec73600b9fc5c4dc2883d4bb84d8e284" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/9/093f97adf7352b6ac7be509ab5d0eaa719ea788b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/c/0c124273c352136de939aa631d623af19d161407" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/1/11a80e29700b74e91f4c7ce6878289f83f54cbde" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/6/16148d7689672f582b26cfcb954442397adefae6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/b/1bc2f1dd5d63757bd323a92eecd7f895eb7a00bf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/2/229391fdad1beb2e44c21ada8699aa79e630f954" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/2/229391fdad1beb2e44c21ada8699aa79e630f954" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/4/2427d24821ee9a6d954db652d75ea1387d5b2797" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/7/274499890fb30738a23893f8965cf05daaf01346" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/3/33542e4fda36d75a07454e727ae0fbaa0b967a37" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/4/34efcbb769a42c2a88aee02c88be8212a6f079f1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/b/3b9c1a07345f9cd2617a12dfb449e9ea22724654" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/d/3dc91ccfd8dc5fcb6852dadf811bb167fa9a255f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/6/46b14ee67a8d85b03f32e4a76d8c89f1154783de" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/9/49ab9d3b8165c2052dfb2fd80d05197e614c1984" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/c/4cccef02d0e12bea5264c46039cc756beb0b5a19" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/2/52ec3fa64088038a44d4015dfdd663ec6785a6d9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/7/57f3c893708aa765037710ce5ecf16d0d4072d06" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/d/5decf8a57f7230deef7906edf63733390023fde1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/f/5fec074c2bbe1fb8d076cdaebd7c8a2a4b5dffe0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/6/66619d752ae3e3313ee950129cc80f930ab48cb2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/7/6757017a454437acee51604e7d9216ae8d02b368" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/9/79e728d69bdb8e852ec89f9c56a8e1ca7986fef9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/f/7f781938be68f0f66ebfa2f3a0feb255ebe7fea9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/2/8204b4eb43021636ff656c05afb381586fdcf45e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/a/8a20fd2550980e290bc9f20dec438a0564fc1f4c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/7/9790d7aaa28e3dbadf5b1cf402004573866da889" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/8/98cbe6b426727c6fa96e964146a3d77d56d00de6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/e/9e2b8665f4b920cbb9aa81b730fb22bf90b440a2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/e/9e44f33f6910663b4f85096b69e5e0ff87147d56" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/0/a0358d1d4316f86447416fd269ce58e2148dabf9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/6/a69f3df8766202088c46044f321452d5c78e9ef7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/6/b63d4c1f00bda5f82b2b9f5b84e566db26ded6bd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/d/bd916eb04525be3d6816e2c6efd0900f6ec7ca14" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/5/c5a0963f62f72b93e8092d60c7e87a081217f786" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/8/c852d40b71165770cccb5d04d56117d30d4e5509" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/f/cfed0671a15a58ffbcfc259f574248baa0431c89" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/4/d4647a40214f1e2db10506407a2d2c28234713b1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/6/d66346925172831e0440fd6628a19b6b75698786" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/a/daff90e0d9473b88c0c648a283198cb19fa890cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/b/db84bae2ca4d0086f7640f3596edb13be13bee43" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/3/e364275201fdb5c8ffc3d864e375f8bb0a734fce" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/6/e60f0b6fe25357537612f189cf5d42c08af0f10b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/c/eccc78935278b4a40506d680a35cf0cb390d1627" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/2/f248fc83da8baedf9fd8499c2dae978e9e4a3a0e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/7/f73c98bc09522cd9c276a54432bd889f658b50cb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/8/f8c2fcddf8c192e0ce588427254c4eb00b29b632" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/d/fd91e6654945ac611655189629cff1c7a082e55d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/0/002dba2cc7406ce0aebefb70487c553edf0131bf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/5/0508d02d0329ed1e150a6c06ec57966535dc3003" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/5/05877c4dc25d1c878548a9d5f82e8ecc2e91f375" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/6/0607ba7e7d940206bdc94e4c4dc1f14fe93d1fc5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/6/06f65155ec73600b9fc5c4dc2883d4bb84d8e284" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/9/093f97adf7352b6ac7be509ab5d0eaa719ea788b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/c/0c124273c352136de939aa631d623af19d161407" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/1/11a80e29700b74e91f4c7ce6878289f83f54cbde" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/6/16148d7689672f582b26cfcb954442397adefae6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/b/1bc2f1dd5d63757bd323a92eecd7f895eb7a00bf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/4/2427d24821ee9a6d954db652d75ea1387d5b2797" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/7/274499890fb30738a23893f8965cf05daaf01346" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/3/33542e4fda36d75a07454e727ae0fbaa0b967a37" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/4/34efcbb769a42c2a88aee02c88be8212a6f079f1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/b/3b9c1a07345f9cd2617a12dfb449e9ea22724654" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/d/3dc91ccfd8dc5fcb6852dadf811bb167fa9a255f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/6/46b14ee67a8d85b03f32e4a76d8c89f1154783de" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/9/49ab9d3b8165c2052dfb2fd80d05197e614c1984" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/c/4cccef02d0e12bea5264c46039cc756beb0b5a19" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/2/52ec3fa64088038a44d4015dfdd663ec6785a6d9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/7/57f3c893708aa765037710ce5ecf16d0d4072d06" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/d/5decf8a57f7230deef7906edf63733390023fde1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/f/5fec074c2bbe1fb8d076cdaebd7c8a2a4b5dffe0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/6/66619d752ae3e3313ee950129cc80f930ab48cb2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/7/6757017a454437acee51604e7d9216ae8d02b368" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/9/79e728d69bdb8e852ec89f9c56a8e1ca7986fef9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/f/7f781938be68f0f66ebfa2f3a0feb255ebe7fea9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/2/8204b4eb43021636ff656c05afb381586fdcf45e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/a/8a20fd2550980e290bc9f20dec438a0564fc1f4c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/7/9790d7aaa28e3dbadf5b1cf402004573866da889" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/8/98cbe6b426727c6fa96e964146a3d77d56d00de6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/e/9e2b8665f4b920cbb9aa81b730fb22bf90b440a2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/e/9e44f33f6910663b4f85096b69e5e0ff87147d56" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/0/a0358d1d4316f86447416fd269ce58e2148dabf9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/6/a69f3df8766202088c46044f321452d5c78e9ef7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/6/b63d4c1f00bda5f82b2b9f5b84e566db26ded6bd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/d/bd916eb04525be3d6816e2c6efd0900f6ec7ca14" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/5/c5a0963f62f72b93e8092d60c7e87a081217f786" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/8/c852d40b71165770cccb5d04d56117d30d4e5509" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/f/cfed0671a15a58ffbcfc259f574248baa0431c89" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/4/d4647a40214f1e2db10506407a2d2c28234713b1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/6/d66346925172831e0440fd6628a19b6b75698786" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/a/daff90e0d9473b88c0c648a283198cb19fa890cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/b/db84bae2ca4d0086f7640f3596edb13be13bee43" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/3/e364275201fdb5c8ffc3d864e375f8bb0a734fce" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/6/e60f0b6fe25357537612f189cf5d42c08af0f10b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/c/eccc78935278b4a40506d680a35cf0cb390d1627" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/2/f248fc83da8baedf9fd8499c2dae978e9e4a3a0e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/7/f73c98bc09522cd9c276a54432bd889f658b50cb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/8/f8c2fcddf8c192e0ce588427254c4eb00b29b632" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/d/fd91e6654945ac611655189629cff1c7a082e55d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/informes/informesTest/informe1.html" beforeDir="false" afterPath="$PROJECT_DIR$/files/informes/informesTest/informe1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/informes/informesTest/informe1.json" beforeDir="false" afterPath="$PROJECT_DIR$/files/informes/informesTest/informe1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/informes/informesTest/informes.json" beforeDir="false" afterPath="$PROJECT_DIR$/files/informes/informesTest/informes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/informes/informe.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/informes/informe.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/informes/informe1.html" beforeDir="false" afterPath="$PROJECT_DIR$/files/informes/informe1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/informes/informe2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/informes/informe3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/informes/informe4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/informes/informes.json" beforeDir="false" afterPath="$PROJECT_DIR$/files/informes/informes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/trabajadores/trabajador.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/MainApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/MainApplication.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/utils/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/projectofinalitv/utils/Utils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/example/projectofinalitv/repositories/informe/InformeRepositoryImplTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/files/projectofinalitv/repositories/informe/InformeRepositoryImplTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/example/projectofinalitv/repositories/propietario/PropietarioRepositoryImplTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/files/projectofinalitv/repositories/propietario/PropietarioRepositoryImplTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/example/projectofinalitv/repositories/trabajador/TrabajadoresRepositoryImplTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/files/projectofinalitv/repositories/trabajador/TrabajadoresRepositoryImplTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/example/projectofinalitv/repositories/vehiculo/VehiculosRepositoryImplTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/files/projectofinalitv/repositories/vehiculo/VehiculosRepositoryImplTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/example/projectofinalitv/storage/InformeStorageHtmlTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/files/projectofinalitv/storage/InformeStorageHtmlTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/example/projectofinalitv/storage/InformeStorageJsonTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/files/projectofinalitv/storage/InformeStorageJsonTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/example/projectofinalitv/viewmodel/ViewModelTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/files/projectofinalitv/viewmodel/ViewModelTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,22 +183,69 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2QPnHzzgLBe0ZmRlUBfwh1I06Wd" />
+  <component name="ProjectId" id="2QTsMByY8euhkQ2K4ZvnlqHhKwq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
+    <option name="compactDirectories" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jiach/Desktop/ProjectoFinal-ITV&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.ProjectoFinal-ITV [run]">
+  <component name="RunManager" selected="Gradle.Tests in 'com.example.projectofinalitv'">
+    <configuration name="InformeRepositoryImplTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.example.projectofinalitv.repositories.informe.InformeRepositoryImplTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="InformeRepositoryImplTest.getInforme" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.example.projectofinalitv.repositories.informe.InformeRepositoryImplTest.getInforme&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="ProjectoFinal-ITV [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -119,102 +290,28 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TrabajadoresRepositoryImplTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.example.projectofinalitv.repositories.trabajador.TrabajadoresRepositoryImplTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="TrabajadoresRepositoryImplTest.getAll" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.example.projectofinalitv.repositories.trabajador.TrabajadoresRepositoryImplTest.getAll&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="ViewModelTest.updateInformeTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.example.projectofinalitv.viewmodel.ViewModelTest.updateInformeTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.ProjectoFinal-ITV [run]" />
         <item itemvalue="Gradle.Tests in 'com.example.projectofinalitv'" />
-        <item itemvalue="Gradle.TrabajadoresRepositoryImplTest" />
-        <item itemvalue="Gradle.TrabajadoresRepositoryImplTest.getAll" />
-        <item itemvalue="Gradle.ViewModelTest.updateInformeTest" />
+        <item itemvalue="Gradle.ProjectoFinal-ITV [run]" />
+        <item itemvalue="Gradle.InformeRepositoryImplTest" />
+        <item itemvalue="Gradle.InformeRepositoryImplTest.getInforme" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e71dec7f-69a7-4d4f-891f-e177356e1cd3" name="Changes" comment="" />
-      <created>1685264003381</created>
+      <changelist id="11440888-3ab2-4d45-b09a-316d7202da71" name="Changes" comment="" />
+      <created>1685388859058</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1685264003381</updated>
-      <workItem from="1685264005025" duration="791000" />
-      <workItem from="1685264819234" duration="18833000" />
-      <workItem from="1685307065557" duration="600000" />
-      <workItem from="1685345221809" duration="844000" />
-      <workItem from="1685348631294" duration="2211000" />
-      <workItem from="1685359962616" duration="1185000" />
-      <workItem from="1685361641348" duration="67000" />
-      <workItem from="1685370981137" duration="1497000" />
-      <workItem from="1685381527129" duration="1927000" />
+      <updated>1685388859058</updated>
+      <workItem from="1685388860736" duration="598000" />
+      <workItem from="1685398942522" duration="321000" />
+      <workItem from="1685399285432" duration="54000" />
+      <workItem from="1685399442436" duration="640000" />
+      <workItem from="1685428317540" duration="4185000" />
     </task>
     <servers />
   </component>

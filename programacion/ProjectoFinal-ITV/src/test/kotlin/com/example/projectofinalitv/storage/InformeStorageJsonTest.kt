@@ -1,7 +1,8 @@
-package com.example.projectofinalitv.services.storage.informe
+package com.example.projectofinalitv.storage
 
 import com.example.projectofinalitv.config.ConfigApp
 import com.example.projectofinalitv.models.*
+import com.example.projectofinalitv.services.storage.informe.InformeStorageJson
 import com.example.projectofinalitv.utils.toLocalDate
 import com.example.projectofinalitv.utils.toLocalDateTime
 import com.github.michaelbull.result.Ok
