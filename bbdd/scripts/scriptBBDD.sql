@@ -96,15 +96,17 @@ drop procedure if exists listWorkersByStation $$
 create procedure listWorkersByStation(stationId INT)
 begin
     declare l_last_row_fetched int;
-    declare id int;
-    declare c1 cursor for select id_trabajador from trabajador where id_itv = stationId;
+    declare idTrabajador, idItv int;
+    declare nombreTrabajador varchar(50);
+    declare telefonoTrabajador char(9);
+    declare c1 cursor for select id_trabajador, id_itv, nombre, telefono from trabajador where id_itv = stationId;
     declare continue handler for not found set l_last_row_fetched = 1;
     set l_last_row_fetched = 0;
     open c1;
-    bucle: WHILE l_last_row_fetched <> 1 do
-        fetch c1 into id;
-        select * from Trabajador where id_trabajador = id;
-    end WHILE bucle;
+    repeat
+        fetch c1 into idTrabajador, idItv, nombreTrabajador, telefonoTrabajador;
+        select idTrabajador, idItv, nombreTrabajador, telefonoTrabajador;
+    until l_last_row_fetched = 1 end repeat;
     close c1;
 end ;$$
 

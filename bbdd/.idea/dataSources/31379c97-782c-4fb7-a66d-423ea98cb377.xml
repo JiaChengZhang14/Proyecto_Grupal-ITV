@@ -1109,452 +1109,887 @@
     <schema id="325" parent="1" name="empresaitv">
       <CollationName>utf8mb4_general_ci</CollationName>
     </schema>
-    <schema id="326" parent="1" name="information_schema">
-      <CollationName>utf8_general_ci</CollationName>
-    </schema>
-    <schema id="327" parent="1" name="liga">
-      <CollationName>latin1_swedish_ci</CollationName>
-    </schema>
-    <schema id="328" parent="1" name="mysql">
+    <schema id="326" parent="1" name="empresaitvparatest">
       <CollationName>utf8mb4_general_ci</CollationName>
     </schema>
-    <schema id="329" parent="1" name="performance_schema">
+    <schema id="327" parent="1" name="information_schema">
       <CollationName>utf8_general_ci</CollationName>
     </schema>
-    <schema id="330" parent="1" name="phpmyadmin">
+    <schema id="328" parent="1" name="liga">
+      <CollationName>latin1_swedish_ci</CollationName>
+    </schema>
+    <schema id="329" parent="1" name="mysql">
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </schema>
+    <schema id="330" parent="1" name="performance_schema">
+      <CollationName>utf8_general_ci</CollationName>
+    </schema>
+    <schema id="331" parent="1" name="phpmyadmin">
       <CollationName>utf8_bin</CollationName>
     </schema>
-    <schema id="331" parent="1" name="test">
+    <schema id="332" parent="1" name="test">
       <CollationName>latin1_swedish_ci</CollationName>
     </schema>
-    <user id="332" parent="1" name="pma">
+    <user id="333" parent="1" name="pma">
       <Host>localhost</Host>
-    </user>
-    <user id="333" parent="1" name="root">
-      <Host>127.0.0.1</Host>
     </user>
     <user id="334" parent="1" name="root">
-      <Host>::1</Host>
+      <Host>127.0.0.1</Host>
     </user>
     <user id="335" parent="1" name="root">
+      <Host>::1</Host>
+    </user>
+    <user id="336" parent="1" name="root">
       <Host>localhost</Host>
     </user>
-    <table id="336" parent="324" name="cliente">
+    <table id="337" parent="324" name="cliente">
       <Engine>MyISAM</Engine>
       <CollationName>latin1_swedish_ci</CollationName>
     </table>
-    <table id="337" parent="324" name="cuenta">
+    <table id="338" parent="324" name="cuenta">
       <Engine>MyISAM</Engine>
       <CollationName>latin1_swedish_ci</CollationName>
     </table>
-    <routine id="338" parent="325" name="comprobarSiPerteneceANuestraEstacion">
+    <routine id="339" parent="325" name="insertTrabajadorEncriptandoContraseña">
       <Definer>root@localhost</Definer>
       <RoutineKind>procedure</RoutineKind>
-      <SourceTextLength>214</SourceTextLength>
+      <SourceTextLength>197</SourceTextLength>
     </routine>
-    <routine id="339" parent="325" name="listWorkersByStation">
+    <routine id="340" parent="325" name="insertarInformeCompleto">
       <Definer>root@localhost</Definer>
       <RoutineKind>procedure</RoutineKind>
-      <SourceTextLength>457</SourceTextLength>
+      <SourceTextLength>2212</SourceTextLength>
     </routine>
-    <table id="340" parent="325" name="citas">
+    <routine id="341" parent="325" name="listWorkersByStation">
+      <Definer>root@localhost</Definer>
+      <RoutineKind>procedure</RoutineKind>
+      <SourceTextLength>620</SourceTextLength>
+    </routine>
+    <routine id="342" parent="325" name="updateTrabajadorEncriptandoContraseña">
+      <Definer>root@localhost</Definer>
+      <RoutineKind>procedure</RoutineKind>
+      <SourceTextLength>361</SourceTextLength>
+    </routine>
+    <scheduled-event id="343" parent="325" name="borrado_informes_bimestral">
+      <Definer>root@localhost</Definer>
+      <SourceTextLength>38</SourceTextLength>
+      <Starts>&apos;2023-07-31 11:07:25&apos;</Starts>
+      <Status>enabled</Status>
+    </scheduled-event>
+    <table id="344" parent="325" name="estacionitv">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="341" parent="325" name="citasbeforeupdate">
+    <table id="345" parent="325" name="informe">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="342" parent="325" name="estacionitv">
+    <table id="346" parent="325" name="informesbeforeupdate">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="343" parent="325" name="propietario">
+    <table id="347" parent="325" name="propietario">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="344" parent="325" name="trabajador">
+    <table id="348" parent="325" name="trabajador">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="345" parent="325" name="vehiculo">
+    <table id="349" parent="325" name="vehiculo">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <column id="346" parent="336" name="codigo_cliente">
+    <column id="350" parent="337" name="codigo_cliente">
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="347" parent="336" name="dni">
+    <column id="351" parent="337" name="dni">
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="348" parent="336" name="nombre">
+    <column id="352" parent="337" name="nombre">
       <DasType>char(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="349" parent="336" name="apellido1">
+    <column id="353" parent="337" name="apellido1">
       <DasType>char(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="350" parent="336" name="apellido2">
+    <column id="354" parent="337" name="apellido2">
       <DasType>char(20)|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="351" parent="336" name="direccion">
+    <column id="355" parent="337" name="direccion">
       <DasType>char(50)|0s</DasType>
       <Position>6</Position>
     </column>
-    <index id="352" parent="336" name="SID_cliente_1">
+    <index id="356" parent="337" name="SID_cliente_1">
       <ColNames>codigo_cliente</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="353" parent="336" name="PRIMARY">
+    <index id="357" parent="337" name="PRIMARY">
       <ColNames>dni</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="354" parent="336" name="PRIMARY">
+    <key id="358" parent="337" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="355" parent="336" name="SID_cliente_1">
+    <key id="359" parent="337" name="SID_cliente_1">
       <UnderlyingIndexName>SID_cliente_1</UnderlyingIndexName>
     </key>
-    <column id="356" parent="337" name="tipo">
+    <column id="360" parent="338" name="tipo">
       <DasType>char(1)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="357" parent="337" name="fecha_creacion">
+    <column id="361" parent="338" name="fecha_creacion">
       <DasType>date|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="358" parent="337" name="saldo">
+    <column id="362" parent="338" name="saldo">
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="359" parent="337" name="cod_cuenta">
+    <column id="363" parent="338" name="cod_cuenta">
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <index id="360" parent="337" name="ID_cuenta_IND">
+    <index id="364" parent="338" name="ID_cuenta_IND">
       <ColNames>cod_cuenta</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="361" parent="337" name="PRIMARY">
+    <index id="365" parent="338" name="PRIMARY">
       <ColNames>cod_cuenta</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="362" parent="337" name="PRIMARY">
+    <key id="366" parent="338" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="363" parent="337" name="ID_cuenta_IND">
+    <key id="367" parent="338" name="ID_cuenta_IND">
       <UnderlyingIndexName>ID_cuenta_IND</UnderlyingIndexName>
     </key>
-    <argument id="364" parent="338" name="fechaInicio">
-      <DasType>date|0s</DasType>
+    <argument id="368" parent="339" name="id_trabajador">
+      <DasType>int(11)|0s</DasType>
       <Position>1</Position>
     </argument>
-    <argument id="365" parent="338" name="fechaFin">
-      <DasType>date|0s</DasType>
+    <argument id="369" parent="339" name="id_itv">
+      <DasType>int(11)|0s</DasType>
       <Position>2</Position>
     </argument>
-    <argument id="366" parent="338" name="idVehiculo">
+    <argument id="370" parent="339" name="nombre">
+      <DasType>varchar(50)|0s</DasType>
+      <Position>3</Position>
+    </argument>
+    <argument id="371" parent="339" name="telefono">
+      <DasType>char(9)|0s</DasType>
+      <Position>4</Position>
+    </argument>
+    <argument id="372" parent="339" name="email">
+      <DasType>varchar(50)|0s</DasType>
+      <Position>5</Position>
+    </argument>
+    <argument id="373" parent="339" name="nombre_usuario">
+      <DasType>varchar(50)|0s</DasType>
+      <Position>6</Position>
+    </argument>
+    <argument id="374" parent="339" name="contraseña_usuario">
+      <DasType>varchar(50)|0s</DasType>
+      <Position>7</Position>
+    </argument>
+    <argument id="375" parent="339" name="fecha_contratacion">
+      <DasType>date|0s</DasType>
+      <Position>8</Position>
+    </argument>
+    <argument id="376" parent="339" name="especialidad">
+      <DasType>varchar(20)|0s</DasType>
+      <Position>9</Position>
+    </argument>
+    <argument id="377" parent="339" name="salario">
+      <DasType>decimal(6,2 digit)|0s</DasType>
+      <Position>10</Position>
+    </argument>
+    <argument id="378" parent="339" name="id_responsable">
+      <DasType>int(11)|0s</DasType>
+      <Position>11</Position>
+    </argument>
+    <argument id="379" parent="340" name="idInforme">
+      <DasType>int(11)|0s</DasType>
+      <Position>1</Position>
+    </argument>
+    <argument id="380" parent="340" name="fechaInicio">
+      <DasType>text|0s</DasType>
+      <Position>2</Position>
+    </argument>
+    <argument id="381" parent="340" name="fechaFin">
+      <DasType>text|0s</DasType>
+      <Position>3</Position>
+    </argument>
+    <argument id="382" parent="340" name="idVehiculo">
+      <DasType>int(11)|0s</DasType>
+      <Position>4</Position>
+    </argument>
+    <argument id="383" parent="340" name="idTrabajador">
+      <DasType>int(11)|0s</DasType>
+      <Position>5</Position>
+    </argument>
+    <argument id="384" parent="340" name="favorable">
+      <DasType>text|0s</DasType>
+      <Position>6</Position>
+    </argument>
+    <argument id="385" parent="340" name="frenado">
+      <DasType>decimal(4,2 digit)|0s</DasType>
+      <Position>7</Position>
+    </argument>
+    <argument id="386" parent="340" name="contaminacion">
+      <DasType>decimal(4,2 digit)|0s</DasType>
+      <Position>8</Position>
+    </argument>
+    <argument id="387" parent="340" name="interior">
+      <DasType>text|0s</DasType>
+      <Position>9</Position>
+    </argument>
+    <argument id="388" parent="340" name="luces">
+      <DasType>text|0s</DasType>
+      <Position>10</Position>
+    </argument>
+    <argument id="389" parent="340" name="dniPropietario">
+      <DasType>char(9)|0s</DasType>
+      <Position>11</Position>
+    </argument>
+    <argument id="390" parent="340" name="nombrePropietario">
+      <DasType>varchar(50)|0s</DasType>
+      <Position>12</Position>
+    </argument>
+    <argument id="391" parent="340" name="apellidosPropietario">
+      <DasType>varchar(50)|0s</DasType>
+      <Position>13</Position>
+    </argument>
+    <argument id="392" parent="340" name="telefonoPropietario">
+      <DasType>char(9)|0s</DasType>
+      <Position>14</Position>
+    </argument>
+    <argument id="393" parent="340" name="emailPropietario">
+      <DasType>varchar(50)|0s</DasType>
+      <Position>15</Position>
+    </argument>
+    <argument id="394" parent="340" name="trabajadorIdItv">
+      <DasType>int(11)|0s</DasType>
+      <Position>16</Position>
+    </argument>
+    <argument id="395" parent="340" name="nombreTrabajador">
+      <DasType>varchar(50)|0s</DasType>
+      <Position>17</Position>
+    </argument>
+    <argument id="396" parent="340" name="telefonoTrabajador">
+      <DasType>char(9)|0s</DasType>
+      <Position>18</Position>
+    </argument>
+    <argument id="397" parent="340" name="emailTrabajador">
+      <DasType>varchar(50)|0s</DasType>
+      <Position>19</Position>
+    </argument>
+    <argument id="398" parent="340" name="nombreUsuario">
+      <DasType>varchar(50)|0s</DasType>
+      <Position>20</Position>
+    </argument>
+    <argument id="399" parent="340" name="contraseñaUsuario">
+      <DasType>varchar(50)|0s</DasType>
+      <Position>21</Position>
+    </argument>
+    <argument id="400" parent="340" name="fechaContratacion">
+      <DasType>text|0s</DasType>
+      <Position>22</Position>
+    </argument>
+    <argument id="401" parent="340" name="especialidadTrabajador">
+      <DasType>varchar(20)|0s</DasType>
+      <Position>23</Position>
+    </argument>
+    <argument id="402" parent="340" name="salarioTrabajador">
+      <DasType>decimal(6,2 digit)|0s</DasType>
+      <Position>24</Position>
+    </argument>
+    <argument id="403" parent="340" name="idResponsable">
+      <DasType>int(11)|0s</DasType>
+      <Position>25</Position>
+    </argument>
+    <argument id="404" parent="340" name="matriculaVehiculo">
       <DasType>char(7)|0s</DasType>
-      <Position>3</Position>
+      <Position>26</Position>
     </argument>
-    <argument id="367" parent="338" name="idTrabajador">
+    <argument id="405" parent="340" name="marcaVehiculo">
+      <DasType>varchar(50)|0s</DasType>
+      <Position>27</Position>
+    </argument>
+    <argument id="406" parent="340" name="modeloVehiculo">
+      <DasType>varchar(50)|0s</DasType>
+      <Position>28</Position>
+    </argument>
+    <argument id="407" parent="340" name="fechaMatriculacionVehiculo">
+      <DasType>text|0s</DasType>
+      <Position>29</Position>
+    </argument>
+    <argument id="408" parent="340" name="fechaUltimaRevisionVehiculo">
+      <DasType>text|0s</DasType>
+      <Position>30</Position>
+    </argument>
+    <argument id="409" parent="340" name="tipoMotorVehiculo">
+      <DasType>varchar(15)|0s</DasType>
+      <Position>31</Position>
+    </argument>
+    <argument id="410" parent="340" name="tipoVehiculoVehiculo">
+      <DasType>varchar(15)|0s</DasType>
+      <Position>32</Position>
+    </argument>
+    <argument id="411" parent="340" name="IdItvPedida">
       <DasType>int(11)|0s</DasType>
-      <Position>4</Position>
+      <Position>33</Position>
     </argument>
-    <argument id="368" parent="339" name="stationId">
+    <argument id="412" parent="341" name="stationId">
       <DasType>int(11)|0s</DasType>
       <Position>1</Position>
     </argument>
-    <column id="369" parent="340" name="fecha_inicio">
-      <DasType>datetime|0s</DasType>
-      <NotNull>1</NotNull>
+    <argument id="413" parent="342" name="id_trabajadorP">
+      <DasType>int(11)|0s</DasType>
       <Position>1</Position>
-    </column>
-    <column id="370" parent="340" name="fecha_final">
-      <DasType>datetime|0s</DasType>
-      <NotNull>1</NotNull>
+    </argument>
+    <argument id="414" parent="342" name="id_itvP">
+      <DasType>int(11)|0s</DasType>
       <Position>2</Position>
-    </column>
-    <column id="371" parent="340" name="id_vehiculo">
-      <DasType>int(11)|0s</DasType>
-      <NotNull>1</NotNull>
+    </argument>
+    <argument id="415" parent="342" name="nombreP">
+      <DasType>varchar(50)|0s</DasType>
       <Position>3</Position>
-    </column>
-    <column id="372" parent="340" name="id_trabajador">
-      <DasType>int(11)|0s</DasType>
-      <NotNull>1</NotNull>
+    </argument>
+    <argument id="416" parent="342" name="telefonoP">
+      <DasType>char(9)|0s</DasType>
       <Position>4</Position>
-    </column>
-    <index id="373" parent="340" name="PRIMARY">
-      <ColNames>fecha_inicio
-fecha_final
-id_vehiculo</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="374" parent="340" name="PRIMARY">
+    </argument>
+    <argument id="417" parent="342" name="emailP">
+      <DasType>varchar(50)|0s</DasType>
+      <Position>5</Position>
+    </argument>
+    <argument id="418" parent="342" name="nombre_usuarioP">
+      <DasType>varchar(50)|0s</DasType>
+      <Position>6</Position>
+    </argument>
+    <argument id="419" parent="342" name="contraseña_usuarioP">
+      <DasType>varchar(50)|0s</DasType>
+      <Position>7</Position>
+    </argument>
+    <argument id="420" parent="342" name="fecha_contratacionP">
+      <DasType>date|0s</DasType>
+      <Position>8</Position>
+    </argument>
+    <argument id="421" parent="342" name="especialidadP">
+      <DasType>varchar(20)|0s</DasType>
+      <Position>9</Position>
+    </argument>
+    <argument id="422" parent="342" name="salarioP">
+      <DasType>decimal(6,2 digit)|0s</DasType>
+      <Position>10</Position>
+    </argument>
+    <argument id="423" parent="342" name="id_responsableP">
+      <DasType>int(11)|0s</DasType>
+      <Position>11</Position>
+    </argument>
+    <check id="424" parent="344" name="correo_electronico">
+      <ColNames>correo_electronico</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <trigger id="375" parent="340" name="saveBeforeUpdate">
-      <Definer>root@localhost</Definer>
-      <Events>U</Events>
-      <SourceTextLength>197</SourceTextLength>
-      <Turn>after-row</Turn>
-    </trigger>
-    <column id="376" parent="341" name="fecha_inicio">
-      <DasType>datetime|0s</DasType>
-      <Position>1</Position>
-    </column>
-    <column id="377" parent="341" name="fecha_final">
-      <DasType>datetime|0s</DasType>
-      <Position>2</Position>
-    </column>
-    <column id="378" parent="341" name="id_vehiculo">
-      <DasType>char(7)|0s</DasType>
-      <Position>3</Position>
-    </column>
-    <column id="379" parent="341" name="id_trabajador">
-      <DasType>int(11)|0s</DasType>
-      <Position>4</Position>
-    </column>
-    <column id="380" parent="342" name="id_itv">
+      <Predicate>`correo_electronico` regexp &apos;^[^@]+@[^@]+.[a-zA-Z]{2,}$&apos;</Predicate>
+    </check>
+    <check id="425" parent="344" name="direccion">
+      <ColNames>direccion</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Predicate>`direccion` &lt;&gt; &apos;&apos;</Predicate>
+    </check>
+    <check id="426" parent="344" name="nombre">
+      <ColNames>nombre</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Predicate>`nombre` &lt;&gt; &apos;&apos;</Predicate>
+    </check>
+    <check id="427" parent="344" name="telefono">
+      <ColNames>telefono</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Predicate>`telefono` regexp &apos;[0-9]{9}&apos;</Predicate>
+    </check>
+    <column id="428" parent="344" name="id_itv">
+      <AutoIncrement>4</AutoIncrement>
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="381" parent="342" name="nombre">
+    <column id="429" parent="344" name="nombre">
       <DasType>varchar(50)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="382" parent="342" name="direccion">
+    <column id="430" parent="344" name="direccion">
       <DasType>varchar(50)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="383" parent="342" name="telefono">
+    <column id="431" parent="344" name="telefono">
       <DasType>char(9)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="384" parent="342" name="correo_electronico">
+    <column id="432" parent="344" name="correo_electronico">
       <DasType>varchar(50)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <index id="385" parent="342" name="PRIMARY">
+    <index id="433" parent="344" name="PRIMARY">
       <ColNames>id_itv</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="386" parent="342" name="PRIMARY">
+    <key id="434" parent="344" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="387" parent="343" name="dni">
+    <check id="435" parent="345" name="fecha_final">
+      <ColNames>fecha_final</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Predicate>(`fecha_final` regexp &apos;[0-9]{4}-[0-1][0-9]-[0-9]{2} [0-9]{2}:[0-5][0-9](:[0-5][0-9])?&apos; or `fecha_final` regexp &apos;[0-9]{4}-[0-1][0-9]-[0-9]{2}T[0-9]{2}:[0-5][0-9](:[0-5][0-9])?&apos;) and `fecha_final` &gt; `fecha_inicio`</Predicate>
+    </check>
+    <check id="436" parent="345" name="contaminacion">
+      <ColNames>contaminacion</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Predicate>`contaminacion` is null or `contaminacion` &gt;= 20.0 and `contaminacion` &lt;= 50.0</Predicate>
+    </check>
+    <check id="437" parent="345" name="favorable">
+      <ColNames>favorable</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Predicate>`favorable` regexp &apos;^(apto|no apto)$&apos; or `favorable` = &apos;&apos;</Predicate>
+    </check>
+    <check id="438" parent="345" name="fecha_inicio">
+      <ColNames>fecha_inicio</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Predicate>`fecha_inicio` regexp &apos;[0-9]{4}-[0-1][0-9]-[0-9]{2} [0-9]{2}:[0-5][0-9](:[0-5][0-9])?&apos; or `fecha_inicio` regexp &apos;[0-9]{4}-[0-1][0-9]-[0-9]{2}T[0-9]{2}:[0-5][0-9](:[0-5][0-9])?&apos;</Predicate>
+    </check>
+    <check id="439" parent="345" name="frenado">
+      <ColNames>frenado</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Predicate>`frenado` is null or `frenado` &gt;= 0.0 and `frenado` &lt;= 10.0</Predicate>
+    </check>
+    <check id="440" parent="345" name="interior">
+      <ColNames>interior</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Predicate>`interior` regexp &apos;^(apto|no apto)$&apos; or `interior` = &apos;&apos;</Predicate>
+    </check>
+    <check id="441" parent="345" name="luces">
+      <ColNames>luces</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Predicate>`luces` regexp &apos;^(apto|no apto)$&apos; or `luces` = &apos;&apos;</Predicate>
+    </check>
+    <column id="442" parent="345" name="id_informe">
+      <AutoIncrement>5</AutoIncrement>
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="443" parent="345" name="fecha_inicio">
+      <DasType>text|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="444" parent="345" name="fecha_final">
+      <DasType>text|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="445" parent="345" name="id_vehiculo">
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="446" parent="345" name="id_trabajador">
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="447" parent="345" name="favorable">
+      <DasType>text|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <column id="448" parent="345" name="frenado">
+      <DasType>decimal(4,2 digit)|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <column id="449" parent="345" name="contaminacion">
+      <DasType>decimal(4,2 digit)|0s</DasType>
+      <Position>8</Position>
+    </column>
+    <column id="450" parent="345" name="interior">
+      <DasType>text|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>9</Position>
+    </column>
+    <column id="451" parent="345" name="luces">
+      <DasType>text|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>10</Position>
+    </column>
+    <index id="452" parent="345" name="PRIMARY">
+      <ColNames>id_informe</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="453" parent="345" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <trigger id="454" parent="345" name="save_before_update">
+      <Definer>root@localhost</Definer>
+      <Events>U</Events>
+      <SourceTextLength>359</SourceTextLength>
+      <Turn>after-row</Turn>
+    </trigger>
+    <column id="455" parent="346" name="id_informe">
+      <DasType>int(11)|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="456" parent="346" name="fecha_inicio">
+      <DasType>datetime|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="457" parent="346" name="fecha_final">
+      <DasType>datetime|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="458" parent="346" name="id_vehiculo">
+      <DasType>char(7)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="459" parent="346" name="id_trabajador">
+      <DasType>int(11)|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="460" parent="346" name="favorable">
+      <DasType>text|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="461" parent="346" name="frenado">
+      <DasType>decimal(4,2 digit)|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <column id="462" parent="346" name="contaminacion">
+      <DasType>decimal(4,2 digit)|0s</DasType>
+      <Position>8</Position>
+    </column>
+    <column id="463" parent="346" name="interior">
+      <DasType>text|0s</DasType>
+      <Position>9</Position>
+    </column>
+    <column id="464" parent="346" name="luces">
+      <DasType>text|0s</DasType>
+      <Position>10</Position>
+    </column>
+    <check id="465" parent="347" name="apellidos">
+      <ColNames>apellidos</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Predicate>`apellidos` &lt;&gt; &apos;&apos;</Predicate>
+    </check>
+    <check id="466" parent="347" name="dni">
+      <ColNames>dni</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Predicate>`dni` regexp &apos;[0-9]{8}[A-Z]{1}&apos;</Predicate>
+    </check>
+    <check id="467" parent="347" name="email">
+      <ColNames>email</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Predicate>`email` regexp &apos;^[^@]+@[^@]+.[a-zA-Z]{2,}$&apos;</Predicate>
+    </check>
+    <check id="468" parent="347" name="nombre">
+      <ColNames>nombre</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Predicate>`nombre` &lt;&gt; &apos;&apos;</Predicate>
+    </check>
+    <check id="469" parent="347" name="telefono">
+      <ColNames>telefono</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Predicate>`telefono` regexp &apos;[0-9]{9}&apos;</Predicate>
+    </check>
+    <column id="470" parent="347" name="dni">
       <DasType>char(9)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="388" parent="343" name="nombre">
+    <column id="471" parent="347" name="nombre">
       <DasType>varchar(50)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="389" parent="343" name="apellidos">
+    <column id="472" parent="347" name="apellidos">
       <DasType>varchar(50)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="390" parent="343" name="telefono">
+    <column id="473" parent="347" name="telefono">
       <DasType>char(9)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="391" parent="343" name="email">
+    <column id="474" parent="347" name="email">
       <DasType>varchar(50)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <index id="392" parent="343" name="PRIMARY">
+    <index id="475" parent="347" name="PRIMARY">
       <ColNames>dni</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="393" parent="343" name="PRIMARY">
+    <key id="476" parent="347" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="394" parent="344" name="id_trabajador">
-      <AutoIncrement>1</AutoIncrement>
+    <check id="477" parent="348" name="contraseña_usuario">
+      <ColNames>contraseña_usuario</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Predicate>`contraseña_usuario` &lt;&gt; &apos;&apos;</Predicate>
+    </check>
+    <check id="478" parent="348" name="email">
+      <ColNames>email</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Predicate>`email` regexp &apos;^[^@]+@[^@]+.[a-zA-Z]{2,}$&apos;</Predicate>
+    </check>
+    <check id="479" parent="348" name="especialidad">
+      <ColNames>especialidad</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Predicate>`especialidad` regexp &apos;^(administracion|electricidad|motor|mecanica|interior)$&apos;</Predicate>
+    </check>
+    <check id="480" parent="348" name="fecha_contratacion">
+      <ColNames>fecha_contratacion</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Predicate>`fecha_contratacion` regexp &apos;[0-9]{4}-[0-1][0-9]-[0-9]{2}&apos;</Predicate>
+    </check>
+    <check id="481" parent="348" name="nombre_usuario">
+      <ColNames>nombre_usuario</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Predicate>`nombre_usuario` &lt;&gt; &apos;&apos;</Predicate>
+    </check>
+    <check id="482" parent="348" name="nombre">
+      <ColNames>nombre</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Predicate>`nombre` &lt;&gt; &apos;&apos;</Predicate>
+    </check>
+    <check id="483" parent="348" name="salario">
+      <ColNames>salario</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Predicate>`salario` &gt; 0</Predicate>
+    </check>
+    <check id="484" parent="348" name="telefono">
+      <ColNames>telefono</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Predicate>`telefono` regexp &apos;[0-9]{9}&apos;</Predicate>
+    </check>
+    <column id="485" parent="348" name="id_trabajador">
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="395" parent="344" name="id_itv">
+    <column id="486" parent="348" name="id_itv">
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="396" parent="344" name="nombre">
+    <column id="487" parent="348" name="nombre">
       <DasType>varchar(50)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="397" parent="344" name="telefono">
+    <column id="488" parent="348" name="telefono">
       <DasType>char(9)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="398" parent="344" name="email">
+    <column id="489" parent="348" name="email">
       <DasType>varchar(50)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="399" parent="344" name="nombre_usuario">
+    <column id="490" parent="348" name="nombre_usuario">
       <DasType>varchar(50)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="400" parent="344" name="contraseña_usuario">
+    <column id="491" parent="348" name="contraseña_usuario">
       <DasType>varchar(50)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <column id="401" parent="344" name="especialidad">
-      <DasType>varchar(20)|0s</DasType>
+    <column id="492" parent="348" name="fecha_contratacion">
+      <DasType>date|0s</DasType>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
-    <column id="402" parent="344" name="salario">
-      <DasType>decimal(6,2 digit)|0s</DasType>
+    <column id="493" parent="348" name="especialidad">
+      <DasType>varchar(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>9</Position>
     </column>
-    <column id="403" parent="344" name="id_responsable">
-      <DasType>int(11)|0s</DasType>
+    <column id="494" parent="348" name="salario">
+      <DasType>decimal(6,2 digit)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>10</Position>
     </column>
-    <index id="404" parent="344" name="PRIMARY">
+    <column id="495" parent="348" name="id_responsable">
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>11</Position>
+    </column>
+    <index id="496" parent="348" name="PRIMARY">
       <ColNames>id_trabajador</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="405" parent="344" name="email">
+    <index id="497" parent="348" name="email">
       <ColNames>email</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="406" parent="344" name="nombre_usuario">
+    <index id="498" parent="348" name="nombre_usuario">
       <ColNames>nombre_usuario</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="407" parent="344" name="contraseña_usuario">
+    <index id="499" parent="348" name="contraseña_usuario">
       <ColNames>contraseña_usuario</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="408" parent="344" name="PRIMARY">
+    <key id="500" parent="348" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="409" parent="344" name="email">
+    <key id="501" parent="348" name="email">
       <UnderlyingIndexName>email</UnderlyingIndexName>
     </key>
-    <key id="410" parent="344" name="nombre_usuario">
+    <key id="502" parent="348" name="nombre_usuario">
       <UnderlyingIndexName>nombre_usuario</UnderlyingIndexName>
     </key>
-    <key id="411" parent="344" name="contraseña_usuario">
+    <key id="503" parent="348" name="contraseña_usuario">
       <UnderlyingIndexName>contraseña_usuario</UnderlyingIndexName>
     </key>
-    <column id="412" parent="345" name="id_vehiculo">
-      <AutoIncrement>1</AutoIncrement>
+    <check id="504" parent="349" name="fecha_matriculacion">
+      <ColNames>fecha_matriculacion</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Predicate>`fecha_matriculacion` regexp &apos;[0-9]{4}-[0-1][0-9]-[0-9]{2}&apos;</Predicate>
+    </check>
+    <check id="505" parent="349" name="fecha_ultima_revision">
+      <ColNames>fecha_ultima_revision</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Predicate>`fecha_ultima_revision` regexp &apos;[0-9]{4}-[0-1][0-9]-[0-9]{2} [0-9]{2}:[0-5][0-9](:[0-5][0-9])?&apos; or `fecha_ultima_revision` regexp &apos;[0-9]{4}-[0-1][0-9]-[0-9]{2}T[0-9]{2}:[0-5][0-9](:[0-5][0-9])?&apos; or `fecha_ultima_revision` = &apos;&apos;</Predicate>
+    </check>
+    <check id="506" parent="349" name="marca">
+      <ColNames>marca</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Predicate>`marca` &lt;&gt; &apos;&apos;</Predicate>
+    </check>
+    <check id="507" parent="349" name="matricula">
+      <ColNames>matricula</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Predicate>`matricula` regexp &apos;^[BCDFGHJKLMNPRSTVWXYZ]{4}[0-9]{3}&apos;</Predicate>
+    </check>
+    <check id="508" parent="349" name="modelo">
+      <ColNames>modelo</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Predicate>`modelo` &lt;&gt; &apos;&apos;</Predicate>
+    </check>
+    <check id="509" parent="349" name="tipo_motor">
+      <ColNames>tipo_motor</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Predicate>`tipo_motor` regexp &apos;^(gasolina|electrico|diesel|hibrido|otro)$&apos;</Predicate>
+    </check>
+    <check id="510" parent="349" name="tipo_vehiculo">
+      <ColNames>tipo_vehiculo</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Predicate>`tipo_vehiculo` regexp &apos;^(turismo|furgoneta|camion|motocicleta|otro)$&apos;</Predicate>
+    </check>
+    <column id="511" parent="349" name="id_vehiculo">
+      <AutoIncrement>5</AutoIncrement>
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="413" parent="345" name="matricula">
+    <column id="512" parent="349" name="matricula">
       <DasType>char(7)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="414" parent="345" name="id_propietario">
+    <column id="513" parent="349" name="id_propietario">
       <DasType>char(9)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="415" parent="345" name="marca">
+    <column id="514" parent="349" name="marca">
       <DasType>varchar(50)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="416" parent="345" name="modelo">
+    <column id="515" parent="349" name="modelo">
       <DasType>varchar(50)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="417" parent="345" name="fecha_matriculacion">
+    <column id="516" parent="349" name="fecha_matriculacion">
       <DasType>date|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="418" parent="345" name="fecha_ultima_revision">
-      <DasType>datetime|0s</DasType>
+    <column id="517" parent="349" name="fecha_ultima_revision">
+      <DasType>text|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <column id="419" parent="345" name="tipo_motor">
+    <column id="518" parent="349" name="tipo_motor">
       <DasType>varchar(15)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
-    <column id="420" parent="345" name="tipo_vehiculo">
+    <column id="519" parent="349" name="tipo_vehiculo">
       <DasType>varchar(15)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>9</Position>
     </column>
-    <index id="421" parent="345" name="PRIMARY">
+    <index id="520" parent="349" name="PRIMARY">
       <ColNames>id_vehiculo</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="422" parent="345" name="matricula">
+    <index id="521" parent="349" name="matricula">
       <ColNames>matricula</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="423" parent="345" name="PRIMARY">
+    <key id="522" parent="349" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="424" parent="345" name="matricula">
+    <key id="523" parent="349" name="matricula">
       <UnderlyingIndexName>matricula</UnderlyingIndexName>
     </key>
   </database-model>

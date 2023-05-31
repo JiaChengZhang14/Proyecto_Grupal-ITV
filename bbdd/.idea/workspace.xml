@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="195df61c-4474-4f1e-bda4-7e1c70c97151" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/procedimientos/Procedimientos.sql" beforeDir="false" afterPath="$PROJECT_DIR$/procedimientos/Procedimientos.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/31379c97-782c-4fb7-a66d-423ea98cb377.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/31379c97-782c-4fb7-a66d-423ea98cb377.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/31379c97-782c-4fb7-a66d-423ea98cb377/storage_v2/_src_/schema/empresaitv.gp8CNg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/31379c97-782c-4fb7-a66d-423ea98cb377/storage_v2/_src_/schema/empresaitv.gp8CNg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/31379c97-782c-4fb7-a66d-423ea98cb377/storage_v2/_src_/schema/empresaitv.gp8CNg.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/31379c97-782c-4fb7-a66d-423ea98cb377/storage_v2/_src_/schema/empresaitv.gp8CNg.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/scriptBBDD.sql" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/scriptBBDD.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../entornos-desarrollo/Requisitos/~$_RNF_y_RI (3).docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../programacion/ProjectoFinal-ITV/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../programacion/ProjectoFinal-ITV/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../programacion/ProjectoFinal-ITV/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../programacion/ProjectoFinal-ITV/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../programacion/ProjectoFinal-ITV/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../programacion/ProjectoFinal-ITV/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,18 +27,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenDatabaseViewOnStart": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/jiach/Desktop/DAM/PracticaGrupalITV/Proyecto_Grupal-ITV/bbdd"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenDatabaseViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jiach/Desktop/DAM/PracticaGrupalITV/Proyecto_Grupal-ITV/bbdd&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mariadb"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mariadb&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
 </project>

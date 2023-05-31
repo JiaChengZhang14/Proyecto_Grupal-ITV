@@ -12,8 +12,8 @@
       <schema-mapping>
         <introspection-scope>
           <node kind="schema">
-            <name qname="@" />
             <name qname="empresaitv" />
+            <name qname="@" />
           </node>
         </introspection-scope>
       </schema-mapping>
